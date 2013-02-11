@@ -1,0 +1,105 @@
+<%= form_for(@caracteristica) do |f| %>
+  <% if @caracteristica.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@caracteristica.errors.count, "error") %> prohibited this caracteristica from being saved:</h2>
+
+      <ul>
+      <% @caracteristica.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :estatura %><br />
+    <%= f.text_field :estatura %>
+  </div>
+  <div class="field">
+    <%= f.label :calzado %><br />
+    <%= f.text_field :calzado %>
+  </div>
+  <div class="field">
+    <%= f.label :idiomas %><br />
+    <%= f.text_field :idiomas %>
+  </div>
+  <div class="field">
+    <%= f.label :tpantalon %><br />
+    <%= f.text_field :tpantalon %>
+  </div>
+  <div class="field">
+    <%= f.label :tcamisa %><br />
+    <%= f.text_field :tcamisa %>
+  </div>
+  <div class="field">
+    <%= f.label :busto %><br />
+    <%= f.text_field :busto %>
+  </div>
+  <div class="field">
+    <%= f.label :cintura %><br />
+    <%= f.text_field :cintura %>
+  </div>
+  <div class="field">
+    <%= f.label :cadera %><br />
+    <%= f.text_field :cadera %>
+  </div>
+  <div class="field">
+    <%= f.label :cojos %><br />
+    <%= f.text_field :cojos %>
+  </div>
+  <div class="field">
+    <%= f.label :ccabello %><br />
+    <%= f.text_field :ccabello %>
+  </div>
+  <div class="field">
+    <%= f.label :lcabello %><br />
+    <%= f.text_field :lcabello %>
+  </div>
+  <div class="field">
+    <%= f.label :etnia %><br />
+    <%= f.text_field :etnia %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :hobbie %><br />
+    <%= f.text_field :hobbie %>
+  </div>
+  <div class="field">
+    <%= f.label :mcuello %><br />
+    <%= f.text_field :mcuello %>
+  </div>
+  <div class="field">
+    <%= f.label :terno %><br />
+    <%= f.text_field :terno %>
+  </div>
+  <div class="field">
+    <%= f.label :desfile %><br />
+    <%= f.check_box :desfile %>
+  </div>
+  <div class="field">
+    <%= f.label :dientes %><br />
+    <%= f.check_box :dientes %>
+  </div>
+  <div class="field">
+    <%= f.label :actor %><br />
+    <%= f.check_box :actor %>
+  </div>
+  <div class="field">
+    <%= f.label :frenillos %><br />
+    <%= f.check_box :frenillos %>
+  </div>
+  <div class="field">
+    <%= f.label :experiencia %><br />
+    <%= f.check_box :experiencia %>
+  </div>
+  <div class="field">
+    <%= f.label :hot %><br />
+    <%= f.check_box :hot %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

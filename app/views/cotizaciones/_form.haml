@@ -1,0 +1,48 @@
+- if @cotizacione.errors.any?
+  #error_explanation
+    %h2 #{@cotizacione.errors.count} errores impiden generar la Cotización:
+    %ul
+      - @cotizacione.errors.full_messages.each do |msg|
+        %li= msg
+%h1 Ingreso de Cotización
+%table.sglea 
+  %tr
+    %td.tit Cliente
+    %td.inp= f.text_field :cliente 
+    %td.tit Fecha
+    %td.inp= f.date_select :fecha 
+  %tr
+    %td.tit Territorio
+    %td.inp= f.text_field :territorio
+    %td.tit Jornada
+    %td.inp= f.text_field :jornada
+  %tr
+    %td.tit Presupuesto
+    %td.inp= f.text_field :presupuesto
+    %td.tit Exclusividad
+    %td.inp= f.text_field :exclusividad
+  %tr
+    %td.tit Observaciones
+    %td.inp= f.text_field :observaciones
+    %td.tit Usuario
+    - if f.object.usuario.nil?
+      %td.inp= f.text_field :usuario, :value => current_user.nombre, :readonly => true
+    - else
+      %td.inp= f.text_field :usuario, :readonly => true
+
+%h2.titulo01 Detalles
+
+
+
+.field
+  = f.fields_for :lcotizas do |builder|
+    = render 'lcotiza_fields', :f => builder, :form_disabled => form_disabled
+= link_to_add_fields "Agregar", f, :lcotizas	 if not form_disabled
+%br/    
+%br/
+%br/    
+%br/
+
+
+
+  

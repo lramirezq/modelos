@@ -1,0 +1,41 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  tipo_id: MyString
+  numero_id: MyString
+  nombres: MyString
+  apellidos: MyString
+  sexo: MyString
+  fecha_nacimiento: 2012-11-23
+  nacionalidad: MyString
+  tipo_id_responsable: MyString
+  numero_id_responsable: MyString
+  nombres_responsable: MyString
+  apellidos_responsable: MyString
+  telefono_fijo: MyString
+  movil: MyString
+  direccion: MyString
+  comuna: MyString
+  ciudad: MyString
+  pais: MyString
+  licencia: MyString
+
+two:
+  tipo_id: MyString
+  numero_id: MyString
+  nombres: MyString
+  apellidos: MyString
+  sexo: MyString
+  fecha_nacimiento: 2012-11-23
+  nacionalidad: MyString
+  tipo_id_responsable: MyString
+  numero_id_responsable: MyString
+  nombres_responsable: MyString
+  apellidos_responsable: MyString
+  telefono_fijo: MyString
+  movil: MyString
+  direccion: MyString
+  comuna: MyString
+  ciudad: MyString
+  pais: MyString
+  licencia: MyString

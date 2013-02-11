@@ -1,0 +1,4 @@
+- title "Modelo " + @modelo.nombres.to_s
+
+- form_for @modelo, :builder => DisabledFormBuilder do |f|
+  = render 'form', :f => f, :form_disabled => true

@@ -1,0 +1,6 @@
+- title "Ingreso de Modelo"
+
+- form_for @modelo, :html => { :multipart => true } do |f|
+  = render 'form', :f => f, :form_disabled => false
+  .actions{:align => "center"}
+    = f.submit 'Ingresar Modelo'

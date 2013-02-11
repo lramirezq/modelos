@@ -1,0 +1,23 @@
+<h1>Listing bookers</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @bookers.each do |booker| %>
+  <tr>
+    <td><%= booker.nombre %></td>
+    <td><%= link_to 'Show', booker %></td>
+    <td><%= link_to 'Edit', edit_booker_path(booker) %></td>
+    <td><%= link_to 'Destroy', booker, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Booker', new_booker_path %>

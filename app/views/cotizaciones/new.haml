@@ -1,0 +1,6 @@
+- title "Ingreso de Cotización"
+
+- form_for @cotizacione, :html => { :multipart => true } do |f|
+  = render 'form', :f => f, :form_disabled => false
+  .actions{:align => "center"}
+    = f.submit 'Ingresar Cotización'

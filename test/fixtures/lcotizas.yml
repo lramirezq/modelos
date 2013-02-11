@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  cantidad: 1
+  personaje: MyString
+  rol: MyString
+  tdia: 1
+  tmes: 1
+  tanno: 1
+  medios: MyString
+  pais: MyString
+  valor: 1
+  diaadicional: 1
+  diaviajado: 1
+
+two:
+  cantidad: 1
+  personaje: MyString
+  rol: MyString
+  tdia: 1
+  tmes: 1
+  tanno: 1
+  medios: MyString
+  pais: MyString
+  valor: 1
+  diaadicional: 1
+  diaviajado: 1

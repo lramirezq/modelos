@@ -1,0 +1,65 @@
+<h1>Listing caracteristicas</h1>
+
+<table>
+  <tr>
+    <th>Estatura</th>
+    <th>Calzado</th>
+    <th>Idiomas</th>
+    <th>Tpantalon</th>
+    <th>Tcamisa</th>
+    <th>Busto</th>
+    <th>Cintura</th>
+    <th>Cadera</th>
+    <th>Cojos</th>
+    <th>Ccabello</th>
+    <th>Lcabello</th>
+    <th>Etnia</th>
+    <th>Email</th>
+    <th>Hobbie</th>
+    <th>Mcuello</th>
+    <th>Terno</th>
+    <th>Desfile</th>
+    <th>Dientes</th>
+    <th>Actor</th>
+    <th>Frenillos</th>
+    <th>Experiencia</th>
+    <th>Hot</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @caracteristicas.each do |caracteristica| %>
+  <tr>
+    <td><%= caracteristica.estatura %></td>
+    <td><%= caracteristica.calzado %></td>
+    <td><%= caracteristica.idiomas %></td>
+    <td><%= caracteristica.tpantalon %></td>
+    <td><%= caracteristica.tcamisa %></td>
+    <td><%= caracteristica.busto %></td>
+    <td><%= caracteristica.cintura %></td>
+    <td><%= caracteristica.cadera %></td>
+    <td><%= caracteristica.cojos %></td>
+    <td><%= caracteristica.ccabello %></td>
+    <td><%= caracteristica.lcabello %></td>
+    <td><%= caracteristica.etnia %></td>
+    <td><%= caracteristica.email %></td>
+    <td><%= caracteristica.hobbie %></td>
+    <td><%= caracteristica.mcuello %></td>
+    <td><%= caracteristica.terno %></td>
+    <td><%= caracteristica.desfile %></td>
+    <td><%= caracteristica.dientes %></td>
+    <td><%= caracteristica.actor %></td>
+    <td><%= caracteristica.frenillos %></td>
+    <td><%= caracteristica.experiencia %></td>
+    <td><%= caracteristica.hot %></td>
+    <td><%= link_to 'Show', caracteristica %></td>
+    <td><%= link_to 'Edit', edit_caracteristica_path(caracteristica) %></td>
+    <td><%= link_to 'Destroy', caracteristica, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Caracteristica', new_caracteristica_path %>

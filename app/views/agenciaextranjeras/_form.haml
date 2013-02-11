@@ -1,0 +1,36 @@
+- if @agenciaextranjera.errors.any?
+  #error_explanation
+    %h2 #{@agenciaextranjera.errors.count} errores impiden ingresar la Agencia Extranjera !:
+    %ul
+      - @agenciaextranjera.errors.full_messages.each do |msg|
+        %li= msg
+%h1 Ingreso de Agencia Extranjera
+%table.sglea 
+  %tr
+    %td.tit Nombre
+    %td.inp= f.text_field :nombre, :onblur => "upperCase(this)"
+    %td.tit Dueño
+    %td.inp= f.text_field :dueno, :onblur => "upperCase(this)"
+    %td.tit Skype
+    %td.inp= f.text_field :skype, :onblur => "upperCase(this)"
+  %tr
+    %td.tit Dirección
+    %td.inp= f.text_field :direccion, :onblur => "upperCase(this)"
+    %td.tit País
+    %td.inp= manten f, :pais, Mantenedor.paises, 'Seleccione por favor'
+    %td.tit E- mail
+    %td.inp= f.text_field :email, :onblur => "upperCase(this)"
+%h2.titulo01 BOOKERS
+.field
+  = f.fields_for :bookers do |builder|
+    = render 'booker_fields', :f => builder, :form_disabled => form_disabled
+= link_to_add_fields "Agregar Booker ", f, :bookers if not form_disabled
+%br/
+%br/
+%h2.titulo01 TELEFONOS
+.field
+  = f.fields_for :telefonos do |builder|
+    = render 'telefono_fields', :f => builder, :form_disabled => form_disabled
+= link_to_add_fields "Agregar Teléfono ", f, :telefonos if not form_disabled
+%br/
+%br/

@@ -1,0 +1,25 @@
+%h2.titulo01 Listado de Agencias Madres
+
+%table.sglea.datos
+  %tr
+    %td.titg Nombre
+    %td.titg Dueño
+    %td.titg Skype
+    %td.titg E-Mail
+    %td.titg Dirección
+    %td.titg Ver
+    %td.titg Editar
+    %td.titg Eliminar
+  - @agenciamadres.each do |agenciamadre|
+    %tr
+      %td= agenciamadre.nombre
+      %td= agenciamadre.dueno
+      %td= agenciamadre.skype
+      %td= agenciamadre.email
+      %td= agenciamadre.direccion
+      %td= link_to image_tag("ver.png"), agenciamadre
+      %td= link_to image_tag("editar.png"), edit_agenciamadre_path(agenciamadre)
+      %td= link_to image_tag("eliminar.png"), agenciamadre, :confirm => '¿Está Seguro?', :method => :delete
+      
+%br/
+= link_button 'Agregar Agencia Madre', new_agenciamadre_path

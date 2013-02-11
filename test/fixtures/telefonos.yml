@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  cod_area: MyString
+  telefono: MyString
+
+two:
+  cod_area: MyString
+  telefono: MyString

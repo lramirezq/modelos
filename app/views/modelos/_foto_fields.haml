@@ -1,0 +1,10 @@
+.fields 
+  = f.hidden_field :_destroy 
+  %center= image_tag f.object.picture.url(:large)
+  %table.sglea
+    %tr
+      %td.inp=  f.file_field :picture, :size => 16, :onblur => "upperCase(this)"
+      %td.tit  Descripción
+      %td.inp=  f.text_field :nombre, :size => 100, :onblur => "upperCase(this)"
+      %td.inp= link_to_remove_fields "Eliminar", f if not form_disabled
+      

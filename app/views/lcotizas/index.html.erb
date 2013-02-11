@@ -1,0 +1,43 @@
+<h1>Listing lcotizas</h1>
+
+<table>
+  <tr>
+    <th>Cantidad</th>
+    <th>Personaje</th>
+    <th>Rol</th>
+    <th>Tdia</th>
+    <th>Tmes</th>
+    <th>Tanno</th>
+    <th>Medios</th>
+    <th>Pais</th>
+    <th>Valor</th>
+    <th>Diaadicional</th>
+    <th>Diaviajado</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @lcotizas.each do |lcotiza| %>
+  <tr>
+    <td><%= lcotiza.cantidad %></td>
+    <td><%= lcotiza.personaje %></td>
+    <td><%= lcotiza.rol %></td>
+    <td><%= lcotiza.tdia %></td>
+    <td><%= lcotiza.tmes %></td>
+    <td><%= lcotiza.tanno %></td>
+    <td><%= lcotiza.medios %></td>
+    <td><%= lcotiza.pais %></td>
+    <td><%= lcotiza.valor %></td>
+    <td><%= lcotiza.diaadicional %></td>
+    <td><%= lcotiza.diaviajado %></td>
+    <td><%= link_to 'Show', lcotiza %></td>
+    <td><%= link_to 'Edit', edit_lcotiza_path(lcotiza) %></td>
+    <td><%= link_to 'Destroy', lcotiza, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Lcotiza', new_lcotiza_path %>

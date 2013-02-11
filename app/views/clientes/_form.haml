@@ -1,0 +1,37 @@
+- if @cliente.errors.any?
+  #error_explanation
+    %h2 #{@cliente.errors.count} errores impiden ingresar el Cliente:
+    %ul
+      - @cliente.errors.full_messages.each do |msg|
+        %li= msg
+%h1 Ingreso de Cliente
+%table.sglea 
+  %tr
+    %td.tit Rut
+    %td.inp= f.text_field :rut, :onblur => "upperCase(this)"
+    %td.tit Razón Social
+    %td.inp= f.text_field :razonsocial, :onblur => "upperCase(this)"
+    %td.tit Nombre Fantasia
+    %td.inp= f.text_field :nombrefantasia, :onblur => "upperCase(this)"
+  %tr
+    %td.tit Dirección
+    %td.inp= f.text_field :direccion, :onblur => "upperCase(this)"
+    %td.tit Comuna
+    %td.inp= f.text_field :comuna, :onblur => "upperCase(this)"
+    %td.tit Ciudad
+    %td.inp= f.text_field :ciudad, :onblur => "upperCase(this)"
+  %tr
+    %td.tit País
+    %td.inp= manten f, :pais, Mantenedor.paises, 'Seleccione por favor'
+    %td.tit Contacto
+    %td.inp= f.text_field :contacto, :onblur => "upperCase(this)"
+    %td.tit E-Mail
+    %td.inp= f.text_field :email, :onblur => "upperCase(this)"
+  %tr
+    %td.tit Número de Contacto
+    %td.inp= f.text_field :ncontacto, :onblur => "upperCase(this)"
+    %td.tit Contacto Finanzas
+    %td.inp= f.text_field :contactofinanzas, :onblur => "upperCase(this)"
+    %td.tit Número de Contacto Finanzas
+    %td.inp= f.text_field :ncontactofinanzas, :onblur => "upperCase(this)"
+

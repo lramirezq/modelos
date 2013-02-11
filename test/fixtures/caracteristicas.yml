@@ -1,0 +1,49 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  estatura: MyString
+  calzado: MyString
+  idiomas: MyString
+  tpantalon: MyString
+  tcamisa: MyString
+  busto: MyString
+  cintura: MyString
+  cadera: MyString
+  cojos: MyString
+  ccabello: MyString
+  lcabello: MyString
+  etnia: MyString
+  email: MyString
+  hobbie: MyString
+  mcuello: MyString
+  terno: MyString
+  desfile: false
+  dientes: false
+  actor: false
+  frenillos: false
+  experiencia: false
+  hot: false
+
+two:
+  estatura: MyString
+  calzado: MyString
+  idiomas: MyString
+  tpantalon: MyString
+  tcamisa: MyString
+  busto: MyString
+  cintura: MyString
+  cadera: MyString
+  cojos: MyString
+  ccabello: MyString
+  lcabello: MyString
+  etnia: MyString
+  email: MyString
+  hobbie: MyString
+  mcuello: MyString
+  terno: MyString
+  desfile: false
+  dientes: false
+  actor: false
+  frenillos: false
+  experiencia: false
+  hot: false

@@ -1,0 +1,25 @@
+%h2.titulo01 Listado de Clientes
+
+%table.sglea.datos
+  %tr
+    %td.titg Rut
+    %td.titg Razón Social
+    %td.titg Nombre Fantasia
+    %td.titg Contacto
+    %td.titg Telefono
+    %td.titg Ver
+    %td.titg Editar
+    %td.titg Eliminar
+  - @clientes.each do |cliente|
+    %tr
+      %td= cliente.rut
+      %td= cliente.razonsocial
+      %td= cliente.nombrefantasia
+      %td= cliente.contacto
+      %td= cliente.ncontacto
+      %td= link_to image_tag("ver.png"), cliente
+      %td= link_to image_tag("editar.png"), edit_cliente_path(cliente)
+      %td= link_to image_tag("eliminar.png"), cliente, :confirm => '¿Está Seguro?', :method => :delete
+      
+%br/
+= link_button 'Agregar Cliente', new_cliente_path

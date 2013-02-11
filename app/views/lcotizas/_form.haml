@@ -1,0 +1,33 @@
+= form_for(@lcotiza) do |f|
+  - if @lcotiza.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@lcotiza.errors.count, "error")
+        prohibited this lcotiza from being saved:
+      %ul
+        - @lcotiza.errors.full_messages.each do |msg|
+          %li= msg
+  %table.sglea
+    %tr
+      %td Cantidad
+      %td Personaje
+      %td Rol
+      %td Tiempo
+      %td Medios
+      %td País
+      %td Valor
+      %td Día Adicional
+      %td Día Viajado
+    %tr
+      %td.inp= f.text_field :cantidad , :size => 1
+      %td.inp= manten f, :personaje, Mantenedor.personajes, 'Seleccione por favor'
+      %td.inp= manten f, :rol, Mantenedor.roles, 'Seleccione por favor'
+      %td.inp
+        Dias: #{f.text_field :tdia, :size => 1} Meses: #{f.text_field :tmes , :size => 1} Años: #{f.text_field :tanno , :size => 1}
+      %td.inp= manten f, :medios, Mantenedor.medios, 'Seleccione por favor'
+      %td.inp= manten f, :pais, Mantenedor.paises, 'Seleccione por favor'
+      %td.inp= f.text_field :valor , :size => 3
+      %td.inp= f.text_field :diaadicional, :size => 3
+      %td.inp= f.text_field :diaviajado, :size => 3
+  .actions
+    = f.submit

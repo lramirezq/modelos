@@ -1,0 +1,31 @@
+%h2.titulo01 Listado de Cotizaciones
+
+%table.sglea.datos
+  %tr
+    %td.titg Fecha
+    %td.titg Cliente
+    %td.titg Territorio
+    %td.titg Jornada
+    %td.titg Presupuesto
+    %td.titg Exclusividad
+    %td.titg Usuario
+    %td.titg Ver
+    %td.titg Editar
+    %td.titg Eliminar
+  - @cotizaciones.each do |cotizacione|
+    %tr
+      %td= cotizacione.fecha
+      %td= cotizacione.cliente
+      %td= cotizacione.territorio
+      %td= cotizacione.jornada
+      %td= number_to_currency(cotizacione.presupuesto, :locale => :clp, :precision => 0)
+      %td= cotizacione.exclusividad
+      %td= cotizacione.usuario
+      %td= link_to image_tag("ver.png"), cotizacione
+      %td= link_to image_tag("editar.png"), edit_cotizacione_path(cotizacione)
+      %td= link_to image_tag("eliminar.png"), cotizacione, :confirm => '¿Está Seguro?', :method => :delete
+      
+%br/
+= link_button 'Agregar Cotización', new_cotizacione_path
+
+

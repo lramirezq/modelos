@@ -1,0 +1,26 @@
+.fields 
+  = f.hidden_field :_destroy 
+  %table.sglea
+    %tr
+      %td.titg Cantidad
+      %td.titg Personaje
+      %td.titg Rol
+      %td.titg Tiempo
+      %td.titg Medios
+      %td.titg País
+      %td.titg Valor
+      %td.titg Día Adicional
+      %td.titg Día Viajado
+
+    %tr
+      %td.inp= f.text_field :cantidad , :size => 1
+      %td.inp= manten f, :personaje, Mantenedor.personajes, 'Seleccione por favor'
+      %td.inp= manten f, :rol, Mantenedor.roles, 'Seleccione por favor'
+      %td.inp Dia:#{f.text_field :tdia, :size => 1} Mes:#{f.text_field :tmes , :size => 1} Año:#{f.text_field :tanno , :size => 1}
+      %td.inp= manten f, :medios, Mantenedor.medios, 'Seleccione por favor'
+      %td.inp= manten f, :pais, Mantenedor.paises, 'Seleccione por favor'
+      %td.inp= f.text_field :valor , :size => 1
+      %td.inp= f.text_field :diaadicional, :size => 1	
+      %td.inp= f.text_field :diaviajado, :size => 1
+      %td.inp= link_to_remove_fields "X", f if not form_disabled
+     

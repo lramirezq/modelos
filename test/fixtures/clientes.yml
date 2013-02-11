@@ -1,0 +1,29 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  rut: MyString
+  razonsocial: MyString
+  nombrefantasia: MyString
+  direccion: MyString
+  comuna: MyString
+  ciudad: MyString
+  pais: MyString
+  contacto: MyString
+  email: MyString
+  ncontacto: MyString
+  contactofinanzas: MyString
+  ncontactofinanzas: MyString
+
+two:
+  rut: MyString
+  razonsocial: MyString
+  nombrefantasia: MyString
+  direccion: MyString
+  comuna: MyString
+  ciudad: MyString
+  pais: MyString
+  contacto: MyString
+  email: MyString
+  ncontacto: MyString
+  contactofinanzas: MyString
+  ncontactofinanzas: MyString

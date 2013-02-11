@@ -1,0 +1,90 @@
+- if @modelo.errors.any?
+  #error_explanation
+    %h2 #{@modelo.errors.count} errores impiden ingresar el modelo:
+    %ul
+      - @modelo.errors.full_messages.each do |msg|
+        %li= msg
+%h2 Foto de Perfil
+= image_tag @modelo.pictures.url(:small)
+%br
+= f.file_field :pictures
+%h2.titulo01 Ingreso de Modelo
+%table.sglea 
+  %tr
+    %td.tit Tipo Identificación
+    %td.inp= manten f, :tipo_id, Mantenedor.tipoidentificacions, 'Seleccione por favor',{ :onchange => 'tipo_id(this);' }
+    %td.tit Nº Identificación
+    %td.inp= f.text_field :numero_id, :onblur => "upperCase(this)"
+    %td.tit Nombres
+    %td.inp= f.text_field :nombres, :onblur => "upperCase(this)"
+  %tr 
+    %td.tit Apellidos
+    %td.inp= f.text_field :apellidos, :onblur => "upperCase(this)"
+    %td.tit Sexo
+    %td.inp= manten f, :sexo, Mantenedor.tiposexos, 'Seleccione por favor'
+    %td.tit Fecha Nacimiento
+    %td.inp= f.date_select :fecha_nacimiento, :start_year => 1920, :end_year => Time.now.year
+  %tr
+    %td.tit Nacionalidad
+    %td.inp= f.text_field :nacionalidad, :onblur => "upperCase(this)"
+    %td.tit Telefono Fijo
+    %td.inp= f.text_field :telefono_fijo, :onblur => "upperCase(this)"
+    %td.tit Telefono Movil
+    %td.inp= f.text_field :movil, :onblur => "upperCase(this)"
+  %tr
+    %td.tit Dirección
+    %td.inp= f.text_field :direccion, :onblur => "upperCase(this)"
+    %td.tit Comuna
+    %td.inp= f.text_field :comuna, :onblur => "upperCase(this)"
+    %td.tit Ciudad
+    %td.inp=f.text_field :ciudad, :onblur => "upperCase(this)"
+  %tr
+    %td.tit Pais
+    %td.inp= manten f, :pais, Mantenedor.paises, 'Seleccione por favor'
+    %td.tit Licencia de Conducir
+    %td.inp= f.text_field :licencia, :onblur => "upperCase(this)"
+    %td.tit Edad
+    %td.inp=text_field_tag("edad", value = nil, options = {:size => 3, :disabled => true})
+    %tr
+      %td.tit Agencia Madre
+      %td.inp= f.collection_select :agencia, Agenciamadre.all, :nombre, :nombre, :prompt => 'Seleccione por favor'
+      %td.tit  E-Mail
+      %td.inp=  f.text_field :email, :size => 35, :onblur => "upperCase(this)"
+
+#responsable{:style => "visibility: hidden"}
+  %h2.titulo01 Datos del Responsable
+  %table.sglea
+    %tr  
+      %td.tit Tipo Id
+      %td.inp= manten f, :tipo_id_responsable, Mantenedor.tipoidentificacions, 'Seleccione por favor', { :onchange => 'tipo_id(this);' }
+      %td.tit Nº Identificación
+      %td.inp= f.text_field :numero_id_responsable, :onblur => "upperCase(this)"
+    %tr
+      %td.tit Nombres
+      %td.inp= f.text_field :nombres_responsable, :onblur => "upperCase(this)"
+      %td.tit Apellidos
+      %td.inp= f.text_field :apellidos_responsable, :onblur => "upperCase(this)"
+
+%h2.titulo01 Teléfonos Contactos
+.field
+  = f.fields_for :telefonos do |builder|
+    = render 'telefono_fields', :f => builder, :form_disabled => form_disabled
+= link_to_add_fields "Agregar Contacto", f, :telefonos if not form_disabled
+%br/    
+%br/ 
+
+%h2.titulo01 Caracteristicas del Modelo
+.field
+  - if not f.object.caracteristica.nil?
+    = f.fields_for :caracteristica do |builder|
+      = render 'caracteristica_fields', :f => builder, :form_disabled => form_disabled
+%br/
+
+%h2.titulo01 Fotografias
+.field
+  = f.fields_for :fotos do |builder|
+    = render 'foto_fields', :f => builder, :form_disabled => form_disabled
+= link_to_add_fields "Agregar Fotografia", f, :fotos if not form_disabled
+
+:javascript
+  recalcular_edad();

@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  fecha: 2013-02-09
+  cliente: MyString
+  territorio: MyString
+  jornada: MyString
+  presupuesto: 1.5
+  exclusividad: MyString
+  observaciones: MyString
+  usuario: MyString
+
+two:
+  fecha: 2013-02-09
+  cliente: MyString
+  territorio: MyString
+  jornada: MyString
+  presupuesto: 1.5
+  exclusividad: MyString
+  observaciones: MyString
+  usuario: MyString

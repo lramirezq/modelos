@@ -1,0 +1,102 @@
+!!! 5
+%html
+  %head
+    - if yield(:title)
+      %title .:: NewModels - #{yield :title} ::.
+    - else
+      %title .:: NewModels ::.
+    = stylesheet_link_tag 'sglea'
+    = stylesheet_link_tag 'jquery-ui-1.8.6.custom'
+    = stylesheet_link_tag 'login' if not current_user
+    = stylesheet_link_tag 'print', :media => :print
+    = javascript_include_tag :all
+    = csrf_meta_tag
+    = yield(:head)
+  - if not current_user
+    = yield
+  - else
+    %body
+      #header
+        #h-top
+          #top-logo
+          #top-login
+            %table{:border => "0", :cellpadding => "0", :cellspacing => "1"}
+              %tr
+                %td.flecha{:rowspan => "4"}
+                  = image_tag 'flecha.gif', {:align => 'absmiddle', :height => '37', :width => '13'}
+                %td
+                %td.negro
+                  = link_to 'Cambiar Password', password_path
+              %tr
+                %td.rojo Usuario
+                %td.blanco #{current_user.nombre}
+              %tr
+                %td.rojo Perfil
+                %td.blanco #{current_user.roles.map(&:nombre).join(', ')}
+              %tr
+                %td
+                %td.negro
+                  = link_to 'Cerrar sesión', logoff_url
+        #h-bottom
+          %table{:align => "left", :border => "0", :cellpadding => "0", :cellspacing => "0", :width => "950"}
+            %tr
+              %td{:valign => "top", :width => "100"}
+              %td{:valign => "top", :width => "914"}
+                #h-menu
+                  %ul
+                    %li.inicia{:onMouseOut => "desaparece('Iniciativas');", :onMouseOver => "javascript: aparece('Iniciativas');"}
+                      %a{:href => "#"} Modelos
+                      %ul#Iniciativas
+                        - if can? :create, Modelo 
+                          %li= link_to 'Ingresar Modelo', new_modelo_path
+                        - if can? :index, Modelo 
+                          %li= link_to 'Listado Modelos', modelos_path
+                        
+                    %li.docume{:onMouseOut => "desaparece('D');", :onMouseOver => "javascript: aparece('D');"}
+                      %a{:href => "#"} Clientes
+                      %ul#Iniciativas
+                        - if can? :create, Cliente
+                          %li= link_to 'Ingreso', new_cliente_path
+                        - if can? :index, Cliente
+                          %li= link_to 'Listado', clientes_path
+
+                    %li.docume{:onMouseOut => "desaparece('DO');", :onMouseOver => "javascript: aparece('DO');"}
+                      %a{:href => "#"} Cotizaciones
+                      %ul#Iniciativas
+                        -if can? :create, Cotizacione 
+                          %li= link_to 'Ingreso', new_cotizacione_path
+                        -if can? :index, Cotizacione     
+                          %li= link_to 'Listado', cotizaciones_path
+
+                    %li.docume{:onMouseOut => "desaparece('DOC');", :onMouseOver => "javascript: aparece('DOC');"}
+                      %a{:href => "#"} Competencias
+                      %ul#Iniciativas
+                        %li= link_to 'Ingreso', "#"
+                        %li= link_to 'Listado', "#"
+
+                    %li.docume{:onMouseOut => "desaparece('DOCC');", :onMouseOver => "javascript: aparece('DOCC');"}
+                      %a{:href => "#"} Agencias
+                      %ul#Iniciativas
+                        - if can? :index, Agenciamadre
+                          %li= link_to 'Agencias Madres', agenciamadres_path
+                        - if can? :index, Agenciaextranjera
+                          %li= link_to 'Agencias Extranjeras', agenciaextranjeras_path
+
+                    %li.docume{:onMouseOut => "desaparece('Documento');", :onMouseOver => "javascript: aparece('Documento');"}
+                      %a{:href => "#"} Mantenedores
+                      %ul#Documento
+                        %li
+                          - if can? :manager, Mantenedor 
+                            =   link_to 'Parámetros', mantenedors_path
+                        %li
+                          - if can? :manager, User 
+                            =   link_to 'Usuarios', users_path
+
+                    %li.docume{:onMouseOut => "desaparece('Docum');", :onMouseOver => "javascript: aparece('Docum');"}
+                      %a{:href => "#"} Ayuda
+                        
+                          
+          %br
+          -flash.each do |name, msg|
+            = content_tag :div, msg, :class => "flash", :id => "#{name}"
+      = yield

@@ -1,0 +1,52 @@
+.fields 
+  = f.hidden_field :_destroy 
+  %table.sglea
+    %tr
+      %td.tit  Estatura
+      %td.inp=  f.text_field :estatura, :size => 16, :onblur => "upperCase(this)"
+      %td.tit  Calzado
+      %td.inp=  f.text_field :calzado, :size => 16, :onblur => "upperCase(this)"
+      %td.tit  Idiomas
+      %td.inp=  f.text_field :idiomas, :size => 16, :onblur => "upperCase(this)"
+    %tr
+      %td.tit  Talla de Pantalón
+      %td.inp=  f.text_field :tpantalon, :size => 16, :onblur => "upperCase(this)"
+      %td.tit  Talla de Camisa
+      %td.inp= manten f, :tcamisa, Mantenedor.tcamisa, 'Seleccione por favor'
+      %td.tit  Busto
+      %td.inp=  f.text_field :busto, :size => 16, :onblur => "upperCase(this)"
+    %tr
+      %td.tit  Cintura
+      %td.inp=  f.text_field :cintura, :size => 16, :onblur => "upperCase(this)"
+      %td.tit  Cadera
+      %td.inp=  f.text_field :cadera, :size => 16, :onblur => "upperCase(this)"
+      %td.tit  Color de Ojos
+      %td.inp= manten f, :cojos, Mantenedor.cojos, 'Seleccione por favor'
+    %tr
+      %td.tit  Color de Cabello
+      %td.inp= manten f, :ccabello, Mantenedor.ccabello, 'Seleccione por favor'
+      %td.tit  Largo de Cabello
+      %td.inp= manten f, :lcabello, Mantenedor.lcabello, 'Seleccione por favor'
+      %td.tit  Etnia
+      %td.inp= manten f, :etnia, Mantenedor.etnia, 'Seleccione por favor'
+    %tr
+      %td.tit  Mujer Hot?
+      %td.inp= f.check_box :hot, :onblur => "upperCase(this)"      
+      %td.tit  Hobbie / Deporte
+      %td.inp=  f.text_field :hobbie, :size => 16, :onblur => "upperCase(this)"
+      %td.tit  Medida Cuello
+      %td.inp=  f.text_field :mcuello, :size => 16, :onblur => "upperCase(this)"
+    %tr
+      %td.tit  Terno
+      %td.inp=  f.text_field :terno, :size => 16, :onblur => "upperCase(this)"
+      %td.tit  Realiza Desfiles?
+      %td.inp=  f.check_box :desfile, :onblur => "upperCase(this)"
+      %td.tit  Tiene Dientes?
+      %td.inp= f.check_box :dientes, :onblur => "upperCase(this)"
+    %tr
+      %td.tit  Actor?
+      %td.inp= f.check_box :actor, :onblur => "upperCase(this)"
+      %td.tit  Usa Frenillos?
+      %td.inp=  f.check_box :frenillos, :onblur => "upperCase(this)"
+      %td.tit  Tiene Experiencia como modelo?
+      %td.inp= f.check_box :experiencia, :onblur => "upperCase(this)"

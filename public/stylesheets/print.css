@@ -1,0 +1,37 @@
+#header {
+    display: none;
+}
+
+.ocultar_print {
+    display: none;
+}
+
+h1 {
+    text-align: center;
+}
+
+.pagebreak {
+  page-break-before: always;
+}
+
+body{
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size:10px;
+}
+
+
+table.sglea {
+  width: 100%;
+}
+
+td.tit {
+  border: 1px solid #666;
+}
+
+td.titg {
+  border: 1px solid #666;
+}
+
+td.inp {
+  border: 1px solid #666;
+}

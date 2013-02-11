@@ -1,0 +1,6 @@
+- title "Modificación de Agencia Extranjera"
+
+- form_for @agenciaextranjera, :html => { :multipart => true } do |f|
+  = render 'form', :f => f, :form_disabled => false
+  .actions{:align => "center"}
+    = f.submit 'Modificar Agencia Extranjera'

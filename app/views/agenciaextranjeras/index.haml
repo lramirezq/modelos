@@ -1,0 +1,26 @@
+%h2.titulo01 Listado de Agencias Extranjeras
+
+%table.sglea.datos
+  %tr
+    %td.titg Nombre
+    %td.titg Dueño
+    %td.titg Skype
+    %td.titg E-Mail
+    %td.titg Dirección
+    %td.titg Ver
+    %td.titg Editar
+    %td.titg Eliminar
+  - @agenciaextranjeras.each do |agenciaextranjera|
+    %tr
+      %td= agenciaextranjera.nombre
+      %td= agenciaextranjera.dueno
+      %td= agenciaextranjera.skype
+      %td= agenciaextranjera.email
+      %td= agenciaextranjera.direccion
+      %td= link_to image_tag("ver.png"), agenciaextranjera
+      %td= link_to image_tag("editar.png"), edit_agenciaextranjera_path(agenciaextranjera)
+      %td= link_to image_tag("eliminar.png"), agenciaextranjera, :confirm => '¿Está Seguro?', :method => :delete
+      
+%br/
+= link_button 'Agregar Agencia Extranjera', new_agenciaextranjera_path
+

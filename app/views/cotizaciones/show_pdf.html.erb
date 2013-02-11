@@ -1,0 +1,71 @@
+<!-- Aca a poner logo -->
+<img src="http://newmodels.luis-ramirez.cl/images/fondo-l.jpg" width="100">
+<h2>COTIZACION NEW MODELS</h2>
+<br/>
+<table border="1" width="100%">
+	<tr>
+		<td width="200">Nombre de Cliente</td>
+		<td width="400"><b><%=@cotizacione.cliente%></b></td>
+		<td  width="200">Fecha de Cotización</td>
+		<td width="400"><b><%=@cotizacione.fecha.strftime('%d/%m/%Y')%></b></td>
+	</tr>
+	<tr>
+		<td  width="200">Territorio</td>
+		<td width="400"><b><%=@cotizacione.territorio%></b></td>
+		<td  width="200">Jornada</td>
+		<td width="400"><b><%=@cotizacione.jornada%></b></td>
+	</tr>
+	<tr>
+		<td width="200">Presupuesto</td>
+		<td width="400"><b><%= number_to_currency(@cotizacione.presupuesto, :locale => :clp, :precision => 0) %></b></td>
+		<td  width="200">Exclusividad</td>
+		<td  width="400"><b><%=@cotizacione.exclusividad%></b></td>
+	</tr>
+	<tr>
+		<td width="200">Observaciones</td>
+		<td colspan="3"><b><%=@cotizacione.observaciones%></b></td>
+	</tr>
+</table>
+<h3>DETALLE  DE LA COTIZACION</h3>
+<table border="1" width="100%">
+	<tr bgcolor="#798081">
+		<td><b>Qtd</b></td>
+		<td><b>Personaje</b></td>
+		<td><b>Rol</b></td>
+		<td><b>Tiempo</b></td>
+		<td><b>Medios</b></td>
+		<td><b>País</b></td>
+		<td><b>Valor</b></td>
+		<td><b>Día Adicional</b></td>
+		<td><b>Día Viajado</b></td>
+	</tr>
+<% @cotizacione.lcotizas.each do |lcotiza| %>
+  <tr>
+    <td><%= lcotiza.cantidad %></td>
+	<td><%= lcotiza.personaje %></td>
+	<td><%= lcotiza.rol %></td>
+	<td>D: <%= lcotiza.tdia %> M: <%= lcotiza.tmes %> A: <%= lcotiza.tanno %>   </td>
+	<td><%= lcotiza.medios %></td>
+	<td><%= lcotiza.pais %></td>
+	<td><%= number_to_currency(lcotiza.valor, :locale => :clp, :precision => 0) %></td>
+	<td><%= number_to_currency(lcotiza.diaadicional, :locale => :clp, :precision => 0) %></td>
+	<td><%= number_to_currency(lcotiza.diaviajado, :locale => :clp, :precision => 0) %></td>
+  </tr>
+<% end %>
+</table>
+<p align="justify" ><strong>
+	NOTAS: PRESUPUESTO CONSIDERA UNA JORNADA DE TOMAS FOTOGRÁFICAS. EN CASO DE SER RECHAZADAS Y/O NO PUBLICADAS LAS TOMAS REALIZADAS, SE DEBERÁ CANCELAR UN 50% SOBRE EL VALOR PACTADO POR NEW MODELS AGENCY LIMITADA, COMUNICANDO POR UN PLAZO DE 30 DIAS. DESPUES DE ESTE PLAZO EL CLIENTE DEBERA PAGAR EL 100% DEL PRESUPUESTO ORIGINAL, EN CASO DE REEXHIBICION DEL MATERIAL SE DEBERÁ CANCELAR EL 100% DEL VALOR PACTADO ORIGINALMENTE.
+</strong></p>
+<p align="justify"><strong>
+	EN CASO DE APROBAR PRESUPUESTO, SE RUEGA RE ENVIAR APROBACIÓN AL PRESENTE E-MAIL CON ESPECIFICACIONES DE CASTING (BOCETO) Y FECHAS PROBABLES PARA LAS TOMAS.-
+</strong></p>
+<br/>
+<br/>
+<!-- Aca a poner Firma -->
+<p align="right">
+<strong>
+	<%= @cotizacione.usuario%><br>
+	<% us = User.where(:nombre => @cotizacione.usuario) %>
+	<%= us[0].cargo %>
+</strong>	
+</p>
