@@ -1,6 +1,6 @@
 <!-- Aca a poner logo -->
 <img src="http://newmodels.luis-ramirez.cl/images/fondo-l.jpg" width="100">
-<h2>COTIZACION NEW MODELS</h2>
+<h3>COTIZACION NEW MODELS</h3>
 <br/>
 <table border="1" width="100%">
 	<tr>
@@ -10,7 +10,7 @@
 		<td width="400"><b><%=@cotizacione.fecha.strftime('%d/%m/%Y')%></b></td>
 	</tr>
 	<tr>
-		<td  width="200">Territorio</td>
+		<td  width="200">Paises</td>
 		<td width="400"><b><%=@cotizacione.territorio%></b></td>
 		<td  width="200">Jornada</td>
 		<td width="400"><b><%=@cotizacione.jornada%></b></td>
@@ -18,15 +18,21 @@
 	<tr>
 		<td width="200">Presupuesto</td>
 		<td width="400"><b><%= number_to_currency(@cotizacione.presupuesto, :locale => :clp, :precision => 0) %></b></td>
-		<td  width="200">Exclusividad</td>
+		<td  width="200">Exclusividad / Rubro</td>
 		<td  width="400"><b><%=@cotizacione.exclusividad%></b></td>
 	</tr>
 	<tr>
 		<td width="200">Observaciones</td>
-		<td colspan="3"><b><%=@cotizacione.observaciones%></b></td>
+		<td ><b><%=@cotizacione.observaciones%></b></td>
+		<td width="200">Reexhibición</td>
+		<td width="400"><b><%=@cotizacione.reexhibicion%> %</b></td>
+	</tr>
+	<tr>
+		<td>Fecha de Trabajo</td>
+		<td><%=@cotizacione.fechatrabajo.strftime('%d/%m/%Y')%></td>
 	</tr>
 </table>
-<h3>DETALLE  DE LA COTIZACION</h3>
+<h4>DETALLE  DE LA COTIZACION</h4>
 <table border="1" width="100%">
 	<tr bgcolor="#798081">
 		<td><b>Qtd</b></td>

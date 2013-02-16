@@ -8,27 +8,31 @@
 %table.sglea 
   %tr
     %td.tit Cliente
-    %td.inp= f.text_field :cliente 
+    %td.inp= f.text_field :cliente, :onblur => "upperCase(this)"
     %td.tit Fecha
     %td.inp= f.date_select :fecha 
+    %td.tit Paises
+    %td.inp= f.text_field :territorio, :onblur => "upperCase(this)"
   %tr
-    %td.tit Territorio
-    %td.inp= f.text_field :territorio
     %td.tit Jornada
-    %td.inp= f.text_field :jornada
-  %tr
+    %td.inp= f.text_field :jornada, :onblur => "upperCase(this)"
     %td.tit Presupuesto
-    %td.inp= f.text_field :presupuesto
-    %td.tit Exclusividad
-    %td.inp= f.text_field :exclusividad
+    %td.inp= f.text_field :presupuesto, :onblur => "upperCase(this)"
+    %td.tit Exclusividad / Rubro
+    %td.inp= f.text_field :exclusividad, :onblur => "upperCase(this)"
   %tr
     %td.tit Observaciones
-    %td.inp= f.text_field :observaciones
+    %td.inp= f.text_field :observaciones, :onblur => "upperCase(this)"
+    %td.tit Reexhibicion
+    %td.inp #{f.text_field :reexhibicion, :size => 1} %
     %td.tit Usuario
     - if f.object.usuario.nil?
       %td.inp= f.text_field :usuario, :value => current_user.nombre, :readonly => true
     - else
       %td.inp= f.text_field :usuario, :readonly => true
+  %tr
+    %td.tit Fecha de Trabajo
+    %td.inp= f.date_select :fechatrabajo
 
 %h2.titulo01 Detalles
 

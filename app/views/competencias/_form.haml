@@ -11,33 +11,33 @@
     %td.tit Tipo de Compentencia
     %td.inp= manten f, :tipocompetencia, Mantenedor.tcompetencias, 'Seleccione por favor'
     %td.tit Nº Orden de Compra
-    %td.inp= f.text_field :nroorden 
+    %td.inp= f.text_field :nroorden , :onblur => "upperCase(this)"
     %td.tit Producto
-    %td.inp= f.text_field :producto
+    %td.inp= f.text_field :producto, :onblur => "upperCase(this)"
   %tr
     %td.tit Campaña
-    %td.inp= f.text_field :campana
+    %td.inp= f.text_field :campana, :onblur => "upperCase(this)"
     %td.tit Razón Social
     %td.inp= f.collection_select :razonsocial, Cliente.all, :id, :razonsocial,:prompt => 'Seleccione por favor'
     %td.tit RUT
     %td.inp= f.text_field :rut
   %tr
     %td.tit Dirección
-    %td.inp= f.text_field :direccion
+    %td.inp= f.text_field :direccion, :onblur => "upperCase(this)"
     %td.tit Telefono
-    %td.inp= f.text_field :telefono 
+    %td.inp= f.text_field :telefono, :onblur => "upperCase(this)"
     %td.tit Giro
-    %td.inp= f.text_field :giro 
+    %td.inp= f.text_field :giro, :onblur => "upperCase(this)"
   %tr
     %td.tit Productor
-    %td.inp= f.text_field :productor
+    %td.inp= f.text_field :productor, :onblur => "upperCase(this)"
     %td.tit Fotografo
-    %td.inp= f.text_field :fotografo 
+    %td.inp= f.text_field :fotografo, :onblur => "upperCase(this)"
     %td.tit Fecha Fotografia
-    %td.inp= f.date_select :fechafoto
+    %td.inp= f.date_select :fechafoto, :onblur => "upperCase(this)"
   %tr
     %td.tit Agencia
-    %td.inp= f.text_field :agencia
+    %td.inp= f.text_field :agencia, :onblur => "upperCase(this)"
     %td.tit Fecha Filmación
     %td.inp= f.date_select :fechafilmacion
     %td.tit Fecha Comercial
@@ -58,19 +58,19 @@
     %td.tit Tipo Factura
     %td.inp= manten f, :tipofactura, Mantenedor.tfacturas, 'Seleccione por favor'
     %td.tit Nº Factura
-    %td.inp= f.text_field :nrofactura
+    %td.inp= f.text_field :nrofactura, :onblur => "upperCase(this)"
   %tr
     %td.tit Fecha Factura
     %td.inp= f.date_select :fechafactura
     %td.tit Reexhibición
-    %td.inp=f.text_field :reexhibicion
+    %td.inp=f.text_field :reexhibicion, :onblur => "upperCase(this)"
     %td.tit Grafica
-    %td.inp= f.text_field :grafica 
+    %td.inp= f.text_field :grafica, :onblur => "upperCase(this)"
   %tr
     %td.tit Contrato
-    %td.inp= f.text_field :contrato
+    %td.inp= f.text_field :contrato, :onblur => "upperCase(this)"
     %td.tit Observaciones
-    %td.inp{:colspan => "4"}= f.text_field :observaciones, :size => 108
+    %td.inp{:colspan => "4"}= f.text_field :observaciones, :size => 108, :onblur => "upperCase(this)"
 
 
 %h2.titulo01 Detalles

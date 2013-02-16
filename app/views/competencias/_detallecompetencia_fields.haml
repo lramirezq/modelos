@@ -16,10 +16,10 @@
     %tr
       %td.inp= manten f, :tipo_id, Mantenedor.tipoidentificacions, 'Seleccione por favor',{ :onchange => 'tipo_id_competencia(this);'} 
       %td.inp= f.text_field :rutmodelo, :size => 10, :onblur => "buscaModelo(this)"
-      %td.inp= f.text_field :nombremodelo, :size => 10
-      %td.inp= f.text_field :apellidomodelo, :size => 10
+      %td.inp= f.text_field :nombremodelo, :size => 10, :onblur => "upperCase(this)"
+      %td.inp= f.text_field :apellidomodelo, :size => 10, :onblur => "upperCase(this)"
       %td.inp= manten f, :categoria, Mantenedor.ccompetencias, 'Seleccione por favor'
-      %td.inp= f.text_field :nombreresponsable, :size => 10
+      %td.inp= f.text_field :nombreresponsable, :size => 10, :onblur => "upperCase(this)"
       %td.inp= f.text_field :totalfactura, :size => 10
       %td.inp= f.text_field :comisionnma, :size => 3
       %td.inp= f.text_field :impuesto, :size => 3 	
