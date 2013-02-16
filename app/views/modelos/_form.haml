@@ -97,7 +97,7 @@
     %td.titg Ver Detalle
 
   - @competencias.each do |competencia|
-  - c = Cliente.where(:id => competencia.competencia.razonsocial)
+  - c = Cliente.where(:id => competencia.competencia.try(:razonsocial))
     %tr
       %td= competencia.competencia.tipocompetencia
       %td= c[0].razonsocial
