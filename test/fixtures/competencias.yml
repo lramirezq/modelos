@@ -1,0 +1,61 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  tipocompetencia: MyString
+  nroorden: MyString
+  producto: MyString
+  campana: MyString
+  razonsocial: MyString
+  rut: MyString
+  direccion: MyString
+  telefono: MyString
+  giro: MyString
+  productor: MyString
+  fotografo: MyString
+  fechafoto: 2013-02-16
+  agencia: MyString
+  fechafilmacion: 2013-02-16
+  fechacomercial: 2013-02-16
+  texhibiciondia: 1
+  texhibiciondia: 1
+  texhibiciondia: 1
+  medios: MyString
+  paises: MyString
+  bookerresponsable: MyString
+  tipofactura: MyString
+  nrofactura: MyString
+  fechafactura: 2013-02-16
+  reexhibicion: MyString
+  observaciones: MyString
+  grafica: MyString
+  contrato: MyString
+
+two:
+  tipocompetencia: MyString
+  nroorden: MyString
+  producto: MyString
+  campana: MyString
+  razonsocial: MyString
+  rut: MyString
+  direccion: MyString
+  telefono: MyString
+  giro: MyString
+  productor: MyString
+  fotografo: MyString
+  fechafoto: 2013-02-16
+  agencia: MyString
+  fechafilmacion: 2013-02-16
+  fechacomercial: 2013-02-16
+  texhibiciondia: 1
+  texhibiciondia: 1
+  texhibiciondia: 1
+  medios: MyString
+  paises: MyString
+  bookerresponsable: MyString
+  tipofactura: MyString
+  nrofactura: MyString
+  fechafactura: 2013-02-16
+  reexhibicion: MyString
+  observaciones: MyString
+  grafica: MyString
+  contrato: MyString

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130210144516) do
+ActiveRecord::Schema.define(:version => 20130216084840) do
 
   create_table "actividads", :force => true do |t|
     t.string   "nombre"
@@ -118,6 +118,41 @@ ActiveRecord::Schema.define(:version => 20130210144516) do
     t.string   "ncontactofinanzas"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "giro"
+  end
+
+  create_table "competencias", :force => true do |t|
+    t.string   "tipocompetencia"
+    t.string   "nroorden"
+    t.string   "producto"
+    t.string   "campana"
+    t.string   "razonsocial"
+    t.string   "rut"
+    t.string   "direccion"
+    t.string   "telefono"
+    t.string   "giro"
+    t.string   "productor"
+    t.string   "fotografo"
+    t.date     "fechafoto"
+    t.string   "agencia"
+    t.date     "fechafilmacion"
+    t.date     "fechacomercial"
+    t.integer  "texhibiciondia"
+    t.string   "medios"
+    t.string   "paises"
+    t.string   "bookerresponsable"
+    t.string   "tipofactura"
+    t.string   "nrofactura"
+    t.date     "fechafactura"
+    t.string   "reexhibicion"
+    t.string   "observaciones"
+    t.string   "grafica"
+    t.string   "contrato"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "texhibicionmes"
+    t.integer  "texhibicionanno"
+    t.integer  "detallecompetencia_id"
   end
 
   create_table "cotizaciones", :force => true do |t|
@@ -131,6 +166,23 @@ ActiveRecord::Schema.define(:version => 20130210144516) do
     t.string   "usuario"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "detallecompetencias", :force => true do |t|
+    t.string   "rutmodelo"
+    t.string   "nombremodelo"
+    t.string   "apellidomodelo"
+    t.string   "categoria"
+    t.string   "nombreresponsable"
+    t.float    "totalfactura"
+    t.float    "comisionnma"
+    t.float    "impuesto"
+    t.string   "agenciamadre"
+    t.float    "comisionamadre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "competencia_id"
+    t.string   "tipo_id"
   end
 
   create_table "documentos", :force => true do |t|

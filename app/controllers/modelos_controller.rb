@@ -24,7 +24,7 @@ class ModelosController < ApplicationController
   # GET /modelos/1.xml
   def show
     @modelo = Modelo.find(params[:id])
-
+    @competencias = Detallecompetencia.where(:rutmodelo => @modelo.numero_id)
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @modelo }
@@ -46,6 +46,7 @@ class ModelosController < ApplicationController
   # GET /modelos/1/edit
   def edit
     @modelo = Modelo.find(params[:id])
+    @competencias = Detallecompetencia.where(:rutmodelo => @modelo.numero_id)
   end
 
   # POST /modelos

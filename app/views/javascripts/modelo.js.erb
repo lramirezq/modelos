@@ -1,0 +1,18 @@
+<%= params[:idf] %> //competencia_detallecompetencias_attributes_1361005067156_rutmodelo
+var tipoid = <%= params[:idf] %>
+var tipoid = tipoid.id;
+var tipoid = "#"+tipoid;
+//document.write('Hello World!' + tipoid);
+//Obtiene los Id para asignar valores con JQuery
+var nombre = tipoid.replace('rutmodelo', 'nombremodelo');
+//document.write('Hello World!' + nombre);
+var apellido = tipoid.replace('rutmodelo', 'apellidomodelo');
+//document.write('Hello World!' + apellido);
+
+var responsable = tipoid.replace('rutmodelo', 'nombreresponsable');
+//document.write('Hello World!' + responsable);
+
+$(nombre).val("<%= @modelo.nombres %>")    
+$(apellido).val("<%= @modelo.apellidos %>")  
+$(responsable).val("<%= @modelo.nombres_responsable + " " +  @modelo.apellidos_responsable%>")  
+

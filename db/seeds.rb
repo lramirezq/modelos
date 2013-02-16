@@ -425,6 +425,28 @@ end
   Mantenedor.create(:tipo => :medios, :valor => valor)
 end
 
+# Tipos de Competencias
+[ "Comercial",
+  "Fotografia",
+  "Desfile"  
+  ].each do |valor|
+  Mantenedor.create(:tipo => :tcompetencias, :valor => valor)
+end
+
+# Tipos de Facturas
+[ "Nacional",
+  "Internacional",
+  "Sin Factura"  
+  ].each do |valor|
+  Mantenedor.create(:tipo => :tfacturas, :valor => valor)
+end
+
+# Categoria Competencias
+[ "Adulto",
+  "Niño"
+  ].each do |valor|
+  Mantenedor.create(:tipo => :ccompetencias, :valor => valor)
+end
 
 
 # Direcciones de Correo donde se enviarán mail cuando se creen Eventos

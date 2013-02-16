@@ -86,5 +86,24 @@
     = render 'foto_fields', :f => builder, :form_disabled => form_disabled
 = link_to_add_fields "Agregar Fotografia", f, :fotos if not form_disabled
 
+%h2 Competencias
+
+%table.sglea.datos
+  %tr
+    %td.titg Tipo de Competencia
+    %td.titg Cliente
+    %td.titg Producto
+    %td.titg Campaña
+    %td.titg Ver Detalle
+
+  - @competencias.each do |competencia|
+  - c = Cliente.where(:id => competencia.competencia.razonsocial)
+    %tr
+      %td= competencia.competencia.tipocompetencia
+      %td= c[0].razonsocial
+      %td= competencia.competencia.producto
+      %td= competencia.competencia.campana
+      %td= link_to image_tag("ver.png"), competencia.competencia
+
 :javascript
   recalcular_edad();

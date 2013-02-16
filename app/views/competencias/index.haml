@@ -1,0 +1,31 @@
+%h2.titulo01 Listado de Competencias
+
+%table.sglea.datos
+  %tr
+    %td.titg ID
+    %td.titg Tipo Competencia
+    %td.titg Nro Orden
+    %td.titg Producto
+    %td.titg Campaña
+    %td.titg Razon Social
+    %td.titg Responsable
+    %td.titg Ver
+    %td.titg Editar
+    %td.titg Eliminar
+  - @competencias.each do |competencia|
+  - c = Cliente.where(:id => competencia.razonsocial)
+    %tr
+      %td= competencia.id
+      %td= competencia.tipocompetencia
+      %td= competencia.nroorden
+      %td= competencia.producto
+      %td= competencia.campana
+      %td= c[0].try(:razonsocial)
+      %td= competencia.bookerresponsable
+      %td= link_to image_tag("ver.png"), competencia
+      %td= link_to image_tag("editar.png"),  edit_competencia_path(competencia)
+      %td= link_to image_tag("eliminar.png"), competencia, :confirm => '¿Está Seguro?', :method => :delete
+      
+%br/
+= link_button 'Agregar Competencia', new_competencia_path
+

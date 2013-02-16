@@ -1,0 +1,57 @@
+<%= form_for(@detallecompetencia) do |f| %>
+  <% if @detallecompetencia.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@detallecompetencia.errors.count, "error") %> prohibited this detallecompetencia from being saved:</h2>
+
+      <ul>
+      <% @detallecompetencia.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :rutmodelo %><br />
+    <%= f.text_field :rutmodelo %>
+  </div>
+  <div class="field">
+    <%= f.label :nombremodelo %><br />
+    <%= f.text_field :nombremodelo %>
+  </div>
+  <div class="field">
+    <%= f.label :apellidomodelo %><br />
+    <%= f.text_field :apellidomodelo %>
+  </div>
+  <div class="field">
+    <%= f.label :categoria %><br />
+    <%= f.text_field :categoria %>
+  </div>
+  <div class="field">
+    <%= f.label :nombreresponsable %><br />
+    <%= f.text_field :nombreresponsable %>
+  </div>
+  <div class="field">
+    <%= f.label :totalfactura %><br />
+    <%= f.text_field :totalfactura %>
+  </div>
+  <div class="field">
+    <%= f.label :comisionnma %><br />
+    <%= f.text_field :comisionnma %>
+  </div>
+  <div class="field">
+    <%= f.label :impuesto %><br />
+    <%= f.text_field :impuesto %>
+  </div>
+  <div class="field">
+    <%= f.label :agenciamadre %><br />
+    <%= f.text_field :agenciamadre %>
+  </div>
+  <div class="field">
+    <%= f.label :comisionamadre %><br />
+    <%= f.text_field :comisionamadre %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

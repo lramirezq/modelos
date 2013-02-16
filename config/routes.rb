@@ -1,6 +1,10 @@
 NewModels::Application.routes.draw do
   
   
+  resources :detallecompetencias
+
+  resources :competencias
+
   resources :cotizaciones
 
   resources :lcotizas
@@ -49,6 +53,8 @@ NewModels::Application.routes.draw do
   root :to => "home#index"
   match "proyectos/:id/validate" => "proyectos#validate", :as => :validate_proyecto
   match "cotizaciones/:id/show_pdf" => "cotizaciones#show_pdf", :as => :show_pdf
+  match 'javascripts/cliente(.:format)' => "javascripts#cliente"
+  match 'javascripts/modelo(.:format)' => "javascripts#modelo"
   # match ':controller(/:action(/:id(.:format)))'
   
   # The priority is based upon order of creation:

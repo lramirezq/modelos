@@ -1,0 +1,41 @@
+<h1>Listing detallecompetencias</h1>
+
+<table>
+  <tr>
+    <th>Rutmodelo</th>
+    <th>Nombremodelo</th>
+    <th>Apellidomodelo</th>
+    <th>Categoria</th>
+    <th>Nombreresponsable</th>
+    <th>Totalfactura</th>
+    <th>Comisionnma</th>
+    <th>Impuesto</th>
+    <th>Agenciamadre</th>
+    <th>Comisionamadre</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @detallecompetencias.each do |detallecompetencia| %>
+  <tr>
+    <td><%= detallecompetencia.rutmodelo %></td>
+    <td><%= detallecompetencia.nombremodelo %></td>
+    <td><%= detallecompetencia.apellidomodelo %></td>
+    <td><%= detallecompetencia.categoria %></td>
+    <td><%= detallecompetencia.nombreresponsable %></td>
+    <td><%= detallecompetencia.totalfactura %></td>
+    <td><%= detallecompetencia.comisionnma %></td>
+    <td><%= detallecompetencia.impuesto %></td>
+    <td><%= detallecompetencia.agenciamadre %></td>
+    <td><%= detallecompetencia.comisionamadre %></td>
+    <td><%= link_to 'Show', detallecompetencia %></td>
+    <td><%= link_to 'Edit', edit_detallecompetencia_path(detallecompetencia) %></td>
+    <td><%= link_to 'Destroy', detallecompetencia, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Detallecompetencia', new_detallecompetencia_path %>

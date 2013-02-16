@@ -21,6 +21,7 @@ class Ability
       can :manage, Agenciaextranjera
       can :manage, Agenciamadre
       can :manage, Cotizacione
+      can :manage, Competencia
     end
     
     

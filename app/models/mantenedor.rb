@@ -165,9 +165,21 @@ class Mantenedor < ActiveRecord::Base
         Mantenedor.where(:tipo => :roles).order(:id)
     end
     
-    def self.medios
-          Mantenedor.where(:tipo => :medios).order(:id)
-      end
+  def self.medios
+       Mantenedor.where(:tipo => :medios).order(:id)
+  end
+  
+  def self.tcompetencias
+        Mantenedor.where(:tipo => :tcompetencias).order(:id)
+  end
+  
+  def self.tfacturas
+         Mantenedor.where(:tipo => :tfacturas).order(:id)
+  end
+  
+  def self.ccompetencias
+         Mantenedor.where(:tipo => :ccompetencias).order(:id)
+  end
       
   def self.search(search)
    if search

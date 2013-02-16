@@ -1,0 +1,2 @@
+module DetallecompetenciasHelper
+end

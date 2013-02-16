@@ -1,0 +1,93 @@
+- if @competencia.errors.any?
+  #error_explanation
+    %h2 #{@competencia.errors.count} errores impiden generar la Cotización:
+    %ul
+      - @competencia.errors.full_messages.each do |msg|
+        %li= msg
+
+%h1 Ingreso de Competencias
+%table.sglea 
+  %tr
+    %td.tit Tipo de Compentencia
+    %td.inp= manten f, :tipocompetencia, Mantenedor.tcompetencias, 'Seleccione por favor'
+    %td.tit Nº Orden de Compra
+    %td.inp= f.text_field :nroorden 
+    %td.tit Producto
+    %td.inp= f.text_field :producto
+  %tr
+    %td.tit Campaña
+    %td.inp= f.text_field :campana
+    %td.tit Razón Social
+    %td.inp= f.collection_select :razonsocial, Cliente.all, :id, :razonsocial,:prompt => 'Seleccione por favor'
+    %td.tit RUT
+    %td.inp= f.text_field :rut
+  %tr
+    %td.tit Dirección
+    %td.inp= f.text_field :direccion
+    %td.tit Telefono
+    %td.inp= f.text_field :telefono 
+    %td.tit Giro
+    %td.inp= f.text_field :giro 
+  %tr
+    %td.tit Productor
+    %td.inp= f.text_field :productor
+    %td.tit Fotografo
+    %td.inp= f.text_field :fotografo 
+    %td.tit Fecha Fotografia
+    %td.inp= f.date_select :fechafoto
+  %tr
+    %td.tit Agencia
+    %td.inp= f.text_field :agencia
+    %td.tit Fecha Filmación
+    %td.inp= f.date_select :fechafilmacion
+    %td.tit Fecha Comercial
+    %td.inp=  f.date_select :fechacomercial
+  %tr
+    %td.tit Tiempo Exhibición
+    %td.inp=f.text_field :texhibiciondia 
+    %td.tit Medios
+    %td.inp= f.text_field :medios
+    %td.tit  Paises
+    %td.inp= f.text_field :paises 
+  %tr
+    %td.tit Responsable
+    - if f.object.bookerresponsable.nil?
+      %td.inp= f.text_field :bookerresponsable, :value => current_user.nombre, :readonly => true
+    - else
+      %td.inp= f.text_field :bookerresponsable, :readonly => true
+    %td.tit Tipo Factura
+    %td.inp= manten f, :tipofactura, Mantenedor.tfacturas, 'Seleccione por favor'
+    %td.tit Nº Factura
+    %td.inp= f.text_field :nrofactura
+  %tr
+    %td.tit Fecha Factura
+    %td.inp= f.date_select :fechafactura
+    %td.tit Reexhibición
+    %td.inp=f.text_field :reexhibicion
+    %td.tit Grafica
+    %td.inp= f.text_field :grafica 
+  %tr
+    %td.tit Contrato
+    %td.inp= f.text_field :contrato
+    %td.tit Observaciones
+    %td.inp{:colspan => "4"}= f.text_field :observaciones, :size => 108
+
+
+%h2.titulo01 Detalles
+
+.field
+  = f.fields_for :detallecompetencias do |builder|
+    = render 'detallecompetencia_fields', :f => builder, :form_disabled => form_disabled
+= link_to_add_fields "Agregar", f, :detallecompetencias	 if not form_disabled
+%br/    
+%br/
+
+
+:javascript
+  $(document).ready(function(){ 
+       $("#competencia_razonsocial").change(function() 
+      { 
+        var id = $("#competencia_razonsocial").val();
+        buscaCliente(id);
+      }); 
+  });

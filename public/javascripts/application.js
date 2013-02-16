@@ -58,6 +58,23 @@ function tipo_id(id){
   }
 }  
 
+function tipo_id_competencia(id){
+  tipoid = id.id
+  rut = tipoid.replace('tipo_id', 'rutmodelo');
+  rid= rut;
+  rut = "#"+rut;
+
+  if(id.value =="RUN"){
+      $(rut).Rut({
+          on_error: function(){ document.getElementById(rid).value=""; document.getElementById(rid).focus; alert('El rut ingresado es incorrecto');  },  format_on: 'keyup'
+      });
+      
+  }else{
+    $(rut).val("");
+    $(rut).unbind();
+  }
+}
+
 
 function buscaEvento(id){
   //alert(id.value);
@@ -238,8 +255,13 @@ $(document).ready(function ()
 
 
 
+function buscaCliente(id){
+  $.getScript('/javascripts/cliente.js?id=' + id); 
+}
 
-
+function buscaModelo(id){
+	$.getScript('/javascripts/modelo.js?numero_id=' + id.value + '&idf=' + id.id); 
+}
 
 
 function recalcular_edad(){

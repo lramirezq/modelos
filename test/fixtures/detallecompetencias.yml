@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  rutmodelo: MyString
+  nombremodelo: MyString
+  apellidomodelo: MyString
+  categoria: MyString
+  nombreresponsable: MyString
+  totalfactura: 1.5
+  comisionnma: 1.5
+  impuesto: 1.5
+  agenciamadre: MyString
+  comisionamadre: 1.5
+
+two:
+  rutmodelo: MyString
+  nombremodelo: MyString
+  apellidomodelo: MyString
+  categoria: MyString
+  nombreresponsable: MyString
+  totalfactura: 1.5
+  comisionnma: 1.5
+  impuesto: 1.5
+  agenciamadre: MyString
+  comisionamadre: 1.5

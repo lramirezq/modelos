@@ -71,8 +71,8 @@
                     %li.docume{:onMouseOut => "desaparece('DOC');", :onMouseOver => "javascript: aparece('DOC');"}
                       %a{:href => "#"} Competencias
                       %ul#Iniciativas
-                        %li= link_to 'Ingreso', "#"
-                        %li= link_to 'Listado', "#"
+                        %li= link_to 'Ingreso', new_competencia_path
+                        %li= link_to 'Listado', competencias_path
 
                     %li.docume{:onMouseOut => "desaparece('DOCC');", :onMouseOver => "javascript: aparece('DOCC');"}
                       %a{:href => "#"} Agencias
