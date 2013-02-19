@@ -38,7 +38,7 @@ class ModelosController < ApplicationController
     @modelo.caracteristica = Caracteristica.new
     
     respond_to do |format|
-      format.html # new.html.erb
+      format.html { }
       format.xml  { render :xml => @modelo }
     end
   end

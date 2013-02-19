@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 # rails
 gem 'rails', '3.0.3'
-
+gem 'rake', '~> 0.8.7'
 # ambiente desarrollo
 group :development, :test do
   gem 'pg'
@@ -14,7 +14,7 @@ group :test do
  gem 'sqlite3-ruby', :require => 'sqlite3'
 end
 
-
+gem 'thin'
 # ambiente producción
 group :production do
   gem 'pg'
