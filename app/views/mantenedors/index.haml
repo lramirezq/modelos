@@ -5,7 +5,8 @@
     \#{submit_tag "Buscar", :tipo => nil}
   %p
     Paginación: #{select_paginacion @per_page}
-= will_paginate @eventos
+= will_paginate @mantenedors
+
 %table.sglea.datos
   %tr
     %td.titg Tipo

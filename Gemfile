@@ -2,6 +2,9 @@ source 'http://rubygems.org'
 
 # rails
 gem 'rails', '3.0.3'
+#gem 'rails', '3.2.6'
+#gem 'actionpack', '3.1' 
+
 
 # ambiente desarrollo
 group :development, :test do
@@ -29,6 +32,8 @@ gem 'cancan'
 # templates
 gem 'haml'
 
+#upload fotos
+#gem 'jquery-fileupload-rails'
 # jquery para rails
 gem 'jquery-rails'
 
@@ -43,7 +48,6 @@ gem 'googlecharts'
 
 # paginamiento
 gem 'will_paginate'
-
 # busquedas
 gem 'rd_searchlogic', :require => 'searchlogic', :git => 'git://github.com/railsdog/searchlogic.git'
 # Paperclip archivo adjuntos para una clase
@@ -51,3 +55,7 @@ gem 'paperclip'
 # extensiones a ActiveRecord, http://metautonomo.us/projects/metawhere/
 gem 'meta_where'
 
+#gem 'squeel'
+
+gem 'thin'
+gem 'sprockets'

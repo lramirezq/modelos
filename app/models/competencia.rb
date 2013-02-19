@@ -4,3 +4,8 @@ class Competencia < ActiveRecord::Base
   
   validates_presence_of :tipocompetencia, :razonsocial, :producto, :campana
 end
+
+
+
+
+

@@ -2,41 +2,17 @@ NewModels::Application.routes.draw do
   
   
   resources :detallecompetencias
-
   resources :competencias
-
   resources :cotizaciones
-
   resources :lcotizas
-
   resources :fotos
-
   resources :telefonos
-
   resources :bookers
-
   resources :agenciamadres
-
   resources :agenciaextranjeras
-
   resources :clientes
-
   resources :caracteristicas
-
   resources :modelos
-
-#  resources :testigos
-#  resources :informe_causa_terminadas
-#  resources :informe_victimas
-#  resources :tramites
-#  match "eventos/export(.:format)" => "eventos#export", :as => :export_evento
-#  match "export_atencion(.:format)" => "eventos#export_atencion", :as => :export_atencion
-#  match "reports/export(.:format)" => "reports#export_evento", :as => :report_export
-#  match 'causas/busca(.:format)' => "causas#busca", :as => :busca_causa
-#  match "causas/:id/new" => "causas#new", :as => :new_causa
-#  resources :causas
-#  resources :contactos
-#  resources :asistencias
   resources :users
   resources :mantenedors 
 
