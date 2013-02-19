@@ -2,7 +2,11 @@ source 'http://rubygems.org'
 
 # rails
 gem 'rails', '3.0.3'
+<<<<<<< HEAD
 gem 'rake', '~> 0.8.7'
+=======
+
+>>>>>>> parent of 52640f9... test
 # ambiente desarrollo
 group :development, :test do
   gem 'pg'
