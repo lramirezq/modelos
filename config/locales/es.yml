@@ -297,3 +297,8 @@
       words_connector: ", "
       two_words_connector: " y "
       last_word_connector: ", y "
+      
+  will_paginate:
+    previous_label: "&#8592; Volver"
+    next_label: "Adelante &#8594;"
+    page_gap: "..."
