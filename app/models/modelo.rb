@@ -10,20 +10,8 @@ class Modelo < ActiveRecord::Base
   
   validates_presence_of :tipo_id, :numero_id, :nombres, :apellidos, :sexo, :fecha_nacimiento, :nacionalidad, :movil, :direccion, :comuna, :email
   
-  
-
-  
-  
-  
-  
-  # Paperclip
-  has_attached_file :pictures, :default_url => '/images/perfil.png',
-  :styles => {
-        :thumb=> "50x50#",
-        :small  => "300x300>",
-        :large => "600x600>"
-          }
+  mount_uploader :image, ImageUploader
     
-  validates_attachment_content_type :pictures, :content_type => ['image/jpeg', 'image/png']
+  #validates_attachment_content_type :pictures, :content_type => ['image/jpeg', 'image/png']
     
 end

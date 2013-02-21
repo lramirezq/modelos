@@ -51,7 +51,8 @@ gem 'will_paginate'
 # busquedas
 gem 'rd_searchlogic', :require => 'searchlogic', :git => 'git://github.com/railsdog/searchlogic.git'
 # Paperclip archivo adjuntos para una clase
-gem 'paperclip'
+gem 'rmagick'
+gem 'carrierwave'
 # extensiones a ActiveRecord, http://metautonomo.us/projects/metawhere/
 gem 'meta_where'
 

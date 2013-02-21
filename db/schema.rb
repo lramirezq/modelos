@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130216171051) do
+ActiveRecord::Schema.define(:version => 20130221040849) do
 
   create_table "actividads", :force => true do |t|
     t.string   "nombre"
@@ -295,6 +295,11 @@ ActiveRecord::Schema.define(:version => 20130216171051) do
     t.string   "agencia"
     t.string   "email"
     t.integer  "telefono_id"
+    t.string   "perfil_file_name"
+    t.string   "perfil_content_type"
+    t.integer  "perfil_file_size"
+    t.datetime "perfil_updated_at"
+    t.string   "image"
   end
 
   create_table "proyectos", :force => true do |t|

@@ -18,7 +18,10 @@
     %td.titg Eliminar
   - @modelos.each do |modelo|
     %tr
-      %td= link_to image_tag(modelo.pictures.url(:small), options = {:onmouseover => "this.width=300;this.height=300;" , :onmouseout => "this.width=50;this.height=50;", :width => "50" , :height => "50"}), modelo
+      - if modelo.image.blank?
+        %td
+      - else
+        %td= image_tag(modelo.image.url(:thumb), :border=>0)
       %td= modelo.nombres
       %td= modelo.apellidos
       %td= modelo.direccion

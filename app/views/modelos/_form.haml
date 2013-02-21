@@ -5,10 +5,9 @@
       - @modelo.errors.full_messages.each do |msg|
         %li= msg
 %h2 Foto de Perfil
-= image_tag @modelo.pictures.url(:small)
-= puts "HOLA"
 %br
-= f.file_field :pictures
+= image_tag @modelo.image_url.to_s
+= f.file_field :image
 %h2.titulo01 Ingreso de Modelo
 %table.sglea 
   %tr
@@ -80,12 +79,6 @@
     = f.fields_for :caracteristica do |builder|
       = render 'caracteristica_fields', :f => builder, :form_disabled => form_disabled
 %br/
-
-%h2.titulo01 Fotografias
-.field
-  = f.fields_for :fotos do |builder|
-    = render 'foto_fields', :f => builder, :form_disabled => form_disabled
-= link_to_add_fields "Agregar Fotografia", f, :fotos if not form_disabled
 
 %h2 Competencias
 

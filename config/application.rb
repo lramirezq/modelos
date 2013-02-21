@@ -44,5 +44,7 @@ module NewModels
 
     # pdfkit
     config.middleware.use "PDFKit::Middleware", :print_media_type => true,  :orientation => 'Landscape'
+    
+    config.load_paths << "#{Rails.root}/app/uploaders"
   end
 end
