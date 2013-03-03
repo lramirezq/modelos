@@ -29,7 +29,7 @@
 	</tr>
 	<tr>
 		<td>Fecha de Trabajo</td>
-		<td><%=@cotizacione.fechatrabajo.strftime('%d/%m/%Y')%></td>
+		<td><%=@cotizacione.fechatrabajo.try(:strftime, '%d/%m/%Y' )%></td>
 	</tr>
 </table>
 <h4>DETALLE  DE LA COTIZACION</h4>
