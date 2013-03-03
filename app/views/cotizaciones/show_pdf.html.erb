@@ -7,7 +7,7 @@
 		<td width="200">Nombre de Cliente</td>
 		<td width="400"><b><%=@cotizacione.cliente%></b></td>
 		<td  width="200">Fecha de Cotización</td>
-		<td width="400"><b><%=@cotizacione.fecha.strftime('%d/%m/%Y')%></b></td>
+		<td width="400"><b><%=@cotizacione.fecha.try(:strftime, '%d/%m/%Y' )%></b></td>
 	</tr>
 	<tr>
 		<td  width="200">Paises</td>
