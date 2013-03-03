@@ -1,6 +1,6 @@
 - title "Modificación de Cliente "
 
-- form_for @cliente, :html => { :multipart => true } do |f|
+= form_for @cliente, :html => { :multipart => true } do |f|
   = render 'form', :f => f, :form_disabled => false
   .actions{:align => "center"}
     = f.submit 'Modificar Cliente'

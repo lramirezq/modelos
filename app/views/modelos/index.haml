@@ -21,7 +21,7 @@
       - if modelo.image.blank?
         %td
       - else
-        %td= image_tag(modelo.image.url(:thumb), :border=>0)
+        %td= image_tag(modelo.image.url.to_s, :width => 100)
       %td= modelo.nombres
       %td= modelo.apellidos
       %td= modelo.direccion

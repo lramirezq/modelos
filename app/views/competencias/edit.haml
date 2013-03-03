@@ -1,6 +1,6 @@
 - title "Modificación de Competencias"
 
-- form_for @competencia, :html => { :multipart => true } do |f|
+= form_for @competencia, :html => { :multipart => true } do |f|
   = render 'form', :f => f, :form_disabled => false
   .actions{:align => "center"}
     = f.submit 'Modificar Competencia'

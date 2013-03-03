@@ -6,7 +6,7 @@
         %li= msg
 %h2 Foto de Perfil
 %br
-= image_tag @modelo.image_url.to_s
+= image_tag @modelo.image_url.to_s,  :width => 400
 = f.file_field :image
 %h2.titulo01 Ingreso de Modelo
 %table.sglea 
