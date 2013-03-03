@@ -83,6 +83,17 @@
                           %li= link_to 'Agencias Extranjeras', agenciaextranjeras_path
 
                     %li.docume{:onMouseOut => "desaparece('Documento');", :onMouseOver => "javascript: aparece('Documento');"}
+
+                      %a{:href => "#"} Busquedas
+                      %ul#Documento
+                        %li
+                          - if can? :manager, Modelo 
+                            =   link_to 'Modelos', busca_modelo_path
+
+
+                    %li.docume{:onMouseOut => "desaparece('Docum');", :onMouseOver => "javascript: aparece('Docum');"}
+
+
                       %a{:href => "#"} Mantenedores
                       %ul#Documento
                         %li
@@ -92,9 +103,8 @@
                           - if can? :manager, User 
                             =   link_to 'Usuarios', users_path
 
+
                     %li.docume{:onMouseOut => "desaparece('Docum');", :onMouseOver => "javascript: aparece('Docum');"}
-                      %a{:href => "#"} Ayuda
-                        
                           
           %br
           -flash.each do |name, msg|

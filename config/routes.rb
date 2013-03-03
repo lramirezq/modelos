@@ -55,6 +55,7 @@ NewModels::Application.routes.draw do
   match "cotizaciones/:id/show_pdf" => "cotizaciones#show_pdf", :as => :show_pdf
   match 'javascripts/cliente(.:format)' => "javascripts#cliente"
   match 'javascripts/modelo(.:format)' => "javascripts#modelo"
+  match 'busquedas/modelos(.:format)' => "busquedas#modelo", :as => :busca_modelo
   # match ':controller(/:action(/:id(.:format)))'
   
   # The priority is based upon order of creation:
