@@ -2,6 +2,7 @@
 
 %table.sglea.datos
   %tr
+    %td.titg ID
     %td.titg Fecha
     %td.titg Cliente
     %td.titg Territorio
@@ -14,6 +15,7 @@
     %td.titg Eliminar
   - @cotizaciones.each do |cotizacione|
     %tr
+      %td= cotizacione.id
       %td= cotizacione.fecha
       %td= cotizacione.cliente
       %td= cotizacione.territorio

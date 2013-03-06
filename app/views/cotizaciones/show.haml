@@ -1,4 +1,5 @@
 - title "Cotización "
+%h2 Cotización Nº #{@cotizacione.id.to_s} 
 
 = form_for @cotizacione, :builder => DisabledFormBuilder do |f|
   = render 'form', :f => f, :form_disabled => true

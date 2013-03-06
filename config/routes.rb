@@ -1,6 +1,8 @@
 NewModels::Application.routes.draw do
   
   
+  resources :historials
+
   resources :detallecompetencias
 
   resources :competencias

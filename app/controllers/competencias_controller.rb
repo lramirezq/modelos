@@ -3,7 +3,8 @@ class CompetenciasController < ApplicationController
   # GET /competencias.xml
   load_and_authorize_resource
   def index
-    @competencias = Competencia.all
+    @competencias = Competencia.find(:all, :order => "id DESC")
+ 
 
     respond_to do |format|
       format.html # index.html.erb

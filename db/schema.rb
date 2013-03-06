@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130306045647) do
+ActiveRecord::Schema.define(:version => 20130306074238) do
 
   create_table "actividads", :force => true do |t|
     t.string   "nombre"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(:version => 20130306045647) do
     t.datetime "updated_at"
     t.integer  "booker_id"
     t.integer  "telefono_id"
+    t.string   "ciudad"
+    t.string   "sucursal"
   end
 
   create_table "agenciamadres", :force => true do |t|
@@ -54,6 +56,8 @@ ActiveRecord::Schema.define(:version => 20130306045647) do
     t.datetime "updated_at"
     t.integer  "booker_id"
     t.integer  "telefono_id"
+    t.string   "ciudad"
+    t.string   "sucursal"
   end
 
   create_table "archivos", :force => true do |t|
@@ -126,6 +130,7 @@ ActiveRecord::Schema.define(:version => 20130306045647) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "giro"
+    t.string   "email_finanza"
   end
 
   create_table "competencias", :force => true do |t|
@@ -175,6 +180,9 @@ ActiveRecord::Schema.define(:version => 20130306045647) do
     t.datetime "updated_at"
     t.string   "reexhibicion"
     t.date     "fechatrabajo"
+    t.date     "fechatrabajofin"
+    t.integer  "historial_id"
+    t.string   "obsedit"
   end
 
   create_table "detallecompetencias", :force => true do |t|
@@ -243,6 +251,15 @@ ActiveRecord::Schema.define(:version => 20130306045647) do
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
     t.integer  "modelo_id"
+  end
+
+  create_table "historials", :force => true do |t|
+    t.string   "usuario"
+    t.date     "fecha"
+    t.string   "observacion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "cotizacione_id"
   end
 
   create_table "lcotizas", :force => true do |t|

@@ -31,8 +31,10 @@
     - else
       %td.inp= f.text_field :usuario, :readonly => true
   %tr
-    %td.tit Fecha de Trabajo
+    %td.tit Fecha de Trabajo INICIO
     %td.inp= f.date_select :fechatrabajo
+    %td.tit Fecha de Trabajo FIN
+    %td.inp= f.date_select :fechatrabajofin
 
 %h2.titulo01 Detalles
 
@@ -42,6 +44,18 @@
   = f.fields_for :lcotizas do |builder|
     = render 'lcotiza_fields', :f => builder, :form_disabled => form_disabled
 = link_to_add_fields "Agregar", f, :lcotizas	 if not form_disabled
+
+%h2.titulo02 Detalle de Modificaciones
+%table.sglea.datos
+  %tr
+    %td.titg Fecha
+    %td.titg Usuario
+    %td.titg Observación
+  - @cotizacione.historials.each do |h|
+    %tr
+      %td= h.created_at.strftime('%Y-%m-%d %H:%M')
+      %td= h.usuario
+      %td= h.observacion
 %br/    
 %br/
 %br/    

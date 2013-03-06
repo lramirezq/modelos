@@ -1,0 +1,29 @@
+<%= form_for(@historial) do |f| %>
+  <% if @historial.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@historial.errors.count, "error") %> prohibited this historial from being saved:</h2>
+
+      <ul>
+      <% @historial.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :usuario %><br />
+    <%= f.text_field :usuario %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha %><br />
+    <%= f.date_select :fecha %>
+  </div>
+  <div class="field">
+    <%= f.label :observacion %><br />
+    <%= f.text_field :observacion %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

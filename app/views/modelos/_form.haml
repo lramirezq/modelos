@@ -14,7 +14,7 @@
     %td.tit Tipo Identificación
     %td.inp= manten f, :tipo_id, Mantenedor.tipoidentificacions, 'Seleccione por favor',{ :onchange => 'tipo_id(this);' }
     %td.tit Nº Identificación
-    %td.inp= f.text_field :numero_id, :onblur => "upperCase(this)"
+    %td.inp= f.text_field :numero_id, :onblur => "buscaModelo(this)"
     %td.tit Nombres
     %td.inp= f.text_field :nombres, :onblur => "upperCase(this)"
   %tr 

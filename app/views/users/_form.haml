@@ -10,13 +10,13 @@
   %table.sglea
     %tr
       %td.tit Nombre
-      %td.inp= f.text_field :nombre
+      %td.inp= f.text_field :nombre, :onblur => "upperCase(this)"
     %tr
       %td.tit Login
-      %td.inp= f.text_field :login
+      %td.inp= f.text_field :login, :onblur => "upperCase(this)"
     %tr
       %td.tit Cargo
-      %td.inp= f.text_field :cargo
+      %td.inp= f.text_field :cargo, :onblur => "upperCase(this)"
     %tr
       %td.tit Password
       %td.inp= f.password_field :password

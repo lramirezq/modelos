@@ -1,6 +1,9 @@
 - title "Modificación de Cotización "
+%h2 Cotización Nº #{@cotizacione.id.to_s} 
 
 = form_for @cotizacione, :html => { :multipart => true } do |f|
   = render 'form', :f => f, :form_disabled => false
   .actions{:align => "center"}
+    Observación de la Modificación :
+    = f.text_area :obsedit, :rows => 3, :cols => 50, :maxlength => 200, :onblur => "upperCase(this)"
     = f.submit 'Modificar Cotización'

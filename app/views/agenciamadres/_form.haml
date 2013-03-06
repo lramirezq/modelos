@@ -20,6 +20,11 @@
     %td.inp= manten f, :pais, Mantenedor.paises, 'Seleccione por favor'
     %td.tit E- mail
     %td.inp= f.text_field :email, :onblur => "upperCase(this)"
+  %tr
+    %td.tit Ciudad
+    %td.inp= f.text_field :ciudad, :onblur => "upperCase(this)"
+    %td.tit Sucursal
+    %td.inp= f.text_field :sucursal, :onblur => "upperCase(this)"
 %h2.titulo01 BOOKERS
 .field
   = f.fields_for :bookers do |builder|

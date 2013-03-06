@@ -9,18 +9,18 @@
       %td.titg Medios
       %td.titg País
       %td.titg Valor
-      %td.titg Día Adicional
-      %td.titg Día Viajado
+      %td.titg Día Adicional + IVA
+      %td.titg Día Viajado + IVA
 
     %tr
       %td.inp= f.text_field :cantidad , :size => 1
       %td.inp= manten f, :personaje, Mantenedor.personajes, 'Seleccione por favor'
       %td.inp= manten f, :rol, Mantenedor.roles, 'Seleccione por favor'
-      %td.inp D:#{f.text_field :tdia, :size => 1} M:#{f.text_field :tmes , :size => 1} A:#{f.text_field :tanno , :size => 1}
+      %td.inp DIA:#{f.text_field :tdia, :size => 1} MES:#{f.text_field :tmes , :size => 1} AÑO:#{f.text_field :tanno , :size => 1}
       %td.inp= f.text_field  :medios, :size => 10
-      %td.inp= manten f, :pais, Mantenedor.paises, 'Seleccione por favor'
-      %td.inp= f.text_field :valor , :size => 1
-      %td.inp= f.text_field :diaadicional, :size => 1	
-      %td.inp= f.text_field :diaviajado, :size => 1
+      %td.inp= f.text_field  :pais, :size => 10
+      %td.inp= f.text_field :valor , :size => 5
+      %td.inp= f.text_field :diaadicional, :size => 5	
+      %td.inp= f.text_field :diaviajado, :size => 5
       %td.inp= link_to_remove_fields "X", f if not form_disabled
      

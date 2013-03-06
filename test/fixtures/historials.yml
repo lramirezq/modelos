@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  usuario: MyString
+  fecha: 2013-03-06
+  observacion: MyString
+
+two:
+  usuario: MyString
+  fecha: 2013-03-06
+  observacion: MyString

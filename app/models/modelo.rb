@@ -1,4 +1,5 @@
 class Modelo < ActiveRecord::Base
+  validates_uniqueness_of :numero_id
   has_one :caracteristica, :dependent => :destroy
   accepts_nested_attributes_for :caracteristica, :allow_destroy => true
   

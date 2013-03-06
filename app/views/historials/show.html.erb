@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Usuario:</b>
+  <%= @historial.usuario %>
+</p>
+
+<p>
+  <b>Fecha:</b>
+  <%= @historial.fecha %>
+</p>
+
+<p>
+  <b>Observacion:</b>
+  <%= @historial.observacion %>
+</p>
+
+
+<%= link_to 'Edit', edit_historial_path(@historial) %> |
+<%= link_to 'Back', historials_path %>

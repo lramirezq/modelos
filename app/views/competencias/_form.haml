@@ -44,11 +44,11 @@
     %td.inp=  f.date_select :fechacomercial
   %tr
     %td.tit Tiempo Exhibición
-    %td.inp=f.text_field :texhibiciondia 
+    %td.inp=f.text_field :texhibiciondia, :onblur => "upperCase(this)"
     %td.tit Medios
-    %td.inp= f.text_field :medios
+    %td.inp= f.text_field :medios, :onblur => "upperCase(this)"
     %td.tit  Paises
-    %td.inp= f.text_field :paises 
+    %td.inp= f.text_field :paises , :onblur => "upperCase(this)"
   %tr
     %td.tit Responsable
     - if f.object.bookerresponsable.nil?
