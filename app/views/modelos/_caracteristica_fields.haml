@@ -50,3 +50,21 @@
       %td.inp=  f.check_box :frenillos, :onblur => "upperCase(this)"
       %td.tit  Tiene Experiencia como modelo?
       %td.inp= f.check_box :experiencia, :onblur => "upperCase(this)"
+    %tr
+      %td.tit Cicatriz
+      %td.inp
+        = f.check_box :cicatriz 
+        Donde  #{f.text_field :donde_cicatriz, :size => 16, :onblur => "upperCase(this)"}
+      %td.tit Tatuaje
+      %td.inp
+        = f.check_box :tatuaje 
+        Donde  #{f.text_field :donde_tatuaje, :size => 16, :onblur => "upperCase(this)"}
+      %td.tit Piercing
+      %td.inp
+        = f.check_box :piercing 
+        Donde  #{f.text_field :donde_piercing, :size => 16, :onblur => "upperCase(this)"}
+    %tr
+      %td.tit Otros
+      %td.inp= f.text_field :otros, :size => 16, :onblur => "upperCase(this)"
+
+

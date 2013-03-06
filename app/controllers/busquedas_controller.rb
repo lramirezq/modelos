@@ -1,11 +1,15 @@
 class BusquedasController < ApplicationController
   def modelo
     puts "Buscando Modelo...."
-    
+    sql_specific = "" 
+    sql_specific += "and \"tipo_id\" ilike ?  "
+    sql_specific += "and \"tipo_id\" ilike ?  "
+    puts sql_specific
     #Recibendo Parametros
     tid = params[:tipo_id]
     if tid !=nil && !tid.empty?
       puts "Tipo ID ***************" + tid + "*********************"
+      
     end
 
     nid = params[:numero_id]
