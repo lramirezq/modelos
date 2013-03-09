@@ -1,9 +1,10 @@
 ActionMailer::Base.smtp_settings = {
-  :address              => "info@luis-ramirez.cl",
+  :address              => "smtp.gmail.com",
   :port                 => 587,
-  :domain               => "luis-ramirez.cl",
-  :user_name            => "",
-  :password             => "",
+  :domain               => "newmodels.cl",
+  :user_name            => "newmodelssl",
+  :password             => "Models2013New2012",
   :authentication       => "plain",
   :enable_starttls_auto => true
 }
+

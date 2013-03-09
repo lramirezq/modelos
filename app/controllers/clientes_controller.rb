@@ -45,6 +45,7 @@ class ClientesController < ApplicationController
 
     respond_to do |format|
       if @cliente.save
+        EventoMailer.enviar_informes(@cliente).deliver  
         format.html { redirect_to(@cliente, :notice => 'Cliente fue creado Satisfactoriamente.') }
         format.xml  { render :xml => @cliente, :status => :created, :location => @cliente }
       else

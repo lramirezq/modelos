@@ -1,12 +1,8 @@
 class EventoMailer < ActionMailer::Base
-  default :from => "ramirezqueupul@gmail.com"
-<<<<<<< HEAD
+  default :from => "newmodelssl@gmail.com"  
+  # Metodo de envio para informes 
   
-<<<<<<< HEAD
-=======
-  
-  
->>>>>>> parent of 2f0ae6e... 	modified:   app/mailers/evento_mailer.rb
-=======
->>>>>>> parent of 4c77f49... Alla va
+  def enviar_informes(cliente)  
+    mail(:to => cliente.email, :subject => "Enviando Mail")  
+  end
 end
