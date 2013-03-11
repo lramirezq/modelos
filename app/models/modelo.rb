@@ -10,9 +10,7 @@ class Modelo < ActiveRecord::Base
   accepts_nested_attributes_for :fotos, :allow_destroy => true
   
   validates_presence_of :tipo_id, :numero_id, :nombres, :apellidos, :sexo, :fecha_nacimiento, :nacionalidad, :movil, :direccion, :comuna, :email
-  
+ 
   mount_uploader :image, ImageUploader
-    
-  #validates_attachment_content_type :pictures, :content_type => ['image/jpeg', 'image/png']
     
 end

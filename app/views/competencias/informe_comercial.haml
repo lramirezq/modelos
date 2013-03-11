@@ -1,0 +1,80 @@
+%h2{:align => "center"} INFORME DE TRABAJO EN FOTOGRAFÍA
+%table.sglea{:align => "center"}
+  %tr
+    %td.tit{:width => 200} Nª de Orden de Compra 
+    %td.inp= @competencia.nroorden
+  %tr
+    %td.tit Producto
+    %td.inp= @competencia.producto
+  %tr
+    %td.tit Campaña
+    %td.inp= @competencia.campana
+  %tr
+    %td.tit Razón Social
+    %td.inp=@competencia.razonsocial
+  %tr
+    %td.tit Giro
+    %td.inp= @competencia.giro
+  %tr
+    %td.tit R.U.T
+    %td.inp= @competencia.rut
+  %tr
+    %td.tit Dirección
+    %td.inp= @competencia.direccion
+  %tr
+    %td.tit Teléfono
+    %td.inp= @competencia.telefono
+  %tr
+    %td.tit Fotógrafo
+    %td.inp= @competencia.fotografo
+  %tr
+    %td.tit Productor
+    %td.inp= @competencia.productor
+  %tr
+    %td.tit Fecha de Fotos
+    %td.inp= @competencia.fechafoto.strftime("%d-%m-%Y")
+  %tr
+    %td.tit Medios
+    %td.inp= @competencia.medios
+  %tr
+    %td.tit Nª Factura/Boleta
+    %td.inp= @competencia.nrofactura
+  %tr
+    %td.tit Fecha de Factura/Boleta
+    %td.inp= @competencia.fechafactura.strftime("%d-%m-%Y")
+  %tr
+    %td.tit Tipo de Factura
+    %td.inp= @competencia.tipofactura
+  %tr
+    %td.tit Observaciones
+    %td.inp= @competencia.observaciones
+
+%h2{:align => "center"} Detalle 
+%table.sglea.datos
+  %tr
+    %td.titg Rut
+    %td.titg Nombre
+    %td.titg Apellido
+    %td.titg Categoria
+    %td.titg Responsable
+    %td.titg Total Factura
+    %td.titg Comisión NMA
+    %td.titg Impuesto
+    %td.titg Agencia Madre
+    %td.titg Comisión Agencia Madre
+  - @competencia.detallecompetencias.each do |detalle|
+    %tr
+      %td= detalle.rutmodelo
+      %td= detalle.nombremodelo
+      %td= detalle.apellidomodelo
+      %td= detalle.categoria
+      %td= detalle.nombreresponsable
+      %td= detalle.totalfactura
+      %td= detalle.comisionnma
+      %td= detalle.impuesto
+      %td= detalle.agenciamadre
+      %td= detalle.comisionamadre
+
+
+
+ 

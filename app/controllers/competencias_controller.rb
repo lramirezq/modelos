@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class CompetenciasController < ApplicationController
   # GET /competencias
   # GET /competencias.xml
@@ -86,4 +87,16 @@ class CompetenciasController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  # GET /competencias/1/informe_comercial
+  def informe_comercial
+    @competencia = Competencia.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @competencia }
+    end
+  end
+  
+    
 end

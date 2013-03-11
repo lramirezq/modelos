@@ -1,5 +1,5 @@
 %h2.titulo01 Listado de Modelos
-- form_tag modelos_path, :method => 'get' do
+= form_tag modelos_path, :method => 'get' do
   %p
     Nombre:  #{text_field_tag :search, params[:search]}
     \#{submit_tag "Buscar", :nombre => nil}
@@ -18,10 +18,10 @@
     %td.titg Eliminar
   - @modelos.each do |modelo|
     %tr
-      - if modelo.image.blank?
-        %td
+      - if modelo.image.nil?
+        %td= image_tag('/images/perfil.png')
       - else
-        %td= image_tag(modelo.image.url.to_s, :width => 100)
+        %td= image_tag(modelo.image.to_s)
       %td= modelo.nombres
       %td= modelo.apellidos
       %td= modelo.direccion

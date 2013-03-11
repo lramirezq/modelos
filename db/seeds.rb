@@ -450,7 +450,7 @@ end
 
 
 # Direcciones de Correo donde se enviarán mail cuando se creen Eventos
-[ "ramirezqueupul@gmail.com"  
+[ "ramirezqueupul@gmail.com", "lramirez@xperience.cl"
   ].each do |valor|
   Mantenedor.create(:tipo => :mail_evento, :valor => valor)
 end

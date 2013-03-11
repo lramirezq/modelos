@@ -4,5 +4,4 @@
 = form_for @cotizacione, :builder => DisabledFormBuilder do |f|
   = render 'form', :f => f, :form_disabled => true
 
-= link_to "Download Invoice (PDF)", show_pdf_path(@cotizacione, :format => "pdf")
-= link_button 'Imprimir Cotización',  :show_pdf 
+= link_button  "Imprimir Cotización", show_pdf_path(@cotizacione, :format => "pdf")

@@ -6,7 +6,12 @@
         %li= msg
 %h2 Foto de Perfil
 %br
-= image_tag @modelo.image_url.to_s,  :width => 400
+- if @modelo.image.nil?
+  %p SI
+-  else
+  %p NO
+
+
 = f.file_field :image
 %h2.titulo01 Ingreso de Modelo
 %table.sglea 

@@ -1,4 +1,8 @@
-- title "Competencia "
+- title "INFORME DE TRABAJO "
 
 = form_for @competencia, :builder => DisabledFormBuilder do |f|
   = render 'form', :f => f, :form_disabled => true
+
+= link_button  "Imprimir Trabajo", informe_comercial_path(@competencia, :format => "pdf")
+
+= link_button  "Enviar Datos a Contabilidad", informe_comercial_path(@competencia, :format => "pdf")

@@ -48,14 +48,10 @@ GEM
     cancan (1.6.9)
     carrierwave (0.5.8)
       activesupport (~> 3.0)
-    climate_control (0.0.3)
-      activesupport (>= 3.0)
-    cocaine (0.5.1)
-      climate_control (>= 0.0.3, < 1.0)
     daemons (1.1.9)
     erubis (2.6.6)
       abstract (>= 1.0.0)
-    eventmachine (1.0.1)
+    eventmachine (1.0.3)
     friendly_id (4.0.9)
     googlecharts (1.6.8)
     haml (4.0.0)
@@ -76,12 +72,6 @@ GEM
     mime-types (1.21)
     mini_magick (3.5.0)
       subexec (~> 0.2.1)
-    paperclip (3.4.1)
-      activemodel (>= 3.0.0)
-      activerecord (>= 3.0.0)
-      activesupport (>= 3.0.0)
-      cocaine (~> 0.5.0)
-      mime-types
     pdfkit (0.5.3)
     pg (0.14.1)
     polyglot (0.3.3)
@@ -117,7 +107,7 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.35)
+    tzinfo (0.3.36)
     will_paginate (3.0.4)
 
 PLATFORMS
@@ -133,7 +123,6 @@ DEPENDENCIES
   jquery-rails
   meta_where
   mini_magick
-  paperclip
   pdfkit
   pg
   rails (= 3.0.3)
