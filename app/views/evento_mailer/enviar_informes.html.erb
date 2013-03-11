@@ -2,9 +2,7 @@
 
 	 <p> Adjunto encontrará el detalle de las Competencias</p>
 	 <p> Puede imprimir el informe desde la siguiente URL </p>
-  	
-	
-	<%= @root_url %><%= informe_comercial_path(@competencia) %></a>
+  	<%= @root_url %><%= informe_comercial_path(@competencia, :format => :pdf) %></a>
 	
 
 

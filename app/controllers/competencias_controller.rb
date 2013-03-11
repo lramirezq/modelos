@@ -94,7 +94,6 @@ class CompetenciasController < ApplicationController
 
     respond_to do |format|
       format.html # informe_comercial.html.erb
-      format.pdf
       format.xml  { render :xml => @competencia }
     end
   end
