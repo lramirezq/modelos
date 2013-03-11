@@ -1,6 +1,10 @@
 NewModels::Application.routes.draw do
   
   
+  resources :myphotos
+
+  resources :albums
+
   resources :historials
 
   resources :detallecompetencias
@@ -26,19 +30,6 @@ NewModels::Application.routes.draw do
   resources :caracteristicas
 
   resources :modelos
-
-#  resources :testigos
-#  resources :informe_causa_terminadas
-#  resources :informe_victimas
-#  resources :tramites
-#  match "eventos/export(.:format)" => "eventos#export", :as => :export_evento
-#  match "export_atencion(.:format)" => "eventos#export_atencion", :as => :export_atencion
-#  match "reports/export(.:format)" => "reports#export_evento", :as => :report_export
-#  match 'causas/busca(.:format)' => "causas#busca", :as => :busca_causa
-#  match "causas/:id/new" => "causas#new", :as => :new_causa
-#  resources :causas
-#  resources :contactos
-#  resources :asistencias
   resources :users
   resources :mantenedors 
 
@@ -60,9 +51,11 @@ NewModels::Application.routes.draw do
   match 'busquedas/modelos(.:format)' => "busquedas#modelo", :as => :busca_modelo
   match 'competencias/:id/informe_comercial' => "competencias#informe_comercial", :as => :informe_comercial
   match 'competencias/:id/envio_mail' => "competencias#envio_mail", :as => :envio_mail
+  match 'modelos/:id/subir_foto' => "modelos#subir_foto", :as => :subir_foto
+  match 'modelos/:id/ver_album/:otro' => "modelos#ver_album", :as => :ver_album
+  
   
   # match ':controller(/:action(/:id(.:format)))'
-  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

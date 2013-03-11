@@ -1,0 +1,10 @@
+.fields 
+  = f.hidden_field :_destroy 
+  %table.sglea
+    %tr
+      %td.tit Nombre de La Foto
+      %td.inp=  f.text_field :nombre, :size => 20, :onblur => "upperCase(this)"
+      %td.tit Observacion
+      %td.tit=  f.text_field :observacion, :size => 20, :onblur => "upperCase(this)"
+      %td.tit= image_tag(f.object.picture.url.to_s,  :height=> 20, :onmouseout => "this.width=10;this.height=20", :onmouseover => "this.width=400;this.height=400") 
+      %td.tit= f.file_field :picture

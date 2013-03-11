@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+<h2>Album <%= @album.nombre %></h2>
+<h2>Modelo : <%= @album.modelo.nombres%> <%= @album.modelo.apellidos%></h2>
+
+<h2> Galeria de Imagenes </h2>
+<table align="center">
+	<tr>
+		<%- a = 0 %>
+<%- @album.myphotos.each do |foto| %>
+	<%if a == 3 %>
+		</tr>
+		<tr>
+			<td><%= image_tag(foto.picture.url.to_s, :width => 300,:class => "style_image")%> </td>
+			<%a = 0%>
+		<%else%>	
+			<td><%= image_tag(foto.picture.url.to_s, :width => 300,:class => "style_image")%> </td>
+		<%end%>
+	<%- a = a + 1 %>
+<%end%>
+</tr>
+</table>
+
+<%= link_to 'Volver', modelo_path(@album.modelo) %>
+

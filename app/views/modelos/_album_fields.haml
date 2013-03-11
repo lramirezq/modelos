@@ -1,0 +1,23 @@
+.fields 
+  = f.hidden_field :_destroy 
+  %table.sglea
+    %tr
+      %td.tit Nombre del Album
+      %td.inp=  f.text_field :nombre, :size => 20, :onblur => "upperCase(this)"
+      %td.tit Detalle
+      %td.tit=  f.text_field :detalle, :size => 20, :onblur => "upperCase(this)"
+      %td.inp= link_to_remove_fields "X", f if not form_disabled
+
+- if f.object.id.nil?
+  
+-else
+  = link_to "Ver todas las Fotografias de este album",  album_path(f.object)
+
+%h2.titulo01  Fotografias
+.field
+  = f.fields_for :myphotos do |builder|
+    = render 'myphoto_fields', :f => builder, :form_disabled => form_disabled
+= link_to_add_fields "Agregar Fotografia", f, :myphotos if not form_disabled
+%br/    
+%br/
+

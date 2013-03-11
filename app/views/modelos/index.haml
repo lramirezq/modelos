@@ -19,9 +19,9 @@
   - @modelos.each do |modelo|
     %tr
       - if modelo.image.blank?
-        %td= image_tag('/images/perfil.png', :size => "100x100")
+        %td= image_tag('/images/perfil.png', :width => "100")
       - else
-        %td= image_tag(modelo.image.to_s,  :size => "100x100")
+        %td=  link_to image_tag(modelo.image.to_s,  :width => "100", :onmouseout => "this.width=100", :onmouseover => "this.width=400"), modelo
       %td= modelo.nombres
       %td= modelo.apellidos
       %td= modelo.direccion
@@ -32,5 +32,8 @@
       
 %br/
 = link_button 'Agregar Modelo', new_modelo_path
-
+%br
+%br
+%br
+%br
 

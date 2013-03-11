@@ -7,9 +7,9 @@
 %h2 Foto de Perfil
 %br
 - if @modelo.image.blank?
-  %p Es nulo
+  
 - else
-  = image_tag(@modelo.image.to_s)
+  = image_tag(@modelo.image.to_s,:class => "style_image", :width => 400)
 = f.file_field :image
 %h2.titulo01 Ingreso de Modelo
 %table.sglea 
@@ -82,6 +82,15 @@
     = f.fields_for :caracteristica do |builder|
       = render 'caracteristica_fields', :f => builder, :form_disabled => form_disabled
 %br/
+
+%h2.titulo01 Albums de Fotografias
+.field
+  = f.fields_for :albums do |builder|
+    = render 'album_fields', :f => builder, :form_disabled => form_disabled
+= link_to_add_fields "Agregar Album", f, :albums if not form_disabled
+%br/    
+%br/
+
 
 %h2 Competencias
 

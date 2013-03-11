@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130306074238) do
+ActiveRecord::Schema.define(:version => 20130311054157) do
 
   create_table "actividads", :force => true do |t|
     t.string   "nombre"
@@ -58,6 +58,15 @@ ActiveRecord::Schema.define(:version => 20130306074238) do
     t.integer  "telefono_id"
     t.string   "ciudad"
     t.string   "sucursal"
+  end
+
+  create_table "albums", :force => true do |t|
+    t.string   "nombre"
+    t.string   "detalle"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "modelo_id"
+    t.integer  "myphoto_id"
   end
 
   create_table "archivos", :force => true do |t|
@@ -324,6 +333,16 @@ ActiveRecord::Schema.define(:version => 20130306074238) do
     t.integer  "perfil_file_size"
     t.datetime "perfil_updated_at"
     t.string   "image"
+    t.integer  "album_id"
+  end
+
+  create_table "myphotos", :force => true do |t|
+    t.string   "nombre"
+    t.string   "observacion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "picture"
+    t.integer  "album_id"
   end
 
   create_table "proyectos", :force => true do |t|

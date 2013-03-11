@@ -6,8 +6,8 @@ class Modelo < ActiveRecord::Base
   has_many :telefonos, :dependent => :destroy
   accepts_nested_attributes_for :telefonos, :allow_destroy => true
   
-  has_many :fotos, :dependent => :destroy
-  accepts_nested_attributes_for :fotos, :allow_destroy => true
+  has_many :albums, :dependent => :destroy
+  accepts_nested_attributes_for :albums, :allow_destroy => true
   
   validates_presence_of :tipo_id, :numero_id, :nombres, :apellidos, :sexo, :fecha_nacimiento, :nacionalidad, :movil, :direccion, :comuna, :email
 
