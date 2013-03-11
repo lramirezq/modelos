@@ -93,7 +93,7 @@ class CompetenciasController < ApplicationController
     @competencia = Competencia.find(params[:id])
 
     respond_to do |format|
-      format.html # informe_comercial.html.erb
+       format.html {render :layout => nil  }
       format.xml  { render :xml => @competencia }
     end
   end
@@ -104,7 +104,7 @@ class CompetenciasController < ApplicationController
     EventoMailer.enviar_informes(@competencia, root_url).deliver  
   
   respond_to do |format|
-    format.html # envio_mail.html.erb
+    format.html {render :layout => nil  }
     format.xml  { render :xml => @competencia }
   end
   end
