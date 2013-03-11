@@ -18,10 +18,10 @@
     %td.titg Eliminar
   - @modelos.each do |modelo|
     %tr
-      - if modelo.image.nil?
+      - if modelo.image.blank?
         %td= image_tag('/images/perfil.png', :size => "100x100")
       - else
-        %td= image_tag(modelo.image.try(:to_s),  :size => "100x100")
+        %td= image_tag(modelo.image.to_s,  :size => "100x100")
       %td= modelo.nombres
       %td= modelo.apellidos
       %td= modelo.direccion
@@ -32,3 +32,5 @@
       
 %br/
 = link_button 'Agregar Modelo', new_modelo_path
+
+

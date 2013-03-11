@@ -6,12 +6,10 @@
         %li= msg
 %h2 Foto de Perfil
 %br
-- if @modelo.image.nil?
-  %p SI
--  else
-  %p NO
-
-
+- if @modelo.image.blank?
+  %p Es nulo
+- else
+  = image_tag(@modelo.image.to_s)
 = f.file_field :image
 %h2.titulo01 Ingreso de Modelo
 %table.sglea 
