@@ -1,8 +1,11 @@
 <div><img src="logo.jpg" width="100" height="98" /></div>
-<p> Se ha Actualizado la causa N° <%= @competencia.id%> </p>
-<p> Para revisar siga el siguiente link </p>
-<p> 
-  <a href="<%= @root_url %><%= edit_causa_path(@causa) %>">
-    <%= @root_url %><%= edit_causa_path(@causa) %>
-  </a>
-</p>
+
+	 <p> Adjunto encontrará el detalle de las Competencias</p>
+	 <p> Puede imprimir el informe desde la siguiente URL </p>
+  	
+	
+	<%= @root_url %><%= informe_comercial_path(@competencia) %></a>
+	
+
+
+  

@@ -93,9 +93,21 @@ class CompetenciasController < ApplicationController
     @competencia = Competencia.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html # informe_comercial.html.erb
+      format.pdf
       format.xml  { render :xml => @competencia }
     end
+  end
+  
+  def envio_mail
+    @competencia = Competencia.find(params[:id])
+    puts "Esta es la competencia" + @competencia.tipocompetencia.to_s
+    EventoMailer.enviar_informes(@competencia, root_url).deliver  
+  
+  respond_to do |format|
+    format.html # envio_mail.html.erb
+    format.xml  { render :xml => @competencia }
+  end
   end
   
     

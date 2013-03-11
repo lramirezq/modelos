@@ -59,7 +59,7 @@ NewModels::Application.routes.draw do
   match 'javascripts/modelo(.:format)' => "javascripts#modelo"
   match 'busquedas/modelos(.:format)' => "busquedas#modelo", :as => :busca_modelo
   match 'competencias/:id/informe_comercial' => "competencias#informe_comercial", :as => :informe_comercial
-  
+  match 'competencias/:id/envio_mail' => "competencias#envio_mail", :as => :envio_mail
   
   # match ':controller(/:action(/:id(.:format)))'
   
