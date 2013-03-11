@@ -1,7 +1,7 @@
 %img{:src => "http://newmodels.luis-ramirez.cl/images/fondo-l.jpg", :width => "100"}/
 %h2{:align => "center"} INFORME DE TRABAJO EN FOTOGRAFÍA
 - c = Cliente.where(:id => @competencia.razonsocial)
-%table.sglea{:align => "center"}
+%table.sglea{:align => "center", :border => 1}
   %tr
     %td.tit{:width => 200} Nª de Orden de Compra 
     %td.inp= @competencia.nroorden
