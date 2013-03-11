@@ -8,6 +8,8 @@ class MantenedorsController < ApplicationController
   # GET /mantenedors.xml
   def index
     @mantenedors = paginamiento Mantenedor.search(params[:search])
+   
+    @manten = Mantenedor.find_by_sql "SELECT tipo, tipo FROM \"mantenedors\" group by tipo"
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @mantenedors }

@@ -1,7 +1,7 @@
 %h2.titulo01 Listado de Parámetros Mantenedores
 = form_tag mantenedors_path, :method => 'get' do
   %p
-    Tipo:  #{text_field_tag :search, params[:search]}
+    Tipo:  #{select_tag :search,  options_from_collection_for_select(@manten, :tipo, :tipo), :include_blank => 'Seleccione...'}
     \#{submit_tag "Buscar", :tipo => nil}
   %p
     Paginación: #{select_paginacion @per_page}
