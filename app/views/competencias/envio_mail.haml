@@ -1,2 +1,7 @@
-%p Se ha enviado la información a las siguientes direcciones de correo electronico
-
+%h2 Se envió la información a las siguientes direcciones de correo electronico
+%p
+- @destinos = Mantenedor.mail_evento
+- @destinos.each do |d|
+  %p
+    %center
+      %b= d.valor
