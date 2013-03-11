@@ -19,9 +19,9 @@
   - @modelos.each do |modelo|
     %tr
       - if modelo.image.nil?
-        %td= image_tag('/images/perfil.png')
+        %td= image_tag('/images/perfil.png', :size => "100x100")
       - else
-        %td= image_tag(modelo.image.to_s)
+        %td= image_tag(modelo.image.try(:to_s),  :size => "100x100")
       %td= modelo.nombres
       %td= modelo.apellidos
       %td= modelo.direccion
