@@ -53,6 +53,13 @@
       %td.inp= f.collection_select :agencia, Agenciamadre.all, :nombre, :nombre, :prompt => 'Seleccione por favor'
       %td.tit  E-Mail
       %td.inp=  f.text_field :email, :size => 35, :onblur => "upperCase(this)"
+    %tr
+      %td.tit Link Fotografias
+      %td.inp{:colspan => 4}= f.text_field :link_pictures, :size => 150
+      %td.inp= link_to 'Ver Fotos', f.object.link_pictures
+    %tr
+      %td.tit Observaciones
+      %td.inp{:colspan => 5}= f.text_area :observaciones, :rows=> 2, :cols => 200, :onblur => "upperCase(this)"
 
 #responsable{:style => "visibility: hidden"}
   %h2.titulo01 Datos del Responsable
