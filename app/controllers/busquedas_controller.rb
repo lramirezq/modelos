@@ -133,7 +133,9 @@ class BusquedasController < ApplicationController
   end  
   
   puts query
-  @modelos =  paginamiento Modelo.find_by_sql query 
+  @m = Modelo.find_by_sql query 
+  @total = @m.count
+  @modelos =  paginamiento @m
   @total = @modelos.count
   respond_to do |format|
      format.html # modelo.html.erb
