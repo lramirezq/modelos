@@ -136,7 +136,7 @@ class BusquedasController < ApplicationController
   @m = Modelo.find_by_sql query 
   @total = @m.count
   @modelos =  paginamiento @m
-  @total = @modelos.count
+
   respond_to do |format|
      format.html # modelo.html.erb
      format.xml  { render :xml => @reports }
