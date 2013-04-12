@@ -9,7 +9,7 @@ class Modelo < ActiveRecord::Base
   has_many :albums, :dependent => :destroy
   accepts_nested_attributes_for :albums, :allow_destroy => true
   
-  validates_presence_of :tipo_id, :numero_id, :nombres, :apellidos, :sexo, :fecha_nacimiento, :nacionalidad, :movil, :direccion, :comuna, :email
+  validates_presence_of :tipo_id, :numero_id, :nombres, :movil
 
  
   mount_uploader :image, ImageUploader

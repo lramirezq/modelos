@@ -1,0 +1,107 @@
+<form action="datos_modelos">
+<h2 class='titulo01'>Busqueda de Modelo</h2>
+<table class='sglea'>
+  <tr>
+    <td class='tit'>Tipo Identificación</td>
+    <td class='inp'>
+	<%= select_tag "tipo_id", options_from_collection_for_select(Mantenedor.tipoidentificacions, "valor", "valor"), :include_blank => 'Seleccione...' , :onchange => 'tipo_id_busqueda(this);'%>
+    </td>
+    <td class='tit'>Nº Identificación</td>
+    <td class='inp'><input id="numero_id" name="numero_id" onblur="upperCase(this)" size="30" type="text" /></td>
+    <td class='tit'>Nombres</td>
+    <td class='inp'><input id="nombres" name="nombres" onblur="upperCase(this)" size="30" type="text" /></td>
+  </tr>
+  <tr>
+    <td class='tit'>Apellidos</td>
+    <td class='inp'><input id="apellidos" name="apellidos" onblur="upperCase(this)" size="30" type="text" /></td>
+    <td class='tit'>Sexo</td>
+    <td class='inp'>
+      <%= select_tag "sexo", options_from_collection_for_select(Mantenedor.tiposexos, "valor", "valor"), :include_blank => 'Seleccione...'%>
+    </td>
+    <td class='tit'>Edad</td>
+    <td class='inp'>Desde <input id="edad_desde" name="edad_desde" size="2" onblur="edades(this)" /> Hasta <input id="edad_hasta" name="edad_hasta" size="2" onblur="edades(this)"/> </td>
+  </tr>
+  <tr>
+    <td class='tit'>Nacionalidad</td>
+    <td class='inp'><input id="nacionalidad" name="nacionalidad" onblur="upperCase(this)" size="30" type="text" /></td>
+    <td class='tit'>Telefono Fijo</td>
+    <td class='inp'><input id="telefono_fijo" name="telefono_fijo" onblur="upperCase(this)" size="30" type="text" /></td>
+    <td class='tit'>Telefono Movil</td>
+    <td class='inp'><input id="movil" name="movil" onblur="upperCase(this)" size="30" type="text" /></td>
+  </tr>
+  <tr>
+    <td class='tit'>Dirección</td>
+    <td class='inp'><input id="direccion" name="direccion" onblur="upperCase(this)" size="30" type="text" /></td>
+    <td class='tit'>Comuna</td>
+    <td class='inp'><input id="comuna" name="comuna" onblur="upperCase(this)" size="30" type="text" /></td>
+    <td class='tit'>Ciudad</td>
+    <td class='inp'><input id="ciudad" name="ciudad" onblur="upperCase(this)" size="30" type="text" /></td>
+  </tr>
+  <tr>
+    <td class='tit'>Pais</td>
+    <td class='inp'><%= select_tag "pais", options_from_collection_for_select(Mantenedor.paises, "valor", "valor"), :include_blank => 'Seleccione...' %></td>
+    <td class='tit'>Licencia de Conducir</td>
+    <td class='inp'><input id="licencia" name="licencia" onblur="upperCase(this)" size="30" type="text" /></td>
+    <tr>
+      <td class='tit'>Agencia Madre</td>
+      <td class='inp'><%= select_tag "agencia", options_from_collection_for_select(Agenciamadre.all, "nombre", "nombre"), :include_blank => 'Seleccione...' %></td>
+      <td class='tit'>E-Mail</td>
+      <td class='inp'><input id="email" name="email" onblur="upperCase(this)" size="35" type="text" /></td>
+    </tr>
+  </tr>
+</table>
+
+  <h2 class='titulo01'>Datos del Responsable</h2>
+  <table class='sglea'>
+    <tr>
+      <td class='tit'>Tipo Id</td>
+      <td class='inp'>
+	<%= select_tag "tipo_id_responsable", options_from_collection_for_select(Mantenedor.tipoidentificacions, "valor", "valor"), :include_blank => 'Seleccione...', :onchange => 'tipo_id_busqueda(this);'  %>
+        
+      <td class='tit'>Nº Identificación</td>
+      <td class='inp'><input id="numero_id_responsable" name="numero_id_responsable" onblur="upperCase(this)" size="30" type="text" /></td>
+    </tr>
+    <tr>
+      <td class='tit'>Nombres</td>
+      <td class='inp'><input id="nombres_responsable" name="nombres_responsable" onblur="upperCase(this)" size="30" type="text" /></td>
+      <td class='tit'>Apellidos</td>
+      <td class='inp'><input id="apellidos_responsable" name="apellidos_responsable" onblur="upperCase(this)" size="30" type="text" /></td>
+    </tr>
+  </table>
+</div>
+<br>
+<center><input type="submit" value="Realizar Busqueda !!"></center>
+</form>
+
+
+<h2> Resultados Aca </h2>
+
+<table class='sglea datos'>
+      <tr>
+        <td class='titg'>Foto</td>
+        <td class='titg'>Nombres</td>
+        <td class='titg'>Apellidos</td>
+        <td class='titg'>Direccion</td>
+        <td class='titg'>Comuna</td>
+        <td class='titg'>Ver</td>
+        <td class='titg'>Editar</td>
+        <td class='titg'>Eliminar</td>
+      </tr>
+     
+	<% @modelos.each do |modelo| %>
+	  <tr>
+	    <td><%= image_tag(modelo.image.url.to_s, :width => 100) %></td>
+	    <td><%= modelo.nombres %></td>
+	    <td><%= modelo.apellidos %></td>
+	    <td><%= modelo.direccion %></td>
+	    <td><%= modelo.comuna %></td>
+	    <td><%= link_to image_tag("ver.png"), modelo%></td>
+	    <td><%= link_to image_tag("editar.png"), edit_modelo_path(modelo) %></td>
+	    <td><%= link_to image_tag("eliminar.png"), modelo, :confirm => '¿Está Seguro?', :method => :delete %></td>
+	  </tr>
+	<% end %>
+    </table>
+
+   
+
+	

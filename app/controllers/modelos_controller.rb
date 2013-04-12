@@ -85,6 +85,7 @@ class ModelosController < ApplicationController
   # DELETE /modelos/1.xml
   def destroy
     @modelo = Modelo.find(params[:id])
+    EventoMailer.borrado_modelo(@modelo, current_user.nombre).deliver  
     @modelo.destroy
 
     respond_to do |format|

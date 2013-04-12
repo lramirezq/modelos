@@ -75,6 +75,25 @@ function tipo_id_competencia(id){
   }
 }
 
+function tipo_id_busqueda(id){
+  
+  tipoid = id.id
+  rut = tipoid.replace('tipo_id', 'numero_id');
+  rid= rut;
+  rut = "#"+rut;
+
+  if(id.value =="RUN"){
+      $(rut).Rut({
+          on_error: function(){ document.getElementById(rid).value=""; document.getElementById(rid).focus; alert('El rut ingresado es incorrecto');  },  format_on: 'keyup'
+      });
+      
+  }else{
+    $(rut).val("");
+    $(rut).unbind();
+  }
+}
+
+
 
 function buscaEvento(id){
   //alert(id.value);
@@ -277,3 +296,30 @@ function recalcular_edad(){
 				$('#responsable').attr("style", "visibility: hidden")
 			}
 }
+
+
+
+function edades(x){
+  
+  if (x.id == "edad_hasta"){
+    desde =  $('#edad_desde').val() 
+    if (x.value < desde){
+      alert("El rango Hasta no puede ser menor que el Desde");
+    }
+  }else{
+     hasta =  $('#edad_hasta').val() 
+   
+    if(x.value != empty){
+      if (x.value > hasta){
+       alert("El rango Desde no puede ser mayor que el hasta");
+     }
+  }
+}
+  
+  
+  
+}
+
+
+
+

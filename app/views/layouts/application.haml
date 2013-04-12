@@ -88,7 +88,8 @@
                       %ul#Documento
                         %li
                           - if can? :manager, Modelo 
-                            =   link_to 'Modelos', busca_modelo_path
+                            =   link_to 'Modelos', dato_modelo_path
+                            =   link_to 'Caracteristicas', caracteristicas_modelo_path
 
 
                     %li.docume{:onMouseOut => "desaparece('Docum');", :onMouseOver => "javascript: aparece('Docum');"}

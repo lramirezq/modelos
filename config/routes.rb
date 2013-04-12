@@ -48,7 +48,8 @@ NewModels::Application.routes.draw do
   match "cotizaciones/:id/show_pdf" => "cotizaciones#show_pdf", :as => :show_pdf
   match 'javascripts/cliente(.:format)' => "javascripts#cliente"
   match 'javascripts/modelo(.:format)' => "javascripts#modelo"
-  match 'busquedas/modelos(.:format)' => "busquedas#modelo", :as => :busca_modelo
+  match 'busquedas/caracteristicas_modelo(.:format)' => "busquedas#caracteristicas_modelo", :as => :caracteristicas_modelo
+  match 'busquedas/datos_modelos(.:format)' => "busquedas#datos_modelo", :as => :dato_modelo
   match 'competencias/:id/informe_comercial' => "competencias#informe_comercial", :as => :informe_comercial
   match 'competencias/:id/envio_mail' => "competencias#envio_mail", :as => :envio_mail
   match 'modelos/:id/subir_foto' => "modelos#subir_foto", :as => :subir_foto

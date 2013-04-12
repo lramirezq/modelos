@@ -37,5 +37,7 @@ if (tipoid == "#modelo_numero_id"){
 	var con = confirm("El Modelo \n<%= @modelo.nombres %> <%= @modelo.apellidos %> \nExiste en la Base de datos \nDesea Editar su Ficha?");	
 		if(con){
 			document.location.href="/modelos/<%= @modelo.id %>/edit";
-		}
+		}else{
+      document.location.href="/modelos/new";
+    }
 }

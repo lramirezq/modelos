@@ -1,0 +1,112 @@
+<form>
+<br>
+<h2 class='titulo01'>Caracteristicas del Modelo</h2>
+<div class='field'>
+        <table class='sglea'>
+          <tr>
+            <td class='tit'>Estatura</td>
+            <td class='inp'>Desde <input id="estatura_desde" name="estatura_desde" size="2"/> Hasta <input id="estatura_hasta" name="estatura_hasta" size="2"/></td>
+            <td class='tit'>Calzado</td>
+            <td class='inp'>Desde <input id="calzado_desde" name="calzado_desde" size="2"/> Hasta <input id="calzado_hasta" name="calzado_hasta" size="2"/></td>
+            <td class='tit'>Idiomas</td>
+            <td class='inp'><input id="idiomas" name="idiomas" onblur="upperCase(this)" size="16" type="text" /></td>
+          </tr>
+          <tr>
+            <td class='tit'>Talla de Pantalón</td>
+            <td class='inp'>Desde <input id="pantalon_desde" name="pantalon_desde" size="2"/> Hasta <input id="pantalon_hasta" name="pantalon_hasta" size="2"/></td>
+            <td class='tit'>Talla de Camisa</td>
+            <td class='inp'>
+              	<%= select_tag "tcamisa", options_from_collection_for_select(Mantenedor.tcamisa, "valor", "valor"), :include_blank => 'Seleccione...' %>
+            </td>
+            <td class='tit'>Busto</td>
+            <td class='inp'>Desde <input id="pantalon_desde" name="pantalon_desde" size="2"/> Hasta <input id="pantalon_hasta" name="pantalon_hasta" size="2"/></td>
+          </tr>
+          <tr>
+            <td class='tit'>Cintura</td>
+            <td class='inp'>Desde <input id="cintura_desde" name="cintura_desde" size="2"/> Hasta <input id="cintura_hasta" name="cintura_hasta" size="2"/></td>
+            <td class='tit'>Cadera</td>
+            <td class='inp'>Desde <input id="cadera_desde" name="cadera_desde" size="2"/> Hasta <input id="cadera_hasta" name="cadera_hasta" size="2"/></td>
+            <td class='tit'>Color de Ojos</td>
+            <td class='inp'>
+              	<%= select_tag "cojos", options_from_collection_for_select(Mantenedor.cojos, "valor", "valor"), :include_blank => 'Seleccione...' %>
+            </td>
+          </tr>
+          <tr>
+            <td class='tit'>Color de Cabello</td>
+            <td class='inp'>
+             <%= select_tag "ccabello", options_from_collection_for_select(Mantenedor.ccabello, "valor", "valor"), :include_blank => 'Seleccione...' %>
+            </td>
+            <td class='tit'>Largo de Cabello</td>
+            <td class='inp'>
+              <%= select_tag "lcabello", options_from_collection_for_select(Mantenedor.lcabello, "valor", "valor"), :include_blank => 'Seleccione...' %>
+            </td>
+            <td class='tit'>Etnia</td>
+            <td class='inp'>
+              <%= select_tag "etnia", options_from_collection_for_select(Mantenedor.etnia, "valor", "valor"), :include_blank => 'Seleccione...' %>
+            </td>
+          </tr>
+          <tr>
+            <td class='tit'>Mujer Hot?</td>
+            <td class='inp'><input name="hot" type="hidden" value="0" /><input id="hot" name="hot" onblur="upperCase(this)" type="checkbox" value="1" /></td>
+
+            <td class='tit'>Hobbie / Deporte</td>
+            <td class='inp'><input id="hobbie" name="hobbie" onblur="upperCase(this)" size="16" type="text" /></td>
+            <td class='tit'>Medida Cuello</td>
+            <td class='inp'><input id="mcuello" name="mcuello" onblur="upperCase(this)" size="16" type="text" /></td>
+          </tr>
+          <tr>
+            <td class='tit'>Terno</td>
+            <td class='inp'><input id="terno" name="terno" onblur="upperCase(this)" size="16" type="text" /></td>
+            <td class='tit'>Realiza Desfiles?</td>
+            <td class='inp'><input name="desfile" type="hidden" value="0" /><input id="desfile" name="desfile" onblur="upperCase(this)" type="checkbox" value="1" /></td>
+            <td class='tit'>Tiene Dientes?</td>
+            <td class='inp'><input name="dientes" type="hidden" value="0" /><input id="dientes" name="dientes" onblur="upperCase(this)" type="checkbox" value="1" /></td>
+          </tr>
+          <tr>
+            <td class='tit'>Actor?</td>
+            <td class='inp'><input name="actor" type="hidden" value="0" /><input id="actor" name="actor" onblur="upperCase(this)" type="checkbox" value="1" /></td>
+            <td class='tit'>Usa Frenillos?</td>
+            <td class='inp'><input name="frenillos" type="hidden" value="0" /><input id="frenillos" name="frenillos" onblur="upperCase(this)" type="checkbox" value="1" /></td>
+            <td class='tit'>Tiene Experiencia como modelo?</td>
+            <td class='inp'><input name="experiencia" type="hidden" value="0" /><input id="experiencia" name="experiencia" onblur="upperCase(this)" type="checkbox" value="1" /></td>
+          </tr>
+        </table>
+      </div>
+</div>
+<br>
+<input type="submit" value="Realizar Busqueda !">
+</form>
+
+
+
+
+
+<h2> Resultados de la Busqueda </h2>
+
+<table class='sglea datos'>
+      <tr>
+        <td class='titg'>Foto</td>
+        <td class='titg'>Nombres</td>
+        <td class='titg'>Apellidos</td>
+        <td class='titg'>Direccion</td>
+        <td class='titg'>Comuna</td>
+        <td class='titg'>Ver</td>
+        <td class='titg'>Editar</td>
+        <td class='titg'>Eliminar</td>
+      </tr>
+     
+	<% @modelos.each do |modelo| %>
+	  <tr>
+	    <td><%= image_tag(modelo.image.url.to_s, :width => 100) %></td>
+	    <td><%= modelo.nombres %></td>
+	    <td><%= modelo.apellidos %></td>
+	    <td><%= modelo.direccion %></td>
+	    <td><%= modelo.comuna %></td>
+	    <td><%= link_to image_tag("ver.png"), modelo%></td>
+	    <td><%= link_to image_tag("editar.png"), edit_modelo_path(modelo) %></td>
+	    <td><%= link_to image_tag("eliminar.png"), modelo, :confirm => '¿Está Seguro?', :method => :delete %></td>
+	  </tr>
+	<% end %>
+    </table>
+
+  
