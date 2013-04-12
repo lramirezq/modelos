@@ -75,6 +75,15 @@
 
 
 <h2> Resultados de Busquedas </h2>
+
+<form  action="/busquedas/datos_modelos" method="GET">
+<p> Paginación  <select id="per_page" name="per_page" onchange="this.form.submit()"><option value="5">5 por pág.</option>
+        <option value="10" selected="selected">10 por pág.</option>
+        <option value="20">20 por pág.</option>
+        <option value="50">50 por pág.</option></select></p>
+</form>
+
+
 <br><p>Total Registros : <%= @total%>
 <%= will_paginate @modelos%>  
 <table class='sglea datos'>
