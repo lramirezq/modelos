@@ -52,51 +52,51 @@
                         - if can? :index, Modelo 
                           %li= link_to 'Listado Modelos', modelos_path
                         
-                    %li.docume{:onMouseOut => "desaparece('D');", :onMouseOver => "javascript: aparece('D');"}
+                    %li.docume{:onMouseOut => "desaparece('Clientes');", :onMouseOver => "javascript: aparece('Clientes');"}
                       %a{:href => "#"} Clientes
-                      %ul#Iniciativas
+                      %ul#Clientes
                         - if can? :create, Cliente
                           %li= link_to 'Ingreso', new_cliente_path
                         - if can? :index, Cliente
                           %li= link_to 'Listado', clientes_path
 
-                    %li.docume{:onMouseOut => "desaparece('DO');", :onMouseOver => "javascript: aparece('DO');"}
+                    %li.docume{:onMouseOut => "desaparece('Cotizaciones');", :onMouseOver => "javascript: aparece('Cotizaciones');"}
                       %a{:href => "#"} Cotizaciones
-                      %ul#Iniciativas
+                      %ul#Cotizaciones
                         -if can? :create, Cotizacione 
                           %li= link_to 'Ingreso', new_cotizacione_path
                         -if can? :index, Cotizacione     
                           %li= link_to 'Listado', cotizaciones_path
 
-                    %li.docume{:onMouseOut => "desaparece('DOC');", :onMouseOver => "javascript: aparece('DOC');"}
+                    %li.docume{:onMouseOut => "desaparece('Informes');", :onMouseOver => "javascript: aparece('Informes');"}
                       %a{:href => "#"} Informe Trabajo
-                      %ul#Iniciativas
+                      %ul#Informes
                         %li= link_to 'Ingreso Informe', new_competencia_path
                         %li= link_to 'Listado Informe', competencias_path
 
-                    %li.docume{:onMouseOut => "desaparece('DOCC');", :onMouseOver => "javascript: aparece('DOCC');"}
+                    %li.docume{:onMouseOut => "desaparece('Agencias');", :onMouseOver => "javascript: aparece('Agencias');"}
                       %a{:href => "#"} Agencias
-                      %ul#Iniciativas
+                      %ul#Agencias
                         - if can? :index, Agenciamadre
                           %li= link_to 'Agencias Madres', agenciamadres_path
                         - if can? :index, Agenciaextranjera
                           %li= link_to 'Agencias Extranjeras', agenciaextranjeras_path
 
-                    %li.docume{:onMouseOut => "desaparece('Documento');", :onMouseOver => "javascript: aparece('Documento');"}
+                    %li.docume{:onMouseOut => "desaparece('Busquedas');", :onMouseOver => "javascript: aparece('Busquedas');"}
 
                       %a{:href => "#"} Búsquedas
-                      %ul#Documento
+                      %ul#Busquedas
                         %li
-                          - if can? :manager, Modelo 
+                          - if can? :read, Modelo 
                             =   link_to 'Modelos', dato_modelo_path
                             =   link_to 'Caracteristicas', caracteristicas_modelo_path
 
 
-                    %li.docume{:onMouseOut => "desaparece('Docum');", :onMouseOver => "javascript: aparece('Docum');"}
+                    %li.docume{:onMouseOut => "desaparece('Mantenedor');", :onMouseOver => "javascript: aparece('Mantenedor');"}
 
 
                       %a{:href => "#"} Mantenedores
-                      %ul#Documento
+                      %ul#Mantenedor
                         %li
                           - if can? :manager, Mantenedor 
                             =   link_to 'Parámetros', mantenedors_path

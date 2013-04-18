@@ -24,6 +24,37 @@ class Ability
       can :manage, Competencia
     end
     
+    if user.role? :booker
+      can :read, Modelo
+      can :edit, Modelo
+      can :update, Modelo
+      can :create, Modelo
+      
+      can :read, Cliente
+      can :edit, Cliente
+      can :update, Cliente
+      can :create, Cliente
+      
+      can :read, Cotizacione
+      can :edit, Cotizacione
+      can :update, Cotizacione
+      can :create, Cotizacione      
+      
+      can :read, Agenciaextranjera
+      can :edit, Agenciaextranjera
+      can :update, Agenciaextranjera
+      can :create, Agenciaextranjera    
+      
+      can :read, Agenciamadre
+      can :edit, Agenciamadre
+      can :update, Agenciamadre
+      can :create, Agenciamadre
+      
+      can :read, Competencia
+      can :edit, Competencia
+      can :update, Competencia
+      can :create, Competencia
+    end
     
   end
 end

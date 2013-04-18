@@ -1,6 +1,4 @@
-<%= params[:idf] %> //competencia_detallecompetencias_attributes_1361005067156_rutmodelo
-var tipoid = <%= params[:idf] %>
-var tipoid = tipoid.id;
+var tipoid = "<%= params[:idf] %>";
 var tipoid = "#"+tipoid;
 var nombre = tipoid.replace('rutmodelo', 'nombremodelo');
 var apellido = tipoid.replace('rutmodelo', 'apellidomodelo');
@@ -13,6 +11,7 @@ $(apellido).val("<%= @modelo.apellidos %>")
 var nr = "<%=@modelo.nombres_responsable%>";
 var ar = "<%=@modelo.apellidos_responsable%>";
 var ag = "<%=@modelo.agencia%>";
+
 //Bloquear Responsable cuando corresponda
 if (nr=="" && ar==""){
 	$(responsable).attr('disabled','disabled');
@@ -30,6 +29,7 @@ if (ag==""){
 
 $(agencia).val("<%=@modelo.agencia%>");
 $(responsable).val("<%= @modelo.nombres_responsable + " " +  @modelo.apellidos_responsable%>")  
+
 
 
 

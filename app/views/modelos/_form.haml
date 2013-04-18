@@ -56,7 +56,7 @@
     %tr
       %td.tit Link Fotografias
       %td.inp{:colspan => 4}= f.text_field :link_pictures, :size => 150
-      %td.inp= link_to 'Ver Fotos', f.object.link_pictures
+      %td.inp= link_to_function 'Ver Fotos', 'OpenFolder();'
     %tr
       %td.tit Observaciones
       %td.inp{:colspan => 5}= f.text_area :observaciones, :rows=> 2, :cols => 200, :onblur => "upperCase(this)"

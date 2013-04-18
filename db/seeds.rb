@@ -125,7 +125,7 @@ end
 
 # roles
 [ "Administrador",
-  "Ejecutivo"
+  "Booker"
   ].each do |nombre|
   Role.create(:nombre => nombre)
 end

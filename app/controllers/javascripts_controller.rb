@@ -19,6 +19,7 @@ class JavascriptsController < ApplicationController
   end
 
   def modelo
+  
     m = Modelo.where(:numero_id => params[:numero_id])
     @modelo = m[0]
     puts "elnombre => " + @modelo.to_s

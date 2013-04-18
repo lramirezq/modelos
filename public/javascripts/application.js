@@ -279,7 +279,9 @@ function buscaCliente(id){
 }
 
 function buscaModelo(id){
-	$.getScript('/javascripts/modelo.js?numero_id=' + id.value + '&idf=' + id.id); 
+	valor =  id.value;
+	ident = id.id;
+	$.getScript('/javascripts/modelo.js?numero_id=' + valor + '&idf=' + ident); 
 }
 
 
@@ -297,6 +299,11 @@ function recalcular_edad(){
 			}
 }
 
+function OpenFolder()
+        {   
+	        filePath = $('#modelo_link_pictures').val();
+	        window.location.href = 'smb://'+filePath;
+        }
 
 
 function edades(x){
