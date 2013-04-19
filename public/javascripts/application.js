@@ -302,7 +302,7 @@ function recalcular_edad(){
 function OpenFolder()
         {   
 	        filePath = $('#modelo_link_pictures').val();
-	        window.location.href = 'smb://'+filePath;
+	        window.location.href = 'file://'+filePath;
         }
 
 
