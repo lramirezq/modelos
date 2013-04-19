@@ -1,3 +1,18 @@
+%script{:src => "/javascripts/jquery.js", :type => "text/javascript"}
+%script{:src => "/javascripts/jquery-maskedinput.js", :type => "text/javascript"}
+%script{:src => "/javascripts/jquery.rut.js", :type => "text/javascript"}
+
+:javascript
+  jQuery(function($){
+  $("#modelo_caracteristica_attributes_estatura").mask("9.99");
+  $("#modelo_caracteristica_attributes_calzado").mask("99?.9");
+  $("#modelo_caracteristica_attributes_tpantalon").mask("99");
+  $("#modelo_caracteristica_attributes_busto").mask("9?99");
+  $("#modelo_caracteristica_attributes_cintura").mask("9?99");
+   $("#modelo_caracteristica_attributes_cadera").mask("9?99");
+  
+
+  });
 - if @modelo.errors.any?
   #error_explanation
     %h2 #{@modelo.errors.count} errores impiden ingresar el modelo:
@@ -113,3 +128,4 @@
 
 :javascript
   recalcular_edad();
+
