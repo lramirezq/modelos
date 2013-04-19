@@ -149,19 +149,87 @@ class BusquedasController < ApplicationController
     puts "Buscar caracteristicas de modelos"  
     query = "select * from modelos inner join caracteristicas on modelos.\"id\" = caracteristicas.\"modelo_id\" where 1=1 "
     
-  #estatura_desde
-  #estatura_hasta
-  #calzado_desde
-  #calzado_hasta
-  
-  idiomas = params[:idiomas]
-  if idiomas !=nil && !idiomas.empty?
-   puts "idiomas ***************" + idiomas + "*********************"
-   query += "and \"idiomas\" ilike '%#{idiomas}%' "
+  #estatura
+  estatura_desde = params[:estatura_desde]
+  estatura_hasta = params[:estatura_hasta]
+  if estatura_desde !=nil && !estatura_desde.empty?
+   puts "estatura ***************" + estatura_desde + "*********************"
+   if estatura_hasta!=nil && !estatura_hasta.empty?
+     query += "and CASE WHEN (estatura = '') THEN '0.00' ELSE CAST(estatura AS FLOAT) END BETWEEN #{estatura_desde} AND #{estatura_hasta}  "
+   else
+     query += "and CASE WHEN (estatura = '') THEN '0.00' ELSE CAST(estatura AS FLOAT) END =  #{estatura_desde} " 
+   end
+  end
+
+
+  #calzado
+  calzado_desde = params[:calzado_desde]
+  calzado_hasta = params[:calzado_hasta]
+  if calzado_desde !=nil && !calzado_desde.empty?
+   puts "calzado ***************" + calzado_desde + "*********************"
+   if calzado_hasta!=nil && !calzado_hasta.empty?
+     query += "and CASE WHEN (calzado = '') THEN '0.00' ELSE CAST(calzado AS FLOAT) END BETWEEN #{calzado_desde} AND #{calzado_hasta}  "
+   else
+     query += "and CASE WHEN (calzado = '') THEN '0.00' ELSE CAST(calzado AS FLOAT) END =  #{calzado_desde} " 
+   end
   end
   
-  #pantalon_desde
-  #pantalon_hasta
+  #cintura
+  cintura_desde = params[:cintura_desde]
+  cintura_hasta = params[:cintura_hasta]
+  if cintura_desde !=nil && !cintura_desde.empty?
+   puts "cintura ***************" + cintura_desde + "*********************"
+   if cintura_hasta!=nil && !cintura_hasta.empty?
+     query += "and CASE WHEN (cintura = '') THEN '0.00' ELSE CAST(cintura AS FLOAT) END BETWEEN #{cintura_desde} AND #{cintura_hasta}  "
+   else
+     query += "and CASE WHEN (cintura = '') THEN '0.00' ELSE CAST(cintura AS FLOAT) END =  #{cintura_desde} " 
+   end
+  end
+  
+
+  #cadera
+  cadera_desde = params[:cadera_desde]
+  cadera_hasta = params[:cadera_hasta]
+  if cadera_desde !=nil && !cadera_desde.empty?
+   puts "cadera_desde ***************" + cadera_desde + "*********************"
+   if cadera_hasta!=nil && !cadera_hasta.empty?
+     query += "and CASE WHEN (cadera = '') THEN '0.00' ELSE CAST(cadera AS FLOAT) END BETWEEN #{cadera_desde} AND #{cintura_hasta}  "
+   else
+     query += "and CASE WHEN (cadera = '') THEN '0.00' ELSE CAST(cadera AS FLOAT) END =  #{cadera_desde} " 
+   end
+  end
+
+
+  #pantalon
+  pantalon_desde = params[:pantalon_desde]
+  pantalon_hasta = params[:pantalon_hasta]
+  if pantalon_desde !=nil && !pantalon_desde.empty?
+   puts "pantalon_desde ***************" + pantalon_desde + "*********************"
+   if pantalon_hasta!=nil && !pantalon_hasta.empty?
+     query += "and CASE WHEN (tpantalon = '') THEN '0.00' ELSE CAST(tpantalon AS FLOAT) END BETWEEN #{pantalon_desde} AND #{pantalon_hasta}  "
+   else
+     query += "and CASE WHEN (tpantalon = '') THEN '0.00' ELSE CAST(tpantalon AS FLOAT) END =  #{pantalon_desde} " 
+   end
+  end
+  
+
+  #edad
+  edad_desde = params[:edad_desde]
+  edad_hasta = params[:edad_hasta]
+  if edad_desde !=nil && !edad_desde.empty? && edad_hasta.empty?
+    puts "edad_desde ***************" + edad_desde + "*********************"
+    query = query + " AND extract(year from age(fecha_nacimiento)) = #{edad_desde} "
+  end  
+ 
+  edad_hasta = params[:edad_hasta]
+  if edad_hasta !=nil && !edad_hasta.empty? && edad_desde !=nil && !edad_desde.empty?
+    puts "edad_hasta ***************" + edad_hasta + "*********************"
+    query = query + " AND extract(year from age(fecha_nacimiento)) between #{edad_desde} and #{edad_hasta} "
+  end
+  
+
+  
+
   
   tcamisa = params[:tcamisa]
   if tcamisa !=nil && !tcamisa.empty?
@@ -169,10 +237,6 @@ class BusquedasController < ApplicationController
    query += "and \"tcamisa\" ilike '%#{tcamisa}%' "
   end
   
-  #cintura_desde
-  #cintura_hasta
-  #cadera_desde
-  #cadera_hasta
   
   cojos = params[:cojos]
   if cojos !=nil && !cojos.empty?

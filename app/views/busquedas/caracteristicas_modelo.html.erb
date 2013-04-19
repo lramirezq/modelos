@@ -1,3 +1,24 @@
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/jquery-maskedinput.js"></script>
+<script>
+  jQuery(function($){
+ 	$("#estatura_desde").mask("9.99");
+    $("#estatura_hasta").mask("9.99");
+    $("#calzado_desde").mask("99?.9");
+    $("#calzado_hasta").mask("99?.9");
+    $("#pantalon_desde").mask("99");
+    $("#pantalon_hasta").mask("99");
+    $("#busto_desde").mask("9?99");
+    $("#busto_hasta").mask("9?99");
+    $("#cintura_desde").mask("9?99");
+    $("#cintura_hasta").mask("9?99");
+    $("#cadera_desde").mask("9?99");
+    $("#cadera_hasta").mask("9?99");
+  
+  
+  });
+</script>
+
 <form>
 <br>
 <h2 class='titulo01'>Caracteristicas del Modelo</h2>
@@ -8,8 +29,8 @@
             <td class='inp'>Desde <input id="estatura_desde" name="estatura_desde" size="2"/> Hasta <input id="estatura_hasta" name="estatura_hasta" size="2"/></td>
             <td class='tit'>Calzado</td>
             <td class='inp'>Desde <input id="calzado_desde" name="calzado_desde" size="2"/> Hasta <input id="calzado_hasta" name="calzado_hasta" size="2"/></td>
-            <td class='tit'>Idiomas</td>
-            <td class='inp'><input id="idiomas" name="idiomas" onblur="upperCase(this)" size="16" type="text" /></td>
+            <td class='tit'>Edad</td>
+            <td class='inp'>Desde <input id="edad_desde" name="edad_desde" size="2"/> Hasta <input id="edad_hasta" name="edad_hasta" size="2"/></td>
           </tr>
           <tr>
             <td class='tit'>Talla de Pantalón</td>
