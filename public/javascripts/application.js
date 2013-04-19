@@ -299,11 +299,7 @@ function recalcular_edad(){
 			}
 }
 
-function OpenFolder()
-        {   
-	        filePath = $('#modelo_link_pictures').val();
-	        window.location.href = 'file://'+filePath;
-        }
+
 
 
 function edades(x){

@@ -2,6 +2,7 @@
 
 = form_for @modelo, :html => { :multipart => true } do |f|
   = render 'form', :f => f, :form_disabled => false
+  %br
   .actions{:align => "center"}
     = f.submit 'Ingresar Modelo'
 %br

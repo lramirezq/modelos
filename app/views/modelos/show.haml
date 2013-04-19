@@ -1,7 +1,10 @@
 - title "Modelo " + @modelo.nombres.to_s
 = form_for @modelo, :builder => DisabledFormBuilder do |f|
   = render 'form', :f => f, :form_disabled => true
-%br
+  %br
+  .actions{:align => "center"}
+    = link_button 'Editar', edit_modelo_path(@modelo)
+
 %br
 %br
 %br
