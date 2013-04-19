@@ -193,7 +193,7 @@ class BusquedasController < ApplicationController
   if cadera_desde !=nil && !cadera_desde.empty?
    puts "cadera_desde ***************" + cadera_desde + "*********************"
    if cadera_hasta!=nil && !cadera_hasta.empty?
-     query += "and CASE WHEN (cadera = '') THEN '0.00' ELSE CAST(cadera AS FLOAT) END BETWEEN #{cadera_desde} AND #{cintura_hasta}  "
+     query += "and CASE WHEN (cadera = '') THEN '0.00' ELSE CAST(cadera AS FLOAT) END BETWEEN #{cadera_desde} AND #{cadera_hasta}  "
    else
      query += "and CASE WHEN (cadera = '') THEN '0.00' ELSE CAST(cadera AS FLOAT) END =  #{cadera_desde} " 
    end
