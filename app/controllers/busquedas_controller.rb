@@ -212,7 +212,20 @@ class BusquedasController < ApplicationController
    end
   end
   
-
+  
+  #busto
+  busto_desde = params[:busto_desde]
+  busto_hasta = params[:busto_hasta]
+  if busto_desde !=nil && !busto_desde.empty?
+   puts "busto_desde ***************" + busto_desde + "*********************"
+   if busto_hasta!=nil && !busto_hasta.empty?
+     query += "and CASE WHEN (busto = '') THEN '0.00' ELSE CAST(busto AS FLOAT) END BETWEEN #{busto_desde} AND #{busto_hasta}  "
+   else
+     query += "and CASE WHEN (busto = '') THEN '0.00' ELSE CAST(busto AS FLOAT) END =  #{busto_desde} " 
+   end
+  end
+  
+  
   #edad
   edad_desde = params[:edad_desde]
   edad_hasta = params[:edad_hasta]
