@@ -56,5 +56,33 @@ class Ability
       can :create, Competencia
     end
     
+    if user.role? :contabilidad
+      can :read, Modelo
+      can :edit, Modelo
+      can :update, Modelo
+      can :create, Modelo
+      
+      can :manage, Cliente
+   
+      can :read, Cotizacione
+      can :edit, Cotizacione
+      can :update, Cotizacione
+      can :create, Cotizacione      
+      
+      can :read, Agenciaextranjera
+      can :edit, Agenciaextranjera
+      can :update, Agenciaextranjera
+      can :create, Agenciaextranjera    
+      
+      can :read, Agenciamadre
+      can :edit, Agenciamadre
+      can :update, Agenciamadre
+      can :create, Agenciamadre
+      
+      can :manager, Competencia
+ 
+    end
+    
+    
   end
 end
