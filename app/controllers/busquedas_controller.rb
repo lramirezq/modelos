@@ -148,6 +148,14 @@ class BusquedasController < ApplicationController
   def caracteristicas_modelo
     puts "Buscar caracteristicas de modelos"  
     query = "select * from modelos inner join caracteristicas on modelos.\"id\" = caracteristicas.\"modelo_id\" where 1=1 "
+
+  #sexo
+  sexo = params[:sexo]
+  if sexo !=nil && !sexo.empty?
+    puts "sexo ***************" + sexo + "*********************"
+    query = query + " AND \"sexo\" ilike '%#{sexo}%'  "
+  end
+
     
   #estatura
   estatura_desde = params[:estatura_desde]

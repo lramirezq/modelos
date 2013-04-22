@@ -24,6 +24,12 @@
 <h2 class='titulo01'>Caracteristicas del Modelo</h2>
 <div class='field'>
         <table class='sglea'>
+	      <tr>
+	      	<td class='tit'>Sexo</td>
+		    <td class='inp'>
+		      <%= select_tag "sexo", options_from_collection_for_select(Mantenedor.tiposexos, "valor", "valor"), :include_blank => 'Seleccione...'%>
+		    </td>
+	      </tr>
           <tr>
             <td class='tit'>Estatura</td>
             <td class='inp'>Desde <input id="estatura_desde" name="estatura_desde" size="2"/> Hasta <input id="estatura_hasta" name="estatura_hasta" size="2"/></td>
