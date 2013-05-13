@@ -1,7 +1,183 @@
 - title "Modelo " + @modelo.nombres.to_s
 = form_for @modelo, :builder => DisabledFormBuilder do |f|
-  = render 'form', :f => f, :form_disabled => true
+
+  - if @modelo.errors.any?
+    #error_explanation
+      %h2 #{@modelo.errors.count} errores impiden ingresar el modelo:
+      %ul
+        - @modelo.errors.full_messages.each do |msg|
+          %li= msg
+  
+  %h2 Foto de Perfil
   %br
+  - if @modelo.image.blank?
+    
+  - else
+    = image_tag(@modelo.image.to_s,:class => "style_image", :width => 400)
+  = f.file_field :image
+  %h2.titulo01 Ingreso de Modelo
+  %table.sglea 
+    %tr
+      %td.tit Tipo Identificación
+      %td.inp= f.object.tipo_id
+      %td.tit Nº Identificación
+      %td.inp= f.object.numero_id
+      %td.tit Nombres
+      %td.inp= f.object.nombres
+    %tr 
+      %td.tit Apellidos
+      %td.inp= f.object.apellidos
+      %td.tit Sexo
+      %td.inp= f.object.sexo
+      %td.tit Fecha Nacimiento
+      %td.inp= f.object.fecha_nacimiento
+    %tr
+      %td.tit Nacionalidad
+      %td.inp= f.object.nacionalidad
+      %td.tit Telefono Fijo
+      %td.inp= f.object.telefono_fijo
+      %td.tit Telefono Movil
+      %td.inp= f.object.movil
+    %tr
+      %td.tit Dirección
+      %td.inp= f.object.direccion
+      %td.tit Comuna
+      %td.inp= f.object.comuna
+      %td.tit Ciudad
+      %td.inp= f.object.ciudad
+    %tr
+      %td.tit Pais
+      %td.inp= f.object.pais
+      %td.tit Licencia de Conducir
+      %td.inp= f.object.licencia
+      %td.tit Edad
+      
+      %td.inp=text_field_tag("edad", value = nil, options = {:size => 3, :disabled => true})
+      %tr
+        %td.tit Agencia Madre
+        %td.inp= f.object.agencia
+        %td.tit  E-Mail
+        %td.inp= f.object.email
+      %tr
+        %td.tit Link Fotografias
+        %td.inp{:colspan => 4}= f.object.link_pictures
+        %td.inp= link_to 'Ver Fotos', 'file:///'+f.object.link_pictures.to_s, :target => "_blank"
+      %tr
+        %td.tit Observaciones
+        %td.inp{:colspan => 5}= f.object.observaciones
+  
+  #responsable{:style => "visibility: hidden"}
+    %h2.titulo01 Datos del Responsable
+    %table.sglea
+      %tr  
+        %td.tit Tipo Id
+        %td.inp= f.object.tipo_id_responsable
+        %td.tit Nº Identificación
+        %td.inp= f.object.numero_id_responsable
+      %tr
+        %td.tit Nombres
+        %td.inp= f.object.nombres_responsable
+        %td.tit Apellidos
+        %td.inp= f.object.apellidos_responsable
+
+  %h2 Telefonos 
+  %table.sglea.noborder
+    %tr
+      %td.titg Telefono
+      %td.titg Descripción
+    - f.object.telefonos.each do |telefono|
+      %tr
+        %td=telefono.telefono
+        %td=telefono.descripcion    
+
+  %h2 Caracteristicas
+  %table.sglea
+    %tr
+      %td.tit  Estatura
+      %td.inp= f.object.caracteristica.estatura
+      %td.tit  Calzado
+      %td.inp= f.object.caracteristica.calzado
+      %td.tit  Idiomas
+      %td.inp= f.object.caracteristica.idiomas
+    %tr
+      %td.tit  Talla de Pantalón
+      %td.inp= f.object.caracteristica.tpantalon
+      %td.tit  Talla de Camisa
+      %td.inp= f.object.caracteristica.tcamisa
+      %td.tit  Busto
+      %td.inp= f.object.caracteristica.busto
+    %tr
+      %td.tit  Cintura
+      %td.inp= f.object.caracteristica.cintura
+      %td.tit  Cadera
+      %td.inp= f.object.caracteristica.cadera
+      %td.tit  Color de Ojos
+      %td.inp= f.object.caracteristica.cojos
+    %tr
+      %td.tit  Color de Cabello
+      %td.inp= f.object.caracteristica.ccabello
+      %td.tit  Largo de Cabello
+      %td.inp= f.object.caracteristica.lcabello
+      %td.tit  Etnia
+      %td.inp= f.object.caracteristica.etnia
+    %tr
+      %td.tit  Mujer Hot?
+      %td.inp= f.object.caracteristica.hot == false ? 'NO' : 'SI'
+      %td.tit  Hobbie / Deporte
+      %td.inp= f.object.caracteristica.hobbie
+      %td.tit  Medida Cuello
+      %td.inp= f.object.caracteristica.mcuello
+    %tr
+      %td.tit  Terno
+      %td.inp= f.object.caracteristica.terno
+      %td.tit  Realiza Desfiles?
+      %td.inp= f.object.caracteristica.desfile == false ? 'NO' : 'SI'
+      %td.tit  Tiene Dientes?
+      %td.inp= f.object.caracteristica.dientes  == false ? 'NO' : 'SI'
+    %tr
+      %td.tit  Actor?
+      %td.inp= f.object.caracteristica.actor == false ? 'NO' : 'SI'
+      %td.tit  Usa Frenillos?
+      %td.inp= f.object.caracteristica.frenillos  == false ? 'NO' : 'SI'
+      %td.tit  Tiene Experiencia como modelo?
+      %td.inp= f.object.caracteristica.experiencia  == false ? 'NO' : 'SI'
+    %tr
+      %td.tit Cicatriz
+      %td.inp
+        = f.object.caracteristica.cicatriz  == false ? 'NO' : 'SI DONDE'
+        #{f.object.caracteristica.donde_cicatriz}
+      %td.tit Tatuaje
+      %td.inp
+        = f.object.caracteristica.tatuaje == false ? 'NO' : 'SI DONDE' 
+        #{f.object.caracteristica.donde_tatuaje}
+      %td.tit Piercing
+      %td.inp
+        = f.object.caracteristica.piercing  == false ? 'NO' : 'SI DONDE'
+        #{f.object.caracteristica.donde_piercing}
+    %tr
+      %td.tit Otros
+      %td.inp= f.object.caracteristica.otros
+  
+  %h2 Competencias
+  
+  %table.sglea.datos
+    %tr
+      %td.titg Tipo de Competencia
+      %td.titg Cliente
+      %td.titg Producto
+      %td.titg Campaña
+      %td.titg Ver Detalle
+  
+    - @competencias.try(:each) do |competencia|
+    - c = Cliente.where(:id => competencia.competencia.try(:razonsocial))
+      %tr
+        %td= competencia.competencia.tipocompetencia
+        %td= c[0].razonsocial
+        %td= competencia.competencia.producto
+        %td= competencia.competencia.campana
+        %td= link_to image_tag("ver.png"), competencia.competencia
+  :javascript
+    recalcular_edad();
   .actions{:align => "center"}
     = link_button 'Editar', edit_modelo_path(@modelo)
 

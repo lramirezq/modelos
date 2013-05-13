@@ -135,7 +135,7 @@
      
 	<% @modelos.each do |modelo| %>
 	  <tr>
-	    <td><%= image_tag(modelo.image.url.to_s, :width => 100) %></td>
+	    <td><%= link_to image_tag(modelo.image.url.to_s, :width => 100), modelo %></td>
 	    <td><%= modelo.nombres %></td>
 	    <td><%= modelo.apellidos %></td>
 	    <td><%= modelo.direccion %></td>

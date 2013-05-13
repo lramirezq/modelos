@@ -48,6 +48,7 @@ NewModels::Application.routes.draw do
   match "cotizaciones/:id/show_pdf" => "cotizaciones#show_pdf", :as => :show_pdf
   match 'javascripts/cliente(.:format)' => "javascripts#cliente"
   match 'javascripts/modelo(.:format)' => "javascripts#modelo"
+  match 'javascripts/modelos(.:format)' => "javascripts#modelos"
   match 'busquedas/caracteristicas_modelo(.:format)' => "busquedas#caracteristicas_modelo", :as => :caracteristicas_modelo
   match 'busquedas/datos_modelos(.:format)' => "busquedas#datos_modelo", :as => :dato_modelo
   match 'competencias/:id/informe_comercial' => "competencias#informe_comercial", :as => :informe_comercial

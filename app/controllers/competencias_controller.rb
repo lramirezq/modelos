@@ -51,7 +51,7 @@ class CompetenciasController < ApplicationController
 
     respond_to do |format|
       if @competencia.save
-        format.html { redirect_to(@competencia, :notice => 'Competencia was successfully created.') }
+        format.html { redirect_to(@competencia, :notice => 'Competencia ha sido creada satisfactoriamente.') }
         format.xml  { render :xml => @competencia, :status => :created, :location => @competencia }
       else
         format.html { render :action => "new" }

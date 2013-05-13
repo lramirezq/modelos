@@ -36,7 +36,7 @@
     %td.tit Fecha Fotografia
     %td.inp= f.date_select :fechafoto, :onblur => "upperCase(this)"
   %tr
-    %td.tit Agencia
+    %td.tit Agencia Publicidad
     %td.inp= f.text_field :agencia, :onblur => "upperCase(this)"
     %td.tit Fecha Filmación
     %td.inp= f.date_select :fechafilmacion
@@ -69,6 +69,8 @@
   %tr
     %td.tit Contrato
     %td.inp= f.text_field :contrato, :onblur => "upperCase(this)"
+    %td.tit Productora
+    %td.inp= f.text_field :productora, :onblur => "upperCase(this)"
     %td.tit Observaciones
     %td.inp{:colspan => "4"}= f.text_field :observaciones, :size => 108, :onblur => "upperCase(this)"
 

@@ -19,4 +19,6 @@ class EventoMailer < ActionMailer::Base
     @destinos = Mantenedor.mail_evento.collect {|d| d.valor}.join(', ')
     mail(:to =>  @destinos, :subject => "New Models | Se Ha eliminado el modelo -  #{modelo.nombres.to_s} #{modelo.apellidos.to_s} ")  
   end
+
+  
 end

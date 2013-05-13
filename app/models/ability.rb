@@ -83,6 +83,9 @@ class Ability
  
     end
     
+    if user.blank?
+      can :informe_comercial, Competencia 
+    end
     
   end
 end

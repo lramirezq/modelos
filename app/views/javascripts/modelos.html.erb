@@ -1,0 +1,35 @@
+<script>
+	function seleccion(rut,tipoid){
+		tid = <%= params[:id]%>;
+		tid = tid.id;
+	
+		if(tid.indexOf("nombremodelo") !== -1){
+		  trut = tid.replace('nombremodelo', 'rutmodelo');
+		  tnid = tid.replace('nombremodelo', 'tipo_id');
+		}else{
+		  trut = tid.replace('apellidomodelo', 'rutmodelo');
+		  tnid = tid.replace('apellidomodelo', 'tipo_id');	
+		}
+	
+		$('#'+tnid).val(tipoid)
+		$('#'+trut).val(rut);
+		$('#'+trut).blur();
+		$("#dialog").dialog("close");
+	}
+</script>
+
+<table border="1">
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th></th>
+  </tr>
+
+<% @modelos.each do |modelo| %>
+  <tr>
+    <td><%= modelo.nombres %></td>
+    <td><%= modelo.apellidos %></td>
+    <td><a href="javascript:seleccion('<%= modelo.numero_id%>','<%= modelo.tipo_id%>');">Seleccionar </a></td>
+  </tr>
+<% end %>
+</table>

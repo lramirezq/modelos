@@ -29,5 +29,27 @@ class JavascriptsController < ApplicationController
     
   end
   
+  def modelos
+  
+    nombre   =  params[:nombre].to_s
+    apellido =  params[:apellido].to_s
+    
+    if apellido == '' and nombre != ''
+      query = "select * from modelos WHERE 1=1  AND \"nombres\" ilike '%#{nombre}%'  "
+    end
+    
+    if nombre == '' and apellido != ''
+       query = "select * from modelos WHERE 1=1  AND \"apellidos\" ilike '%#{apellido}%'  "
+    end
+    
+    
+    @modelos = Modelo.find_by_sql query
+    respond_to do |format|
+      format.html {render :layout => false}
+      format.xml  { render :xml => @modelos }
+    end
+    
+  end
+  
 
 end
