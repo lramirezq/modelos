@@ -1,5 +1,5 @@
 class Modelo < ActiveRecord::Base
-  validates_uniqueness_of :numero_id
+#  validates_uniqueness_of :numero_id
   has_one :caracteristica, :dependent => :destroy
   accepts_nested_attributes_for :caracteristica, :allow_destroy => true
   
@@ -9,7 +9,7 @@ class Modelo < ActiveRecord::Base
   has_many :albums, :dependent => :destroy
   accepts_nested_attributes_for :albums, :allow_destroy => true
   
-  validates_presence_of :tipo_id, :numero_id, :nombres, :movil
+  validates_presence_of :nombres, :movil
 
  
   mount_uploader :image, ImageUploader

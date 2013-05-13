@@ -1,9 +1,6 @@
 %h2.titulo01 Listado de Modelos
 = form_tag modelos_path, :method => 'get' do
   %p
-    Nombre:  #{text_field_tag :search, params[:search]}
-    \#{submit_tag "Buscar", :nombre => nil}
-  %p
     Paginación: #{select_paginacion @per_page}
 = will_paginate @modelos
 %table.sglea.datos
