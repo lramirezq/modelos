@@ -104,7 +104,7 @@ class CompetenciasController < ApplicationController
     EventoMailer.enviar_informes(@competencia, root_url).deliver  
   
   respond_to do |format|
-    format.html {render :layout => nil  }
+    format.html {  }
     format.xml  { render :xml => @competencia }
   end
   end

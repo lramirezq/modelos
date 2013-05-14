@@ -10,7 +10,15 @@
     %td.tit Cliente
     %td.inp= f.text_field :cliente, :onblur => "upperCase(this)"
     %td.tit Fecha
-    %td.inp= f.date_select :fecha 
+    %td.inp= f.text_field :fecha, :size => 16
+    :javascript
+      $('#cotizacione_fecha').datetimepicker({
+        timeText: 'Tiempo',
+        hourText: 'hora',
+        minuteText: 'min',
+        stepMinute: 1,
+        currentText: 'Fecha'
+      });
     %td.tit Paises
     %td.inp= f.text_field :territorio, :onblur => "upperCase(this)"
   %tr
@@ -32,9 +40,25 @@
       %td.inp= f.text_field :usuario, :readonly => true
   %tr
     %td.tit Fecha de Trabajo INICIO
-    %td.inp= f.date_select :fechatrabajo
+    %td.inp= f.text_field :fechatrabajo, :size => 16
+    :javascript
+      $('#cotizacione_fechatrabajo').datetimepicker({
+        timeText: 'Tiempo',
+        hourText: 'hora',
+        minuteText: 'min',
+        stepMinute: 1,
+        currentText: 'Fecha'
+      });
     %td.tit Fecha de Trabajo FIN
-    %td.inp= f.date_select :fechatrabajofin
+    %td.inp= f.text_field :fechatrabajofin, :size => 16
+    :javascript
+      $('#cotizacione_fechatrabajofin').datetimepicker({
+        timeText: 'Tiempo',
+        hourText: 'hora',
+        minuteText: 'min',
+        stepMinute: 1,
+        currentText: 'Fecha'
+      });
 
 %h2.titulo01 Detalles
 
@@ -53,7 +77,7 @@
     %td.titg Observación
   - @cotizacione.historials.each do |h|
     %tr
-      %td= h.created_at.strftime('%Y-%m-%d %H:%M')
+      %td= h.created_at.try(:strftime, '%d-%m-%Y %H:%M')
       %td= h.usuario
       %td= h.observacion
 %br/    

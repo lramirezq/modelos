@@ -34,14 +34,39 @@
     %td.tit Fotografo
     %td.inp= f.text_field :fotografo, :onblur => "upperCase(this)"
     %td.tit Fecha Fotografia
-    %td.inp= f.date_select :fechafoto, :onblur => "upperCase(this)"
+    %td.inp= f.text_field :fechafoto, :size => 16
+    :javascript
+      $('#competencia_fechafoto').datetimepicker({
+        timeText: 'Tiempo',
+        hourText: 'hora',
+        minuteText: 'min',
+        stepMinute: 1,
+        currentText: 'Fecha'
+      });
   %tr
     %td.tit Agencia Publicidad
     %td.inp= f.text_field :agencia, :onblur => "upperCase(this)"
     %td.tit Fecha Filmación
-    %td.inp= f.date_select :fechafilmacion
+    %td.inp= f.text_field :fechafilmacion, :size => 16
+    :javascript
+      $('#competencia_fechafilmacion').datetimepicker({
+        timeText: 'Tiempo',
+        hourText: 'hora',
+        minuteText: 'min',
+        stepMinute: 1,
+        currentText: 'Fecha'
+      });
+    
     %td.tit Fecha Comercial
-    %td.inp=  f.date_select :fechacomercial
+    %td.inp= f.text_field :fechacomercial, :size => 16
+    :javascript
+      $('#competencia_fechacomercial').datetimepicker({
+        timeText: 'Tiempo',
+        hourText: 'hora',
+        minuteText: 'min',
+        stepMinute: 1,
+        currentText: 'Fecha'
+      });
   %tr
     %td.tit Tiempo Exhibición
     %td.inp=f.text_field :texhibiciondia, :onblur => "upperCase(this)"
@@ -61,7 +86,15 @@
     %td.inp= f.text_field :nrofactura, :onblur => "upperCase(this)"
   %tr
     %td.tit Fecha Factura
-    %td.inp= f.date_select :fechafactura
+    %td.inp= f.text_field :fechafactura, :size => 16
+    :javascript
+      $('#competencia_fechafactura').datetimepicker({
+        timeText: 'Tiempo',
+        hourText: 'hora',
+        minuteText: 'min',
+        stepMinute: 1,
+        currentText: 'Fecha'
+      });
     %td.tit Reexhibición
     %td.inp=f.text_field :reexhibicion, :onblur => "upperCase(this)"
     %td.tit Grafica
