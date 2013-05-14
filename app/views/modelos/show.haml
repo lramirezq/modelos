@@ -10,6 +10,9 @@
   
   %h2 Foto de Perfil
   %br
+  = hidden_field_tag 'anno','1982'
+  = hidden_field_tag 'mes','09'
+  = hidden_field_tag 'dia','15'
   - if @modelo.image.blank?
     
   - else
@@ -177,7 +180,8 @@
         %td= competencia.competencia.campana
         %td= link_to image_tag("ver.png"), competencia.competencia
   :javascript
-    recalcular_edad();
+    recalcular_edad_show();
+    
   .actions{:align => "center"}
     = link_button 'Editar', edit_modelo_path(@modelo)
 

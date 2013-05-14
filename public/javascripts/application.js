@@ -203,6 +203,7 @@ function upperCase(elem) {
 
 function calcular_edad(dia_nacim,mes_nacim,anio_nacim)
 {
+   // alert("año" + anio_nacim + " mes " + mes_nacim + " dia " + dia_nacim );
     fecha_hoy = new Date();
     ahora_anio = fecha_hoy.getYear();
     ahora_mes = fecha_hoy.getMonth();
@@ -299,7 +300,15 @@ function recalcular_edad(){
 			}
 }
 
+function recalcular_edad_show(){
+			anno = $('#anno').val();
+			mes = $('#mes').val();
+			dia = $('#dia').val();
 
+			edad = calcular_edad(dia,mes,anno);
+      $('#edad').val(edad);
+			//alert("edad = > " + edad)
+}
 
 
 function edades(x){
