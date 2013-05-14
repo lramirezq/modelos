@@ -10,9 +10,9 @@
   
   %h2 Foto de Perfil
   %br
-  = hidden_field_tag 'anno','1982'
-  = hidden_field_tag 'mes','09'
-  = hidden_field_tag 'dia','15'
+  = hidden_field_tag 'anno', f.object.fecha_nacimiento.try(:strftime, "%Y")
+  = hidden_field_tag 'mes',f.object.fecha_nacimiento.try(:strftime, "%m")
+  = hidden_field_tag 'dia',f.object.fecha_nacimiento.try(:strftime, "%d")
   - if @modelo.image.blank?
     
   - else
