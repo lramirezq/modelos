@@ -1,4 +1,5 @@
 - title "INFORME DE TRABAJO "
+%h2 INFORME DE TRABAJO N° #{@competencia.id.to_s}
 
 = form_for @competencia, :builder => DisabledFormBuilder do |f|
   = render 'form', :f => f, :form_disabled => true
