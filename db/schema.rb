@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130513055332) do
+ActiveRecord::Schema.define(:version => 20130515052722) do
 
   create_table "actividads", :force => true do |t|
     t.string   "nombre"
@@ -337,6 +337,7 @@ ActiveRecord::Schema.define(:version => 20130513055332) do
     t.integer  "album_id"
     t.string   "link_pictures"
     t.string   "observaciones"
+    t.integer  "estado"
   end
 
   create_table "myphotos", :force => true do |t|
