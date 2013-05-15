@@ -29,9 +29,11 @@
       %td.inp= link_to_remove_fields "X", f if not form_disabled
 :javascript
     function abrir_dialog(id,no,ap) {
+    //alert("id " + id + " nom " + no + " ap "+ ap);
+    if(no != "" || ap != "" ){
     $( "#dialog" ).load('/javascripts/modelos?nombre='+no+'&apellido='+ap+'&id='+id);
       $( "#dialog" ).dialog({
           show: "blind",
           hide: "explode"
       });
-    };
+    }};
