@@ -295,7 +295,7 @@ function recalcular_edad(){
 
 			edad = calcular_edad(dia,mes,anno);
 			$('#edad').val(edad);
-	        if (edad < 18){
+	    if (edad < 18){
 				$('#responsable').attr("style", "visibility: visible")
 			}else{
 				$('#responsable').attr("style", "visibility: hidden")
@@ -309,7 +309,11 @@ function recalcular_edad_show(){
 
 			edad = calcular_edad(dia,mes,anno);
       $('#edad').val(edad);
-			//alert("edad = > " + edad)
+			if (edad < 18){
+				$('#responsable').attr("style", "visibility: visible")
+			}else{
+				$('#responsable').attr("style", "visibility: hidden")
+			}
 }
 
 

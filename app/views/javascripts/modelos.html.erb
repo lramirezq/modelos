@@ -1,5 +1,5 @@
 <script>
-	function seleccion(rut,tipoid,nombre,apellido,responsable,agencia){
+	function seleccion(rut,tipoid,nombre,apellido,responsable,agencia,modelo_id){
     //alert("rut=>"+rut+" tid =>"+tipoid+" nombre=>"+nombre+" apellido=>"+apellido+" responsable=>" +responsable+" agencia=>"+agencia);
 		tid = <%= params[:id]%>;
 		tid = tid.id;
@@ -11,6 +11,7 @@
       ape = tid.replace('nombremodelo', 'apellidomodelo');
       rep = tid.replace('nombremodelo', 'nombreresponsable');
       age = tid.replace('nombremodelo', 'agenciamadre');
+      mid = tid.replace('nombremodelo', 'id_modelo');
 		}else{
 		  trut = tid.replace('apellidomodelo', 'rutmodelo');
 		  tnid = tid.replace('apellidomodelo', 'tipo_id');	
@@ -18,6 +19,7 @@
       ape = tid.replace('apellidomodelo', 'apellidomodelo');
       rep = tid.replace('apellidomodelo', 'nombreresponsable');
       age = tid.replace('apellidomodelo', 'agenciamadre');
+      mid = tid.replace('apellidomodelo', 'id_modelo');
 		}
 	
 		$('#'+tnid).val(tipoid)
@@ -26,6 +28,7 @@
     $('#'+ape).val(apellido);
     $('#'+rep).val(responsable);
     $('#'+age).val(agencia);
+    $('#'+mid).val(modelo_id);
 		$("#dialog").dialog("close");
 	}
 </script>
@@ -41,7 +44,7 @@
   <tr>
     <td><%= modelo.nombres %></td>
     <td><%= modelo.apellidos %></td>
-    <td><a href="javascript:seleccion('<%= modelo.numero_id%>','<%= modelo.tipo_id%>','<%= modelo.nombres%>','<%= modelo.apellidos%>','<%= modelo.nombres_responsable + ' ' + modelo.apellidos_responsable %>','<%= modelo.agencia %>');">Seleccionar </a></td>
+    <td><a href="javascript:seleccion('<%= modelo.numero_id%>','<%= modelo.tipo_id%>','<%= modelo.nombres%>','<%= modelo.apellidos%>','<%= modelo.nombres_responsable + ' ' + modelo.apellidos_responsable %>','<%= modelo.agencia %>','<%= modelo.id%>');">Seleccionar </a></td>
   </tr>
 <% end %>
 </table>

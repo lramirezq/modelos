@@ -7,7 +7,7 @@ class ModelosController < ApplicationController
   
   def index
    
-     @modelos =  paginamiento Modelo.all(:order => "id DESC")
+     @modelos =  paginamiento Modelo.where(:estado => nil).order("id DESC")
      cod = params[:search]
 
         if cod !=nil && !cod.empty?
@@ -24,7 +24,9 @@ class ModelosController < ApplicationController
   # GET /modelos/1.xml
   def show
     @modelo = Modelo.find(params[:id])
-    @competencias = Detallecompetencia.where(:rutmodelo => @modelo.numero_id)
+   
+    @competencias = Detallecompetencia.where(:id_modelo => @modelo.id)
+   
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @modelo }
@@ -46,7 +48,7 @@ class ModelosController < ApplicationController
   # GET /modelos/1/edit
   def edit
     @modelo = Modelo.find(params[:id])
-    @competencias = Detallecompetencia.where(:rutmodelo => @modelo.numero_id)
+    @competencias = Detallecompetencia.where(:id_modelo => @modelo.id)
   end
 
   # POST /modelos
@@ -85,8 +87,10 @@ class ModelosController < ApplicationController
   # DELETE /modelos/1.xml
   def destroy
     @modelo = Modelo.find(params[:id])
+    
     EventoMailer.borrado_modelo(@modelo, current_user.nombre).deliver  
-    @modelo.destroy
+    @modelo.estado = 1
+    @modelo.save
 
     respond_to do |format|
       format.html { redirect_to(modelos_url) }

@@ -35,11 +35,11 @@ class JavascriptsController < ApplicationController
     apellido =  params[:apellido].to_s
     
     if apellido == '' and nombre != ''
-      query = "select * from modelos WHERE 1=1  AND \"nombres\" ilike '%#{nombre}%'  "
+      query = "select * from modelos WHERE 1=1  AND \"nombres\" ilike '%#{nombre}%' AND \"estado\" IS NULL  "
     end
     
     if nombre == '' and apellido != ''
-       query = "select * from modelos WHERE 1=1  AND \"apellidos\" ilike '%#{apellido}%'  "
+       query = "select * from modelos WHERE 1=1  AND \"apellidos\" ilike '%#{apellido}%' AND \"estado\" IS NULL "
     end
     
     

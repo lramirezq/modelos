@@ -14,7 +14,10 @@
       %td.titg Impuesto
       %td.titg Agencia Madre
       %td.titg Comisión A.Madre
+      - if f.object.id_modelo?
+        %td.titg Ver Modelo
     %tr
+      = f.hidden_field :id_modelo
       %td.inp= manten f, :tipo_id, Mantenedor.tipoidentificacions, 'Seleccione por favor',{ :onchange => 'tipo_id_competencia(this);'} 
       %td.inp= f.text_field :rutmodelo, :size => 10, :onblur => "buscaModelo(this)"
       %td.inp= f.text_field :nombremodelo, :size => 10, :onblur => "upperCase(this);abrir_dialog(this.id,this.value,'')"
@@ -26,6 +29,11 @@
       %td.inp= f.text_field :impuesto, :size => 3 	
       %td.inp= f.collection_select :agenciamadre, Agenciamadre.all, :nombre, :nombre, :prompt => 'Seleccione por favor'
       %td.inp= f.text_field :comisionamadre, :size => 3
+      - if f.object.id_modelo?
+        - url = "/modelos/" + f.object.id_modelo.to_s 
+        %td
+          %a{:href => url}
+            %img{:alt => "Ver", :src => "/images/ver.png"}/
       %td.inp= link_to_remove_fields "X", f if not form_disabled
 :javascript
     function abrir_dialog(id,no,ap) {
