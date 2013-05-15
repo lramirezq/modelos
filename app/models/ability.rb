@@ -52,6 +52,7 @@ class Ability
       
       can :read, Competencia
       can :edit, Competencia
+      can :envio_mail, Competencia
       can :update, Competencia
       can :create, Competencia
     end
