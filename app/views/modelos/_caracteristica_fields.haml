@@ -42,7 +42,11 @@
       %td.tit  Realiza Desfiles?
       %td.inp=  f.check_box :desfile, :onblur => "upperCase(this)"
       %td.tit  Tiene Dientes?
-      %td.inp= f.check_box :dientes, :onblur => "upperCase(this)"
+      - if f.object.dientes.nil?
+        %td.inp= f.check_box :dientes, :checked => true
+      - else
+        %td.inp= f.check_box :dientes
+      
     %tr
       %td.tit  Actor?
       %td.inp= f.check_box :actor, :onblur => "upperCase(this)"
