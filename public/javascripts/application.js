@@ -282,7 +282,9 @@ function buscaCliente(id){
 function buscaModelo(id){
 	valor =  id.value;
 	ident = id.id;
-	$.getScript('/javascripts/modelo.js?numero_id=' + valor + '&idf=' + ident); 
+  if (valor != ""){
+	 $.getScript('/javascripts/modelo.js?numero_id=' + valor + '&idf=' + ident); 
+  }
 }
 
 
