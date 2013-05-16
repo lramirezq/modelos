@@ -3,7 +3,7 @@ class ClientesController < ApplicationController
   # GET /clientes.xml
   load_and_authorize_resource
   def index
-    @clientes = Cliente.all
+    @clientes = Cliente.order("razonsocial ASC").all
 
     respond_to do |format|
       format.html # index.html.erb

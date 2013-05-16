@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130515064102) do
+ActiveRecord::Schema.define(:version => 20130516055819) do
 
   create_table "actividads", :force => true do |t|
     t.string   "nombre"
@@ -182,7 +182,7 @@ ActiveRecord::Schema.define(:version => 20130515064102) do
     t.string   "cliente"
     t.string   "territorio"
     t.string   "jornada"
-    t.float    "presupuesto"
+    t.string   "presupuesto"
     t.string   "exclusividad"
     t.string   "observaciones"
     t.string   "usuario"
@@ -193,6 +193,7 @@ ActiveRecord::Schema.define(:version => 20130515064102) do
     t.date     "fechatrabajofin"
     t.integer  "historial_id"
     t.string   "obsedit"
+    t.string   "correo"
   end
 
   create_table "detallecompetencias", :force => true do |t|
@@ -201,11 +202,11 @@ ActiveRecord::Schema.define(:version => 20130515064102) do
     t.string   "apellidomodelo"
     t.string   "categoria"
     t.string   "nombreresponsable"
-    t.float    "totalfactura"
-    t.float    "comisionnma"
-    t.float    "impuesto"
+    t.string   "totalfactura"
+    t.string   "comisionnma"
+    t.string   "impuesto"
     t.string   "agenciamadre"
-    t.float    "comisionamadre"
+    t.string   "comisionamadre"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "competencia_id"

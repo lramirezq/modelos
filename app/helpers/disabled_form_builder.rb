@@ -1,7 +1,8 @@
 # esta clase deshabilita todos los text_field y transforma los collection_selection a text_fields deshabilitados
 class DisabledFormBuilder < ActionView::Helpers::FormBuilder
   def text_field(attribute, options={})
-    options[:disabled]= true
+    #options[:disabled]= true
+    options[:readonly]= true
     super
   end
   
@@ -11,12 +12,14 @@ class DisabledFormBuilder < ActionView::Helpers::FormBuilder
   end
   
   def collection_select(method, collection, value_method, text_method, options = {}, html_options = {})
-    options[:disabled] = true
+    #options[:disabled] = true
+    options[:readonly]= true
     text_field(method, options)
   end
   
   def check_box(attribute, options={})
-    options[:disabled] = true
+    #options[:disabled] = true
+    options[:readonly]= true
     super    
   end
   
@@ -28,7 +31,8 @@ class DisabledFormBuilder < ActionView::Helpers::FormBuilder
   
   
   def date_select(method, options = {}) 
-    options[:disabled]= true
+    #options[:disabled]= true
+    options[:readonly]= true
     text_field(method, options)
     super
   end

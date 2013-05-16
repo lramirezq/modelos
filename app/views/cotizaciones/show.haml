@@ -1,7 +1,28 @@
+:javascript
+  $(document).ready(function(){
+  	$("#form").submit(function () {
+  		if($("#correo").val().length < 1) {
+  			alert("La dirección e-mail es obligatoria");
+  			return false;
+  		}
+  		if($("#correo").val().indexOf('@', 0) == -1 || $("#correo").val().indexOf('.', 0) == -1) {
+  			alert("La dirección e-mail parece incorrecta");
+  			return false;
+  		}
+  		return false;
+  	});
+  });
+
 - title "Cotización "
 %h2 Cotización Nº #{@cotizacione.id.to_s} 
 
 = form_for @cotizacione, :builder => DisabledFormBuilder do |f|
   = render 'form', :f => f, :form_disabled => true
+%br
 
+%form{:id => "form", :action => "/busquedas/envio_cotizacion", :method => "get"}
+  E-Mail destinatario :
+  %input#correo{:name => "correo",:type => "text"}/
+  %input#id{:name => "id",:type => "hidden", :value => @cotizacione.id}/
+  %input{:type => "submit", :value => "Enviar Cotización" } 
 

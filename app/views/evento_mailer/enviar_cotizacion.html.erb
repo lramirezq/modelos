@@ -1,0 +1,76 @@
+<div><img src="http://www.luis-ramirez.cl/newmodels/logo.jpg" width="100" height="98" /></div>
+
+<p>Estimado Cliente <b><%=@cotizacione.cliente%></b></p>
+<br/>
+<p> Mediante el presente adjunto a usted la cotización solicitada </p>
+<br/>
+<h2>COTIZACION N° <%=@cotizacione.id.to_s %> </h2>
+<table width="100%" border="1" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="16%" bgcolor="#B4B4B4">Cliente</td>
+    <td width="16%"><%=@cotizacione.cliente%></td>
+    <td width="16%" bgcolor="#B4B4B4">Fecha</td>
+    <td width="16%"><%=@cotizacione.fecha.try(:strftime, "%d-%m-%Y")%></td>
+    <td width="16%" bgcolor="#B4B4B4">Paises</td>
+    <td width="16%"><%=@cotizacione.territorio%></td>
+  </tr>
+  <tr>
+    <td bgcolor="#B4B4B4">Jornada</td>
+    <td><%=@cotizacione.jornada%></td>
+    <td bgcolor="#B4B4B4">Presupuesto</td>
+    <td><%=@cotizacione.presupuesto%></td>
+    <td bgcolor="#B4B4B4">Exclusividad / Rubro</td>
+    <td><%=@cotizacione.exclusividad%></td>
+  </tr>
+  <tr>
+    <td bgcolor="#B4B4B4">Observaciones</td>
+    <td><%=@cotizacione.observaciones%></td>
+    <td bgcolor="#B4B4B4">Reexhibicion</td>
+    <td><%=@cotizacione.reexhibicion%> % </td>
+    <td bgcolor="#B4B4B4">Booker New Models</td>
+    <td><%=@cotizacione.usuario%></td>
+  </tr>
+  <tr>
+    <td bgcolor="#B4B4B4">Fecha de Trabajo INICIO</td>
+    <td><%=@cotizacione.fechatrabajo.try(:strftime, "%d-%m-%Y")%></td>
+    <td bgcolor="#B4B4B4">Fecha de Trabajo FIN</td>
+    <td><%=@cotizacione.fechatrabajofin.try(:strftime, "%d-%m-%Y")%></td>
+  </tr>
+</table>
+<br/>
+<h2>DETALLE COTIZACION </h2>
+<br/>
+
+<table width="100%" border="1" cellspacing="0" cellpadding="0">
+            <tr  bgcolor="#B4B4B4">
+              <td >Cantidad</td>
+              <td >Personaje</td>
+              <td >Rol</td>
+              <td >Tiempo</td>
+              <td >Medios</td>
+              <td >País</td>
+              <td >Valor</td>
+              <td >Día Adicional + IVA</td>
+              <td >Día Viajado + IVA</td>
+            </tr>
+            <% @cotizacione.lcotizas.each do |linea| %>
+            <tr>
+              <td><%=linea.cantidad%></td>
+              <td><%=linea.personaje%></td>
+              <td><%=linea.rol%></td>
+              <td>Dias:<%=linea.tdia == nil ? "0" : linea.tdia%> Meses: <%=linea.tmes == nil ? "0" : linea.tmes%> Años: <%=linea.tanno == nil ? "0" : linea.tanno%></td>
+              <td><%=linea.medios%></td>
+              <td><%=linea.pais%></td>
+              <td><%=linea.valor%></td>
+              <td><%=linea.diaadicional%></td>
+              <td><%=linea.diaviajado%></td>
+             
+            </tr>
+            <% end%>
+          </table>
+          
+<br/>
+<p>Saluda Atentamente </p>
+<p><%=@cotizacione.usuario%></p>
+
+<p>New Models Agency </p>

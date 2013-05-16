@@ -1,106 +1,108 @@
 <link href="http://www.luis-ramirez.cl/newmodels/sglea.css" media="screen" rel="stylesheet" type="text/css" />
 <div><img src="http://www.luis-ramirez.cl/newmodels/logo.jpg" width="100" height="98" /></div>
-<h1>INFORME DE TRABAJO N° <%=@competencia.id%> </h1>
-      <table class='sglea'>
+<h2>INFORME DE TRABAJO N° <%=@competencia.id%> </h1>
+    <table width="100%" border="1" cellspacing="0" cellpadding="0">
         <tr>
-          <td class='tit'>Tipo de Compentencia</td>
-          <td class='inp'><%=@competencia.tipocompetencia%></td>
-          <td class='tit'>Nº Orden de Compra</td>
-          <td class='inp'><%=@competencia.nroorden%></td>
-          <td class='tit'>Producto</td>
-          <td class='inp'><%=@competencia.producto%></td>
+          <td width="16%" bgcolor="#B4B4B4">Tipo de Compentencia</td>
+          <td width="16%"><%=@competencia.tipocompetencia%></td>
+          <td width="16%" bgcolor="#B4B4B4">Nº Orden de Compra</td>
+          <td width="16%"><%=@competencia.nroorden%></td>
+          <td width="16%" bgcolor="#B4B4B4">Producto</td>
+          <td width="16%"><%=@competencia.producto%></td>
         </tr>
         <tr>
-          <td class='tit'>Campaña</td>
-          <td class='inp'><%=@competencia.campana%></td>
-          <td class='tit'>Razón Social</td>
-          <td class='inp'><%=@competencia.razonsocial%></td>
-          <td class='tit'>RUT</td>
-          <td class='inp'><%=@competencia.rut%></td>
+          <td  bgcolor="#B4B4B4">Campaña</td>
+          <td ><%=@competencia.campana%></td>
+          <td  bgcolor="#B4B4B4">Razón Social</td>
+          <td ><%=@competencia.razonsocial%></td>
+          <td  bgcolor="#B4B4B4">RUT</td>
+          <td ><%=@competencia.rut%></td>
         </tr>
         <tr>
-          <td class='tit'>Dirección</td>
-          <td class='inp'><%=@competencia.direccion%></td>
-          <td class='tit'>Telefono</td>
-          <td class='inp'><%=@competencia.telefono%></td>
-          <td class='tit'>Giro</td>
-          <td class='inp'><%=@competencia.giro%></td>
+          <td  bgcolor="#B4B4B4">Dirección</td>
+          <td  ><%=@competencia.direccion%></td>
+          <td  bgcolor="#B4B4B4">Telefono</td>
+          <td ><%=@competencia.telefono%></td>
+          <td  bgcolor="#B4B4B4">Giro</td>
+          <td ><%=@competencia.giro%></td>
         </tr>
         <tr>
-          <td class='tit'>Productor</td>
-          <td class='inp'><%=@competencia.productor%></td>
-          <td class='tit'>Fotografo</td>
-          <td class='inp'><%=@competencia.fotografo%></td>
-          <td class='tit'>Fecha Fotografia</td>
-          <td class='inp'><%=@competencia.fechafoto.try(:strftime, "%d-%m-%Y")%></td>
+          <td  bgcolor="#B4B4B4">Productor</td>
+          <td ><%=@competencia.productor%></td>
+          <td  bgcolor="#B4B4B4">Fotografo</td>
+          <td ><%=@competencia.fotografo%></td>
+          <td  bgcolor="#B4B4B4">Fecha Fotografia</td>
+          <td ><%=@competencia.fechafoto.try(:strftime, "%d-%m-%Y")%></td>
         </tr>
         <tr>
-          <td class='tit'>Agencia Publicidad</td>
-          <td class='inp'><%=@competencia.agencia%></td>
-          <td class='tit'>Fecha Filmación</td>
-          <td class='inp'><%=@competencia.fechafilmacion.try(:strftime, "%d-%m-%Y")%></td>
-          <td class='tit'>Fecha Comercial</td>
-          <td class='inp'><%=@competencia.fechacomercial.try(:strftime, "%d-%m-%Y")%></td>
+          <td  bgcolor="#B4B4B4">Agencia Publicidad</td>
+          <td ><%=@competencia.agencia%></td>
+          <td bgcolor="#B4B4B4">Fecha Filmación</td>
+          <td ><%=@competencia.fechafilmacion.try(:strftime, "%d-%m-%Y")%></td>
+          <td  bgcolor="#B4B4B4">Fecha Comercial</td>
+          <td ><%=@competencia.fechacomercial.try(:strftime, "%d-%m-%Y")%></td>
         </tr>
         <tr>
-          <td class='tit'>Tiempo Exhibición</td>
-          <td class='inp'><%=@competencia.texhibiciondia%></td>
-          <td class='tit'>Medios</td>
-          <td class='inp'><%=@competencia.medios%></td>
-          <td class='tit'>Paises</td>
-          <td class='inp'><%=@competencia.paises%></td>
+          <td  bgcolor="#B4B4B4">Tiempo Exhibición</td>
+          <td ><%=@competencia.texhibiciondia%></td>
+          <td  bgcolor="#B4B4B4">Medios</td>
+          <td ><%=@competencia.medios%></td>
+          <td  bgcolor="#B4B4B4">Paises</td>
+          <td ><%=@competencia.paises%></td>
         </tr>
         <tr>
-          <td class='tit'>Responsable</td>
-          <td class='inp'><%=@competencia.bookerresponsable%></td>
-          <td class='tit'>Tipo Factura</td>
-          <td class='inp'><%=@competencia.tipofactura%></td>
-          <td class='tit'>Nº Factura</td>
-          <td class='inp'><%=@competencia.nrofactura%></td>
+          <td  bgcolor="#B4B4B4">Responsable</td>
+          <td ><%=@competencia.bookerresponsable%></td>
+          <td  bgcolor="#B4B4B4">Tipo Factura</td>
+          <td ><%=@competencia.tipofactura%></td>
+          <td  bgcolor="#B4B4B4">Nº Factura</td>
+          <td ><%=@competencia.nrofactura%></td>
         </tr>
         <tr>
-          <td class='tit'>Fecha Factura</td>
-          <td class='inp'><%=@competencia.fechafactura.try(:strftime, "%d-%m-%Y")%></td>
-          <td class='tit'>Reexhibición</td>
-          <td class='inp'><%=@competencia.reexhibicion%></td>
-          <td class='tit'>Grafica</td>
-          <td class='inp'><%=@competencia.grafica%></td>
+          <td  bgcolor="#B4B4B4">Fecha Factura</td>
+          <td ><%=@competencia.fechafactura.try(:strftime, "%d-%m-%Y")%></td>
+          <td  bgcolor="#B4B4B4">Reexhibición</td>
+          <td ><%=@competencia.reexhibicion%></td>
+          <td  bgcolor="#B4B4B4">Grafica</td>
+          <td ><%=@competencia.grafica%></td>
         </tr>
         <tr>
-          <td class='tit'>Contrato</td>
-          <td class='inp'><%=@competencia.contrato%></td>
-          <td class='tit'>Productora</td>
-          <td class='inp'><%=@competencia.productora%></td>
-          <td class='tit'>Observaciones</td>
-          <td class='inp' colspan='4'><%=@competencia.observaciones%></td>
+          <td  bgcolor="#B4B4B4">Contrato</td>
+          <td ><%=@competencia.contrato%></td>
+          <td  bgcolor="#B4B4B4">Productora</td>
+          <td ><%=@competencia.productora%></td>
+          <td  bgcolor="#B4B4B4">Observaciones</td>
+          <td  colspan='4'><%=@competencia.observaciones%></td>
         </tr>
       </table>
-
-        <table class='sglea'>
-              <tr>
-                <td class='titg'>Rut</td>
-                <td class='titg'>Nombre</td>
-                <td class='titg'>Apellido</td>
-                <td class='titg'>Categoria</td>
-                <td class='titg'>Responsable</td>
-                <td class='titg'>Total Factura</td>
-                <td class='titg'>Comisión NMA</td>
-                <td class='titg'>Impuesto</td>
-                <td class='titg'>Agencia Madre</td>
-                <td class='titg'>Comisión A.Madre</td>
+      <br/>
+      <h2> DETALLE INFORME </h2>
+      <br/>
+        <table width="100%" border="1" cellspacing="0" cellpadding="0">
+              <tr bgcolor="#B4B4B4">
+                <td >Rut</td>
+                <td >Nombre</td>
+                <td >Apellido</td>
+                <td >Categoria</td>
+                <td >Responsable</td>
+                <td >Total Factura</td>
+                <td >Comisión NMA</td>
+                <td >Impuesto</td>
+                <td >Agencia Madre</td>
+                <td >Comisión A.Madre</td>
               </tr>
             <% @competencia.detallecompetencias.each do |detalle| %>  
               <tr>
-                <td class='inp'><%=detalle.rutmodelo%></td>
-                <td class='inp'><%=detalle.nombremodelo%></td>
-                <td class='inp'><%=detalle.apellidomodelo%></td>
-                <td class='inp'><%=detalle.categoria%></td>
-                <td class='inp'><%=detalle.nombreresponsable%></td>
-                <td class='inp'><%=detalle.totalfactura%></td>
-                <td class='inp'><%=detalle.comisionnma%></td>
-                <td class='inp'><%=detalle.impuesto%></td>
-                <td class='inp'><%=detalle.agenciamadre%></td>
-                <td class='inp'><%=detalle.comisionamadre%></td>
+                <td ><%=detalle.rutmodelo %></td>
+                <td ><%=detalle.nombremodelo%></td>
+                <td ><%=detalle.apellidomodelo%></td>
+                <td ><%=detalle.categoria%></td>
+                <td ><%=detalle.nombreresponsable%></td>
+                <td ><%=detalle.totalfactura%></td>
+                <td ><%=detalle.comisionnma%></td>
+                <td ><%=detalle.impuesto%></td>
+                <td ><%=detalle.agenciamadre%></td>
+                <td ><%=detalle.comisionamadre%></td>
             <%end%>
             </table>
             

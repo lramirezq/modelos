@@ -1,10 +1,14 @@
 <script>
 	function seleccion(rut,tipoid,nombre,apellido,responsable,agencia,modelo_id){
+   
     //alert("rut=>"+rut+" tid =>"+tipoid+" nombre=>"+nombre+" apellido=>"+apellido+" responsable=>" +responsable+" agencia=>"+agencia);
-		tid = <%= params[:id]%>;
-		tid = tid.id;
+		tid = "<%= params[:id]%>";
+    
+		
+    //tid = tid.id;
 	
 		if(tid.indexOf("nombremodelo") !== -1){
+      
 		  trut = tid.replace('nombremodelo', 'rutmodelo');
 		  tnid = tid.replace('nombremodelo', 'tipo_id');
       nom = tid.replace('nombremodelo', 'nombremodelo');
@@ -21,7 +25,8 @@
       age = tid.replace('apellidomodelo', 'agenciamadre');
       mid = tid.replace('apellidomodelo', 'id_modelo');
 		}
-	
+	 
+     
 		$('#'+tnid).val(tipoid)
 		$('#'+trut).val(rut);
     $('#'+nom).val(nombre);

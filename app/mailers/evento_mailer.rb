@@ -13,6 +13,18 @@ class EventoMailer < ActionMailer::Base
     mail(:to =>  @destinos, :subject => "New Models | Envio Detalle de Competencias -  #{competencia.id.to_s}")  
   end
   
+  
+  # Metodo de envio para informes 
+  def enviar_cotizacion(cotizacione, root_url, destinatario)
+    @root_url = root_url.to_s.gsub(/\/+$/, '')
+    @cotizacione = cotizacione
+    @destinos = destinatario
+    
+      
+    mail(:to =>  @destinos, :subject => "New Models | Cotizacion  -  #{cotizacione.id.to_s} ")  
+  end
+  
+  
   def borrado_modelo(modelo, current_user)
     @usuario = current_user
     @modelo = modelo

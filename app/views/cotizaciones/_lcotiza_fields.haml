@@ -17,8 +17,8 @@
       %td.inp= manten f, :personaje, Mantenedor.personajes, 'Seleccione por favor'
       %td.inp= manten f, :rol, Mantenedor.roles, 'Seleccione por favor'
       %td.inp Dias:#{f.text_field :tdia, :size => 1} Meses:#{f.text_field :tmes , :size => 1} Años:#{f.text_field :tanno , :size => 1}
-      %td.inp= f.text_field  :medios, :size => 10
-      %td.inp= f.text_field  :pais, :size => 10
+      %td.inp= f.text_field  :medios, :size => 10,  :onblur => "upperCase(this)"
+      %td.inp= f.text_field  :pais, :size => 10,  :onblur => "upperCase(this)"
       %td.inp= f.text_field :valor , :size => 5
       %td.inp= f.text_field :diaadicional, :size => 5	
       %td.inp= f.text_field :diaviajado, :size => 5

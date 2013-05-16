@@ -50,11 +50,7 @@ class Ability
       can :update, Agenciamadre
       can :create, Agenciamadre
       
-      can :read, Competencia
-      can :edit, Competencia
-      can :envio_mail, Competencia
-      can :update, Competencia
-      can :create, Competencia
+      can :manage, Competencia
     end
     
     if user.role? :contabilidad

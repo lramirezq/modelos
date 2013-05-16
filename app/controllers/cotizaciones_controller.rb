@@ -106,6 +106,8 @@ class CotizacionesController < ApplicationController
     end
   end
 
+
+  
   # DELETE /cotizaciones/1
   # DELETE /cotizaciones/1.xml
   def destroy

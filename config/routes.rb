@@ -53,6 +53,7 @@ NewModels::Application.routes.draw do
   match 'busquedas/datos_modelos(.:format)' => "busquedas#datos_modelo", :as => :dato_modelo
   match 'competencias/:id/informe_comercial' => "competencias#informe_comercial", :as => :informe_comercial
   match 'competencias/:id/envio_mail' => "competencias#envio_mail", :as => :envio_mail
+  match 'busquedas/envio_cotizacion(.:format)' => "busquedas#envio_cotizacion", :as => :envio_cotizacion
   match 'modelos/:id/subir_foto' => "modelos#subir_foto", :as => :subir_foto
   match 'modelos/:id/ver_album/:otro' => "modelos#ver_album", :as => :ver_album
   
