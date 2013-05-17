@@ -3,8 +3,8 @@ class ClientesController < ApplicationController
   # GET /clientes.xml
   load_and_authorize_resource
   def index
-    @clientes = Cliente.order("razonsocial ASC").all
-
+    @clientes =   Cliente.where(:estado => nil).order("razonsocial ASC")
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @clientes }
@@ -75,8 +75,9 @@ class ClientesController < ApplicationController
   # DELETE /clientes/1.xml
   def destroy
     @cliente = Cliente.find(params[:id])
-    @cliente.destroy
-
+    @cliente.estado = 1
+    @cliente.save
+  
     respond_to do |format|
       format.html { redirect_to(clientes_url) }
       format.xml  { head :ok }

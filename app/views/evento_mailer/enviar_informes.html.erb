@@ -14,7 +14,9 @@
           <td  bgcolor="#B4B4B4">Campaña</td>
           <td ><%=@competencia.campana%></td>
           <td  bgcolor="#B4B4B4">Razón Social</td>
-          <td ><%=@competencia.razonsocial%></td>
+          <% c = Cliente.where(:id => @competencia.razonsocial) %>
+  
+          <td ><%=c[0].try(:razonsocial)%></td>
           <td  bgcolor="#B4B4B4">RUT</td>
           <td ><%=@competencia.rut%></td>
         </tr>

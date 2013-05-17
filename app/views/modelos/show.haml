@@ -55,7 +55,7 @@
       %td.inp= f.object.licencia
       %td.tit Edad
       
-      %td.inp=text_field_tag("edad", value = nil, options = {:size => 3, :disabled => true})
+      %td.inp=text_field_tag("edad", value = nil, options = {:size => 3, :readonly => true})
       %tr
         %td.tit Agencia Madre
         %td.inp= f.object.agencia
