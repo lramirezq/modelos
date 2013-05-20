@@ -5,74 +5,109 @@
         <tr>
           <td width="16%" bgcolor="#B4B4B4">Tipo de Compentencia</td>
           <td width="16%"><%=@competencia.tipocompetencia%></td>
+        </tr>
+        <tr>
           <td width="16%" bgcolor="#B4B4B4">Nº Orden de Compra</td>
           <td width="16%"><%=@competencia.nroorden%></td>
+        </tr>
+        <tr>
           <td width="16%" bgcolor="#B4B4B4">Producto</td>
           <td width="16%"><%=@competencia.producto%></td>
         </tr>
         <tr>
           <td  bgcolor="#B4B4B4">Campaña</td>
           <td ><%=@competencia.campana%></td>
+        </tr>
+        <tr>
           <td  bgcolor="#B4B4B4">Razón Social</td>
           <% c = Cliente.where(:id => @competencia.razonsocial) %>
-  
           <td ><%=c[0].try(:razonsocial)%></td>
+        </tr>
+        <tr>
           <td  bgcolor="#B4B4B4">RUT</td>
           <td ><%=@competencia.rut%></td>
         </tr>
         <tr>
           <td  bgcolor="#B4B4B4">Dirección</td>
           <td  ><%=@competencia.direccion%></td>
+        </tr>
+        <tr>
           <td  bgcolor="#B4B4B4">Telefono</td>
           <td ><%=@competencia.telefono%></td>
+        </tr>
+        <tr>
           <td  bgcolor="#B4B4B4">Giro</td>
           <td ><%=@competencia.giro%></td>
         </tr>
         <tr>
           <td  bgcolor="#B4B4B4">Productor</td>
           <td ><%=@competencia.productor%></td>
+        </tr>
+        <tr>
           <td  bgcolor="#B4B4B4">Fotografo</td>
           <td ><%=@competencia.fotografo%></td>
+        </tr>
+        <tr>
           <td  bgcolor="#B4B4B4">Fecha Fotografia</td>
           <td ><%=@competencia.fechafoto.try(:strftime, "%d-%m-%Y")%></td>
         </tr>
         <tr>
           <td  bgcolor="#B4B4B4">Agencia Publicidad</td>
           <td ><%=@competencia.agencia%></td>
+        </tr>
+        <tr>
           <td bgcolor="#B4B4B4">Fecha Filmación</td>
           <td ><%=@competencia.fechafilmacion.try(:strftime, "%d-%m-%Y")%></td>
+        </tr>
+        <tr>
           <td  bgcolor="#B4B4B4">Fecha Comercial</td>
           <td ><%=@competencia.fechacomercial.try(:strftime, "%d-%m-%Y")%></td>
         </tr>
         <tr>
           <td  bgcolor="#B4B4B4">Tiempo Exhibición</td>
           <td ><%=@competencia.texhibiciondia%></td>
+        </tr>
+        <tr>
           <td  bgcolor="#B4B4B4">Medios</td>
           <td ><%=@competencia.medios%></td>
+        </tr>
+        <tr>
           <td  bgcolor="#B4B4B4">Paises</td>
           <td ><%=@competencia.paises%></td>
         </tr>
         <tr>
           <td  bgcolor="#B4B4B4">Responsable</td>
           <td ><%=@competencia.bookerresponsable%></td>
+        </tr>
+        <tr>
           <td  bgcolor="#B4B4B4">Tipo Factura</td>
           <td ><%=@competencia.tipofactura%></td>
+        </tr>
+        <tr>
           <td  bgcolor="#B4B4B4">Nº Factura</td>
           <td ><%=@competencia.nrofactura%></td>
         </tr>
         <tr>
           <td  bgcolor="#B4B4B4">Fecha Factura</td>
           <td ><%=@competencia.fechafactura.try(:strftime, "%d-%m-%Y")%></td>
+        </tr>
+        <tr>
           <td  bgcolor="#B4B4B4">Reexhibición</td>
           <td ><%=@competencia.reexhibicion%></td>
+        </tr>
+        <tr>
           <td  bgcolor="#B4B4B4">Grafica</td>
           <td ><%=@competencia.grafica%></td>
         </tr>
         <tr>
           <td  bgcolor="#B4B4B4">Contrato</td>
           <td ><%=@competencia.contrato%></td>
+        </tr>
+        <tr>
           <td  bgcolor="#B4B4B4">Productora</td>
           <td ><%=@competencia.productora%></td>
+        </tr>
+        <tr>
           <td  bgcolor="#B4B4B4">Observaciones</td>
           <td  colspan='4'><%=@competencia.observaciones%></td>
         </tr>
