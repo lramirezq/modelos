@@ -99,14 +99,31 @@ class CompetenciasController < ApplicationController
   end
   
   def envio_mail
+
+        
     @competencia = Competencia.find(params[:id])
     puts "Esta es la competencia" + @competencia.tipocompetencia.to_s
-    EventoMailer.enviar_informes(@competencia, root_url).deliver  
+    EventoMailer.envio_informe_adjunto(@competencia, root_url).deliver  
+    #EventoMailer.enviar_informes(@competencia, root_url).deliver  
   
   respond_to do |format|
     format.html {  }
     format.xml  { render :xml => @competencia }
   end
+  end
+  
+  def excel
+   headers['Content-type'] = "application/ms-excel; charset=UTF8"
+   headers['Content-Disposition'] = "attachment; filename=competencia_excel.xls"
+   headers['Pragma'] = "no-cache"
+   headers['Expires'] = "0"
+   @competencia = Competencia.find(params[:id])
+   
+   respond_to do |format|
+     format.html { render :layout => nil }
+     format.xml  { head :ok }
+  end
+  
   end
   
     

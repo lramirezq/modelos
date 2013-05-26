@@ -7,7 +7,7 @@ development:
   pool:      5
   username: new_models
   password: new_models
-  host:     localhost
+  host:     192.168.202.182
   port:     5432    
   
 # Warning: The database defined as "test" will be erased and
