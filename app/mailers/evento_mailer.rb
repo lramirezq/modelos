@@ -38,26 +38,14 @@ class EventoMailer < ActionMailer::Base
    
     @destinos = Mantenedor.mail_evento.collect {|d| d.valor}.join(', ')
     require 'open-uri'
-  
-    url = root_url.to_s.gsub(/\/+$/, '') + "/reportes/informe_excel?id=2"
-    #url = "http://es.kioskea.net/faq/1750-crear-una-lista-desplegable-simple-en-excel"
-    #url_data = open(url).read()
+    puts  competencia.id
+    url = root_url.to_s.gsub(/\/+$/, '') + "/reportes/informe_excel?id="+competencia.id
     
-    #puts "la URL => " + url.to_s
-      #url = "http://es.kioskea.net/faq/1750-crear-una-lista-desplegable-simple-en-excel"
-      
-      require 'net/http'
+    require 'net/http'
       uri = URI(url)
       contents = Net::HTTP.get(uri)
-      
-    
-    
-    
-    
-    
-    attachments["informe.xls"] = contents 
-    #File.read(root_url.to_s.gsub(/\/+$/, '')+"/competencias/2/excel")  
-
+      attachments["informe.xls"] = contents 
+  
     
     
     mail(:to =>  @destinos, :subject => "New Models | Envio Informe -  #{competencia.id.to_s}")  
