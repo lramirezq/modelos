@@ -52,7 +52,6 @@ class EventoMailer < ActionMailer::Base
   def envio_cotizacion_excel(cotizacione, root_url, destinatario)
      @destinos = destinatario
       require 'open-uri'
-      puts  competencia.id
       url = root_url.to_s.gsub(/\/+$/, '') + "/reportes/cotizacion_excel?id="+cotizacione.id.to_s
       require 'net/http'
       uri = URI(url)
