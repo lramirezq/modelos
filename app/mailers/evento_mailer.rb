@@ -39,7 +39,7 @@ class EventoMailer < ActionMailer::Base
     @destinos = Mantenedor.mail_evento.collect {|d| d.valor}.join(', ')
     require 'open-uri'
     puts  competencia.id
-    url = root_url.to_s.gsub(/\/+$/, '') + "/reportes/informe_excel?id="+competencia.id
+    url = root_url.to_s.gsub(/\/+$/, '') + "/reportes/informe_excel?id="+competencia.id.to_s
     
     require 'net/http'
       uri = URI(url)
