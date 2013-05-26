@@ -53,6 +53,7 @@ class EventoMailer < ActionMailer::Base
      @destinos = destinatario
       require 'open-uri'
       url = root_url.to_s.gsub(/\/+$/, '') + "/reportes/cotizacion_excel?id="+cotizacione.id.to_s
+      puts url.to_s
       require 'net/http'
       uri = URI(url)
       contents = Net::HTTP.get(uri)
