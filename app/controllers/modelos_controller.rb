@@ -88,7 +88,7 @@ class ModelosController < ApplicationController
   def destroy
     @modelo = Modelo.find(params[:id])
     
-    EventoMailer.borrado_modelo(@modelo, current_user.nombre).deliver  
+    #EventoMailer.borrado_modelo(@modelo, current_user.nombre).deliver  
     @modelo.estado = 1
     @modelo.save
 

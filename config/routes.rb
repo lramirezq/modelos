@@ -58,6 +58,7 @@ NewModels::Application.routes.draw do
   match 'modelos/:id/subir_foto' => "modelos#subir_foto", :as => :subir_foto
   match 'modelos/:id/ver_album/:otro' => "modelos#ver_album", :as => :ver_album
   match 'reportes/informe_excel(.:format)' => "reportes#informe_excel", :as => :excel_informe
+  match 'reportes/cotizacion_excel(.:format)' => "reportes#cotizacion_excel", :as => :excel_cotizacion
   
   # match ':controller(/:action(/:id(.:format)))'
   # The priority is based upon order of creation:

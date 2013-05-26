@@ -390,9 +390,9 @@ class BusquedasController < ApplicationController
     def envio_cotizacion
     @cotizacione = Cotizacione.find(params[:id])
     correo = params[:correo]
-    puts "Probando envio de cotizacion por mail !!"
     puts "a este mail envio" + correo.to_s
-    EventoMailer.enviar_cotizacion(@cotizacione, root_url, correo).deliver  
+   
+    EventoMailer.envio_cotizacion_excel(@cotizacione, root_url, correo).deliver  
   
   respond_to do |format|
     format.html {  }

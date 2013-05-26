@@ -35,20 +35,35 @@ class EventoMailer < ActionMailer::Base
 
   def envio_informe_adjunto(competencia, root_url)
     puts "Llegue al metodo"
-   
+  
     @destinos = Mantenedor.mail_evento.collect {|d| d.valor}.join(', ')
     require 'open-uri'
+  
     puts  competencia.id
     url = root_url.to_s.gsub(/\/+$/, '') + "/reportes/informe_excel?id="+competencia.id.to_s
     
     require 'net/http'
-      uri = URI(url)
-      contents = Net::HTTP.get(uri)
-      attachments["informe.xls"] = contents 
-  
-    
-    
+    uri = URI(url)
+    contents = Net::HTTP.get(uri)
+    attachments["informe.xls"] = contents 
     mail(:to =>  @destinos, :subject => "New Models | Envio Informe -  #{competencia.id.to_s}")  
   end
+  
+  def envio_cotizacion_excel(cotizacione, root_url, destinatario)
+     @destinos = destinatario
+      require 'open-uri'
+      puts  competencia.id
+      url = root_url.to_s.gsub(/\/+$/, '') + "/reportes/cotizacion_excel?id="+cotizacione.id.to_s
+      require 'net/http'
+      uri = URI(url)
+      contents = Net::HTTP.get(uri)
+      attachments["cotizacion.xls"] = contents 
+
+      mail(:to => @destinos, :subject => "New Models | Envio Cotización -  #{cotizacione.id.to_s}")
+    
+  end
+  
+  
+  
   
 end
