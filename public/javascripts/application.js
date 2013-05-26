@@ -95,28 +95,6 @@ function tipo_id_busqueda(id){
 
 
 
-function buscaEvento(id){
-  //alert(id.value);
-  $.getScript('/javascripts/causas.js?codigo=' + id.value); 
-}
-
-
-function upvictimas(id){
-  $.getScript('/javascripts/victimas.js?rut=' + id.value+ "&control=" + id.id); 
-}
-
-function upimputados(id){
-  $.getScript('/javascripts/imputados.js?rut=' + id.value+ "&control=" + id.id); 
-}
-
-function estado_causa(id){
-  if(id.value=="Terminada"){
-    alert("Debe agregar Informe de Causa Terminada")
-    $("#field_terminada").show("slow");
-  }else{
-    $("#field_terminada").hide("slow");
-  }
-} 
 
 function tipo_id(id){
   tipoid = id.id
@@ -143,62 +121,13 @@ function calculaEdad(x){
 
 
   
-  function recalcular(){
-	//Contar Actividades
-	var a = 56;
-	x = 0;y=0;i=0;j=0;totalcheck=0;totalchecktrue=0;
-	while (i == 0){
-		if(document.getElementById("proyecto_fases_attributes_"+x+"_actividads_attributes_"+y+"_estado")){
-			totalcheck++;
-			obj = document.getElementById("proyecto_fases_attributes_"+x+"_actividads_attributes_"+y+"_estado");
-			if(obj.checked){
-				totalchecktrue++;
-			}
-			y++;
-			j=0;
-		}else{
-			y=0;
-			x++;
-			j++;
-		}
-		
-		if(j==2){
-			i=1;
-		}
-		
-	}
-	a = (totalchecktrue * 100 / totalcheck);
-	$("#progressbar").progressbar({ value: a });
-	$("#porcentaje").val(a.toFixed(2));
-	$("#proyecto_porcentaje").val(a.toFixed(2));
-  }
+
 
 function upperCase(elem) {
    var x=elem.value
    elem.value=x.toUpperCase()
 }
 
-
-  function testing(x, f){
-		
-		id = f.id;
-		id_proyecto = $("#proyecto_id").val();
-		id = id.substring(0, id.length - 24);
-		id = "#"+id+"valida";
-		rechaza = id.substring(0, id.length - 6);
-		rechaza+="rechaza"
-	
-		if (x =="valida"){
-			$(id).attr('checked', true);
-			$(rechaza).attr('checked', false);
-		}else{
-			$(id).attr('checked', false);
-			$(rechaza).attr('checked', true);
-		}
-
-		document.forms["edit_proyecto_"+id_proyecto].submit();
-
-  }
 
 
 function calcular_edad(dia_nacim,mes_nacim,anio_nacim)
@@ -221,6 +150,7 @@ function calcular_edad(dia_nacim,mes_nacim,anio_nacim)
     {
     edad -= 1900;
     }
+  if (edad == 1900){edad = 0}
   return edad;
 }
 
@@ -292,9 +222,12 @@ function recalcular_edad(){
 			dia = $('#modelo_fecha_nacimiento_3i').val();
 			mes = $('#modelo_fecha_nacimiento_2i').val();
 			anno = $('#modelo_fecha_nacimiento_1i').val();
-
 			edad = calcular_edad(dia,mes,anno);
+			if (edad == 1900){
+				edad = 0;
+			}
 			$('#edad').val(edad);
+		
 	    if (edad < 18){
 				$('#responsable').attr("style", "visibility: visible")
 			}else{
@@ -308,6 +241,10 @@ function recalcular_edad_show(){
 			dia = $('#dia').val();
 
 			edad = calcular_edad(dia,mes,anno);
+			if (edad == 1900){
+				edad = 0;
+			}
+
       $('#edad').val(edad);
 			if (edad < 18){
 				$('#responsable').attr("style", "visibility: visible")

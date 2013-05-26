@@ -26,7 +26,7 @@
       %td= link_to image_tag("ver.png"), modelo
       %td= link_to image_tag("editar.png"), edit_modelo_path(modelo)
       %td= link_to image_tag("eliminar.png"), modelo, :confirm => 'Está Seguro?', :method => :delete
-      
+= will_paginate @modelos      
 %br/
 = link_button 'Agregar Modelo', new_modelo_path
 %br
