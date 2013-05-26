@@ -58,8 +58,7 @@ class EventoMailer < ActionMailer::Base
       uri = URI(url)
       contents = Net::HTTP.get(uri)
       attachments["cotizacion.xls"] = contents 
-
-      mail(:to => @destinos, :subject => "New Models | Envio Cotización -  #{cotizacione.id.to_s}")
+      mail(:to => @destinos, :subject => "New Models | Envio Cotizacion -  #{cotizacione.id.to_s}")
     
   end
   
