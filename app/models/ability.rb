@@ -30,11 +30,6 @@ class Ability
       can :update, Modelo
       can :create, Modelo
       
-      can :read, Cliente
-      can :edit, Cliente
-      can :update, Cliente
-      can :create, Cliente
-      
       can :read, Cotizacione
       can :edit, Cotizacione
       can :update, Cotizacione
