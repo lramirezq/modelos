@@ -2,7 +2,7 @@ class BusquedasController < ApplicationController
   
   def datos_modelo
   puts "Buscar por datos de modelos....."  
-  query = "select * from modelos WHERE 1=1 "  
+  query = "select * from modelos WHERE 1=1 and estado = null "  
   parametros = []
   #Recibendo Parametros
   tipo_id = params[:tipo_id]
@@ -147,7 +147,7 @@ class BusquedasController < ApplicationController
   
   def caracteristicas_modelo
     puts "Buscar caracteristicas de modelos"  
-    query = "select * from modelos inner join caracteristicas on modelos.\"id\" = caracteristicas.\"modelo_id\" where 1=1 "
+    query = "select * from modelos inner join caracteristicas on modelos.\"id\" = caracteristicas.\"modelo_id\" where 1=1  "
 
   #sexo
   sexo = params[:sexo]
@@ -372,9 +372,42 @@ class BusquedasController < ApplicationController
    end
   end 
   
-  
-
+  cicatriz = params[:cicatriz]
+  if cicatriz !=nil && !cicatriz.empty?
+   puts "cicatriz ***************" + cicatriz + "*********************"
  
+      if (cicatriz == "0")
+    query += "and \"cicatriz\" = false "
+   else
+    query += "and \"cicatriz\" = true "
+   end
+  end 
+
+  tatuaje = params[:tatuaje]
+  if tatuaje !=nil && !tatuaje.empty?
+   puts "tatuaje ***************" + tatuaje + "*********************"
+ 
+      if (tatuaje == "0")
+    query += "and \"tatuaje\" = false "
+   else
+    query += "and \"tatuaje\" = true "
+   end
+  end 
+ 
+ 
+  piercing = params[:piercing]
+  if piercing !=nil && !piercing.empty?
+   puts "piercing ***************" + piercing + "*********************"
+ 
+      if (piercing == "0")
+    query += "and \"piercing\" = false "
+   else
+    query += "and \"piercing\" = true "
+   end
+  end 
+  
+  
+  
    puts query
   @m = Modelo.find_by_sql query 
   @total = @m.count

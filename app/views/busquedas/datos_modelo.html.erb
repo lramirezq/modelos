@@ -4,49 +4,49 @@
   <tr>
     <td class='tit'>Tipo Identificación</td>
     <td class='inp'>
-	<%= select_tag "tipo_id", options_from_collection_for_select(Mantenedor.tipoidentificacions, "valor", "valor"), :include_blank => 'Seleccione...' , :onchange => 'tipo_id_busqueda(this);'%>
+	<%= select_tag "tipo_id", options_from_collection_for_select(Mantenedor.tipoidentificacions, "valor", "valor", params[:tipo_id]), :include_blank => 'Seleccione...' , :onchange => 'tipo_id_busqueda(this);'%>
     </td>
     <td class='tit'>Nº Identificación</td>
-    <td class='inp'><input id="numero_id" name="numero_id" onblur="upperCase(this)" size="30" type="text" /></td>
+    <td class='inp'><input id="numero_id" name="numero_id" onblur="upperCase(this)" size="30" type="text" value = "<%= params[:numero_id]%>"/></td>
     <td class='tit'>Nombres</td>
-    <td class='inp'><input id="nombres" name="nombres" onblur="upperCase(this)" size="30" type="text" /></td>
+    <td class='inp'><input id="nombres" name="nombres" onblur="upperCase(this)" size="30" type="text" value = "<%= params[:nombres]%>" /></td>
   </tr>
   <tr>
     <td class='tit'>Apellidos</td>
-    <td class='inp'><input id="apellidos" name="apellidos" onblur="upperCase(this)" size="30" type="text" /></td>
+    <td class='inp'><input id="apellidos" name="apellidos" onblur="upperCase(this)" size="30" type="text" value = "<%= params[:apellidos]%>"/></td>
     <td class='tit'>Sexo</td>
     <td class='inp'>
-      <%= select_tag "sexo", options_from_collection_for_select(Mantenedor.tiposexos, "valor", "valor"), :include_blank => 'Seleccione...'%>
+      <%= select_tag "sexo", options_from_collection_for_select(Mantenedor.tiposexos, "valor", "valor", params[:sexo]), :include_blank => 'Seleccione...'%>
     </td>
     <td class='tit'>Edad</td>
-    <td class='inp'>Desde <input id="edad_desde" name="edad_desde" size="2" onblur="edades(this)" /> Hasta <input id="edad_hasta" name="edad_hasta" size="2" onblur="edades(this)"/> </td>
+    <td class='inp'>Desde <input id="edad_desde" name="edad_desde" size="2" onblur="edades(this)" value = "<%= params[:edad_desde]%>"/> Hasta <input id="edad_hasta" name="edad_hasta" size="2" onblur="edades(this)" value = "<%= params[:edad_hasta]%>"/> </td>
   </tr>
   <tr>
     <td class='tit'>Nacionalidad</td>
-    <td class='inp'><input id="nacionalidad" name="nacionalidad" onblur="upperCase(this)" size="30" type="text" /></td>
+    <td class='inp'><input id="nacionalidad" name="nacionalidad" onblur="upperCase(this)" size="30" type="text" value = "<%= params[:nacionalidad]%>" /></td>
     <td class='tit'>Telefono Fijo</td>
-    <td class='inp'><input id="telefono_fijo" name="telefono_fijo" onblur="upperCase(this)" size="30" type="text" /></td>
+    <td class='inp'><input id="telefono_fijo" name="telefono_fijo" onblur="upperCase(this)" size="30" type="text" value = "<%= params[:telefono_fijo]%>"/></td>
     <td class='tit'>Telefono Movil</td>
-    <td class='inp'><input id="movil" name="movil" onblur="upperCase(this)" size="30" type="text" /></td>
+    <td class='inp'><input id="movil" name="movil" onblur="upperCase(this)" size="30" type="text" value = "<%= params[:movil]%>"/></td>
   </tr>
   <tr>
     <td class='tit'>Dirección</td>
-    <td class='inp'><input id="direccion" name="direccion" onblur="upperCase(this)" size="30" type="text" /></td>
+    <td class='inp'><input id="direccion" name="direccion" onblur="upperCase(this)" size="30" type="text" value = "<%= params[:direccion]%>"/></td>
     <td class='tit'>Comuna</td>
-    <td class='inp'><input id="comuna" name="comuna" onblur="upperCase(this)" size="30" type="text" /></td>
+    <td class='inp'><input id="comuna" name="comuna" onblur="upperCase(this)" size="30" type="text" value = "<%= params[:comuna]%>"/></td>
     <td class='tit'>Ciudad</td>
-    <td class='inp'><input id="ciudad" name="ciudad" onblur="upperCase(this)" size="30" type="text" /></td>
+    <td class='inp'><input id="ciudad" name="ciudad" onblur="upperCase(this)" size="30" type="text" value = "<%= params[:ciudad]%>"/></td>
   </tr>
   <tr>
     <td class='tit'>Pais</td>
-    <td class='inp'><%= select_tag "pais", options_from_collection_for_select(Mantenedor.paises, "valor", "valor"), :include_blank => 'Seleccione...' %></td>
+    <td class='inp'><%= select_tag "pais", options_from_collection_for_select(Mantenedor.paises, "valor", "valor", params[:pais]), :include_blank => 'Seleccione...' %></td>
     <td class='tit'>Licencia de Conducir</td>
-    <td class='inp'><input id="licencia" name="licencia" onblur="upperCase(this)" size="30" type="text" /></td>
+    <td class='inp'><input id="licencia" name="licencia" onblur="upperCase(this)" size="30" type="text" value = "<%= params[:licencia]%>"/></td>
     <tr>
       <td class='tit'>Agencia Madre</td>
-      <td class='inp'><%= select_tag "agencia", options_from_collection_for_select(Agenciamadre.all, "nombre", "nombre"), :include_blank => 'Seleccione...' %></td>
+      <td class='inp'><%= select_tag "agencia", options_from_collection_for_select(Agenciamadre.all, "nombre", "nombre", params[:agencia]), :include_blank => 'Seleccione...' %></td>
       <td class='tit'>E-Mail</td>
-      <td class='inp'><input id="email" name="email" onblur="upperCase(this)" size="35" type="text" /></td>
+      <td class='inp'><input id="email" name="email" onblur="upperCase(this)" size="35" type="text" value = "<%= params[:email]%>"/></td>
     </tr>
   </tr>
 </table>
@@ -56,16 +56,16 @@
     <tr>
       <td class='tit'>Tipo Id</td>
       <td class='inp'>
-	<%= select_tag "tipo_id_responsable", options_from_collection_for_select(Mantenedor.tipoidentificacions, "valor", "valor"), :include_blank => 'Seleccione...', :onchange => 'tipo_id_busqueda(this);'  %>
+	<%= select_tag "tipo_id_responsable", options_from_collection_for_select(Mantenedor.tipoidentificacions, "valor", "valor", params[:tipo_id_responsable]), :include_blank => 'Seleccione...', :onchange => 'tipo_id_busqueda(this);'  %>
         
       <td class='tit'>Nº Identificación</td>
-      <td class='inp'><input id="numero_id_responsable" name="numero_id_responsable" onblur="upperCase(this)" size="30" type="text" /></td>
+      <td class='inp'><input id="numero_id_responsable" name="numero_id_responsable" onblur="upperCase(this)" size="30" type="text" value = "<%= params[:numero_id_responsable]%>"/></td>
     </tr>
     <tr>
       <td class='tit'>Nombres</td>
-      <td class='inp'><input id="nombres_responsable" name="nombres_responsable" onblur="upperCase(this)" size="30" type="text" /></td>
+      <td class='inp'><input id="nombres_responsable" name="nombres_responsable" onblur="upperCase(this)" size="30" type="text" value = "<%= params[:nombres_responsable]%>"/></td>
       <td class='tit'>Apellidos</td>
-      <td class='inp'><input id="apellidos_responsable" name="apellidos_responsable" onblur="upperCase(this)" size="30" type="text" /></td>
+      <td class='inp'><input id="apellidos_responsable" name="apellidos_responsable" onblur="upperCase(this)" size="30" type="text" value = "<%= params[:apellidos_responsable]%>" /></td>
     </tr>
   </table>
 </div>

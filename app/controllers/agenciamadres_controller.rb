@@ -3,7 +3,7 @@ class AgenciamadresController < ApplicationController
   # GET /agenciamadres.xml
   load_and_authorize_resource
   def index
-    @agenciamadres = Agenciamadre.all
+    @agenciamadres = Agenciamadre.where(:estado => nil)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -74,7 +74,8 @@ class AgenciamadresController < ApplicationController
   # DELETE /agenciamadres/1.xml
   def destroy
     @agenciamadre = Agenciamadre.find(params[:id])
-    @agenciamadre.destroy
+    @agenciamadre.estado = "1"
+    @agenciamadre.save
 
     respond_to do |format|
       format.html { redirect_to(agenciamadres_url) }

@@ -27,49 +27,49 @@
 	      <tr>
 	      	<td class='tit'>Sexo</td>
 		    <td class='inp'>
-		      <%= select_tag "sexo", options_from_collection_for_select(Mantenedor.tiposexos, "valor", "valor"), :include_blank => 'Seleccione...'%>
+		      <%= select_tag "sexo", options_from_collection_for_select(Mantenedor.tiposexos, "valor", "valor", params[:sexo]), :include_blank => 'Seleccione...'%>
 		    </td>
 	      </tr>
           <tr>
             <td class='tit'>Estatura</td>
-            <td class='inp'>Desde <input id="estatura_desde" name="estatura_desde" size="2"/> Hasta <input id="estatura_hasta" name="estatura_hasta" size="2"/></td>
+            <td class='inp'>Desde <input id="estatura_desde" name="estatura_desde" size="2" value = "<%= params[:estatura_desde]%>"/> Hasta <input id="estatura_hasta" name="estatura_hasta" size="2" value = "<%= params[:estatura_hasta]%>"/></td>
             <td class='tit'>Calzado</td>
-            <td class='inp'>Desde <input id="calzado_desde" name="calzado_desde" size="2"/> Hasta <input id="calzado_hasta" name="calzado_hasta" size="2"/></td>
+            <td class='inp'>Desde <input id="calzado_desde" name="calzado_desde" size="2" value = "<%= params[:calzado_desde]%>"/> Hasta <input id="calzado_hasta" name="calzado_hasta" size="2" value = "<%= params[:calzado_hasta]%>" /></td>
             <td class='tit'>Edad</td>
-            <td class='inp'>Desde <input id="edad_desde" name="edad_desde" size="2"/> Hasta <input id="edad_hasta" name="edad_hasta" size="2"/></td>
+            <td class='inp'>Desde <input id="edad_desde" name="edad_desde" size="2" value = "<%= params[:edad_desde]%>"/> Hasta <input id="edad_hasta" name="edad_hasta" size="2" value = "<%= params[:edad_hasta]%>" /></td>
           </tr>
           <tr>
             <td class='tit'>Talla de Pantalón</td>
-            <td class='inp'>Desde <input id="pantalon_desde" name="pantalon_desde" size="2"/> Hasta <input id="pantalon_hasta" name="pantalon_hasta" size="2"/></td>
+            <td class='inp'>Desde <input id="pantalon_desde" name="pantalon_desde" size="2"  value = "<%= params[:pantalon_desde]%>"/> Hasta <input id="pantalon_hasta" name="pantalon_hasta" size="2" value = "<%= params[:pantalon_hasta]%>" /></td>
             <td class='tit'>Talla de Camisa</td>
             <td class='inp'>
-              	<%= select_tag "tcamisa", options_from_collection_for_select(Mantenedor.tcamisa, "valor", "valor"), :include_blank => 'Seleccione...' %>
+              	<%= select_tag "tcamisa", options_from_collection_for_select(Mantenedor.tcamisa, "valor", "valor", params[:tcamisa]), :include_blank => 'Seleccione...' %>
             </td>
             <td class='tit'>Busto</td>
-            <td class='inp'>Desde <input id="busto_desde" name="busto_desde" size="2"/> Hasta <input id="busto_hasta" name="busto_hasta" size="2"/></td>
+            <td class='inp'>Desde <input id="busto_desde" name="busto_desde" size="2" value = "<%= params[:busto_desde]%>"/> Hasta <input id="busto_hasta" name="busto_hasta" size="2" value = "<%= params[:busto_hasta]%>" /></td>
           </tr>
           <tr>
             <td class='tit'>Cintura</td>
-            <td class='inp'>Desde <input id="cintura_desde" name="cintura_desde" size="2"/> Hasta <input id="cintura_hasta" name="cintura_hasta" size="2"/></td>
+            <td class='inp'>Desde <input id="cintura_desde" name="cintura_desde" size="2" value = "<%= params[:cintura_desde]%>" /> Hasta <input id="cintura_hasta" name="cintura_hasta" size="2" value = "<%= params[:cintura_hasta]%>" /></td>
             <td class='tit'>Cadera</td>
-            <td class='inp'>Desde <input id="cadera_desde" name="cadera_desde" size="2"/> Hasta <input id="cadera_hasta" name="cadera_hasta" size="2"/></td>
+            <td class='inp'>Desde <input id="cadera_desde" name="cadera_desde" size="2" value = "<%= params[:cadera_desde]%>" /> Hasta <input id="cadera_hasta" name="cadera_hasta" size="2" value = "<%= params[:cadera_hasta]%>"/></td>
             <td class='tit'>Color de Ojos</td>
             <td class='inp'>
-              	<%= select_tag "cojos", options_from_collection_for_select(Mantenedor.cojos, "valor", "valor"), :include_blank => 'Seleccione...' %>
+              	<%= select_tag "cojos", options_from_collection_for_select(Mantenedor.cojos, "valor", "valor",  params[:cojos]), :include_blank => 'Seleccione...' %>
             </td>
           </tr>
           <tr>
             <td class='tit'>Color de Cabello</td>
             <td class='inp'>
-             <%= select_tag "ccabello", options_from_collection_for_select(Mantenedor.ccabello, "valor", "valor"), :include_blank => 'Seleccione...' %>
+             <%= select_tag "ccabello", options_from_collection_for_select(Mantenedor.ccabello, "valor", "valor", params[:ccabello] ), :include_blank => 'Seleccione...' %>
             </td>
             <td class='tit'>Largo de Cabello</td>
             <td class='inp'>
-              <%= select_tag "lcabello", options_from_collection_for_select(Mantenedor.lcabello, "valor", "valor"), :include_blank => 'Seleccione...' %>
+              <%= select_tag "lcabello", options_from_collection_for_select(Mantenedor.lcabello, "valor", "valor", params[:lcabello]), :include_blank => 'Seleccione...' %>
             </td>
             <td class='tit'>Etnia</td>
             <td class='inp'>
-              <%= select_tag "etnia", options_from_collection_for_select(Mantenedor.etnia, "valor", "valor"), :include_blank => 'Seleccione...' %>
+              <%= select_tag "etnia", options_from_collection_for_select(Mantenedor.etnia, "valor", "valor", params[:etnia]), :include_blank => 'Seleccione...' %>
             </td>
           </tr>
           <tr>
@@ -77,13 +77,13 @@
             <td class='inp'><input name="hot" type="hidden" value="0" /><input id="hot" name="hot" onblur="upperCase(this)" type="checkbox" value="1" /></td>
 
             <td class='tit'>Hobbie / Deporte</td>
-            <td class='inp'><input id="hobbie" name="hobbie" onblur="upperCase(this)" size="16" type="text" /></td>
+            <td class='inp'><input id="hobbie" name="hobbie" onblur="upperCase(this)" size="16" type="text" value = "<%= params[:hobbie]%>"/></td>
             <td class='tit'>Medida Cuello</td>
-            <td class='inp'><input id="mcuello" name="mcuello" onblur="upperCase(this)" size="16" type="text" /></td>
+            <td class='inp'><input id="mcuello" name="mcuello" onblur="upperCase(this)" size="16" type="text" value = "<%= params[:mcuello]%>" /></td>
           </tr>
           <tr>
             <td class='tit'>Terno</td>
-            <td class='inp'><input id="terno" name="terno" onblur="upperCase(this)" size="16" type="text" /></td>
+            <td class='inp'><input id="terno" name="terno" onblur="upperCase(this)" size="16" type="text" value = "<%= params[:terno]%>"/></td>
             <td class='tit'>Realiza Desfiles?</td>
             <td class='inp'><input name="desfile" type="hidden" value="0" /><input id="desfile" name="desfile" onblur="upperCase(this)" type="checkbox" value="1" /></td>
             <td class='tit'>Tiene Dientes?</td>
@@ -97,14 +97,23 @@
             <td class='tit'>Tiene Experiencia como modelo?</td>
             <td class='inp'><input name="experiencia" type="hidden" value="0" /><input id="experiencia" name="experiencia" onblur="upperCase(this)" type="checkbox" value="1" /></td>
           </tr>
+          <tr>
+            <td class='tit'>Cicatriz</td>
+            <td class='inp'><input name="cicatriz" type="hidden" value="0" /><input id="cicatriz" name="cicatriz" onblur="upperCase(this)" type="checkbox" value="1" /></td>
+            <td class='tit'>Tatuaje</td>
+            <td class='inp'><input name="tatuaje" type="hidden" value="0" /><input id="tatuaje" name="tatuaje" onblur="upperCase(this)" type="checkbox" value="1" /></td>
+            <td class='tit'>Piercing</td>
+            <td class='inp'><input name="piercing" type="hidden" value="0" /><input id="piercing" name="piercing" onblur="upperCase(this)" type="checkbox" value="1" /></td>
+          </tr>
         </table>
       </div>
 </div>
 <br>
 <input type="submit" value="Realizar Busqueda !">
+
 </form>
 
-
+	
 
 
 
