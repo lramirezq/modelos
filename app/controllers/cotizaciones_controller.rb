@@ -4,7 +4,7 @@ class CotizacionesController < ApplicationController
   # GET /cotizaciones.xml
    load_and_authorize_resource
   def index
-    @cotizaciones = Cotizacione.find(:all, :order => "id DESC")
+    @cotizaciones = paginamiento Cotizacione.find(:all, :order => "id DESC")
 
     respond_to do |format|
       format.html # index.html.erb

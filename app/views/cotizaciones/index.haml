@@ -1,5 +1,8 @@
 %h2.titulo01 Listado de Cotizaciones
-
+= form_tag cotizaciones_path, :method => 'get' do
+  %p
+    Paginación: #{select_paginacion @per_page}
+= will_paginate @cotizaciones
 %table.sglea.datos
   %tr
     %td.titg ID

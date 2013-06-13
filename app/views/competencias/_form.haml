@@ -18,7 +18,7 @@
     %td.tit Campaña
     %td.inp= f.text_field :campana, :onblur => "upperCase(this)"
     %td.tit Razón Social
-    %td.inp= f.collection_select :razonsocial, Cliente.all, :id, :razonsocial,:prompt => 'Seleccione por favor'
+    %td.inp= f.collection_select :razonsocial, Cliente.where(:estado => nil), :id, :razonsocial,:prompt => 'Seleccione por favor'
     %td.tit RUT
     %td.inp= f.text_field :rut
   %tr
