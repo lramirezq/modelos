@@ -10,7 +10,7 @@ class Modelo < ActiveRecord::Base
   accepts_nested_attributes_for :albums, :allow_destroy => true
   
   validates_presence_of :nombres, :movil
-
+  
  
   mount_uploader :image, ImageUploader
     

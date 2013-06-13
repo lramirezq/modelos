@@ -3,7 +3,7 @@ class ClientesController < ApplicationController
   # GET /clientes.xml
   load_and_authorize_resource
   def index
-    @clientes =   Cliente.where(:estado => nil).order("razonsocial ASC")
+    @clientes =   paginamiento Cliente.where(:estado => nil).order("razonsocial ASC")
     
     respond_to do |format|
       format.html # index.html.erb

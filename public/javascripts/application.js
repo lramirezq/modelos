@@ -94,7 +94,21 @@ function tipo_id_busqueda(id){
 }
 
 
-
+function tipo_id_cliente(id){
+  tipoid = id.id
+  rut = tipoid.replace('tipo_id', 'cliente_rut');
+  rid= rut;
+  rut = "#cliente_rut";
+  if(id.value =="RUN"){
+      $(rut).Rut({
+          on_error: function(){ document.getElementById('cliente_rut').value=""; document.getElementById('cliente_rut').focus; alert('El rut ingresado es incorrecto');  },  format_on: 'keyup'
+      });
+      
+  }else{
+    $(rut).val("");
+    $(rut).unbind();
+  }
+}
 
 function tipo_id(id){
   tipoid = id.id
@@ -214,6 +228,15 @@ function buscaModelo(id){
 	ident = id.id;
   if (valor != ""){
 	 $.getScript('/javascripts/modelo.js?numero_id=' + valor + '&idf=' + ident); 
+  }
+}
+
+
+function buscaClienteExiste(id){
+	valor =  id.value;
+	ident = id.id;
+  if (valor != ""){
+	 $.getScript('/javascripts/busca_cliente.js?numero_id=' + valor + '&idf=' + ident); 
   }
 }
 

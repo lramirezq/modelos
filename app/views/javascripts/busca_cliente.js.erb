@@ -1,0 +1,10 @@
+
+if ("<%= @cliente.length %>" != "0"){
+
+	var con = confirm("El Cliente \n<%= @cliente[0].try(:razonsocial.to_s)%> \nExiste en la Base de datos \nDesea Editar ?");	
+		if(con){
+			document.location.href="/clientes/<%= @cliente[0].try(:id) %>/edit";
+		}else{
+	  document.location.href="/clientes/new";
+      }
+}

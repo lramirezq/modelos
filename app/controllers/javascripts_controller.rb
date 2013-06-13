@@ -19,15 +19,21 @@ class JavascriptsController < ApplicationController
   end
 
   def modelo
-  
     m = Modelo.where(:numero_id => params[:numero_id])
     @modelo = m[0]
     puts "elnombre => " + @modelo.to_s
     respond_to do |format|
        format.js {render :layout => false}
      end
-    
   end
+  
+  
+  def busca_cliente
+    @cliente = Cliente.where(:rut => params[:numero_id])
+    respond_to do |format|
+       format.js {render :layout => false}
+     end
+   end
   
   def modelos
   

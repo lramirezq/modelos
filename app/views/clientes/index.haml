@@ -1,5 +1,8 @@
 %h2.titulo01 Listado de Clientes
-
+= form_tag clientes_path, :method => 'get' do
+  %p
+    Paginación: #{select_paginacion @per_page}
+= will_paginate @clientes
 %table.sglea.datos
   %tr
     %td.titg Rut
